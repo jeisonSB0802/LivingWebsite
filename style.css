@@ -17,6 +17,10 @@ body {
   position: relative;
 }
 
+.LogoCemilan {
+    weidth: 100%;
+}
+
 .overlay {
   background: rgba(0,0,0,0.4);
   height: 100%;
@@ -77,7 +81,7 @@ body {
 }
 
 .imagenes {
-  width: 90%;
+  width: 65%;
   display: flex;
   gap: 20px;
 }
@@ -97,20 +101,6 @@ body {
   background: black;
   margin-top: 20px;
 }
-
-.noche-talentos {
-  width: 70%;
-  border-radius: 10px;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
-}
-
-.noche-talentos2 {
-  width: 100%;
-  margin-top: 60px;
-  border-radius: 10px;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
-}
-
 
 /* FOOTER */
 footer {
