@@ -1,0 +1,342 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Únete a Living | Movimiento Juvenil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Epilogue:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#400010",
+                    "on-secondary-fixed": "#3f0018",
+                    "on-primary-fixed-variant": "#910030",
+                    "surface-container-lowest": "#0d0e0f",
+                    "on-secondary-container": "#ffc1cd",
+                    "inverse-surface": "#e2e2e2",
+                    "surface-tint": "#ffb2ba",
+                    "outline-variant": "#5d3f42",
+                    "surface-variant": "#333535",
+                    "on-primary": "#670020",
+                    "on-secondary": "#66002b",
+                    "surface-container": "#1e2020",
+                    "on-surface-variant": "#e7bcbf",
+                    "primary-container": "#ff4f72",
+                    "surface-container-low": "#1a1c1c",
+                    "secondary": "#ffb1c2",
+                    "on-background": "#e2e2e2",
+                    "primary-fixed": "#ffd9dc",
+                    "background": "#121414",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "surface": "#121414",
+                    "primary": "#ffb2ba",
+                    "inverse-on-surface": "#2f3131",
+                    "tertiary-fixed": "#89f8bd",
+                    "on-tertiary": "#003822",
+                    "secondary-fixed-dim": "#ffb1c2",
+                    "on-secondary-fixed-variant": "#8f003f",
+                    "on-primary-container": "#5a001b",
+                    "surface-container-high": "#282a2b",
+                    "on-tertiary-container": "#00311d",
+                    "tertiary-fixed-dim": "#6cdba2",
+                    "outline": "#ad878a",
+                    "secondary-fixed": "#ffd9df",
+                    "surface-bright": "#38393a",
+                    "primary-fixed-dim": "#ffb2ba",
+                    "on-tertiary-fixed-variant": "#005233",
+                    "inverse-primary": "#bd0041",
+                    "on-tertiary-fixed": "#002112",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#e2e2e2",
+                    "tertiary": "#6cdba2",
+                    "tertiary-container": "#2da46f",
+                    "secondary-container": "#b20150",
+                    "surface-container-highest": "#333535",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "nav-link": ["Montserrat"],
+                    "display-hero": ["Epilogue"],
+                    "headline-md": ["Montserrat"],
+                    "body-main": ["Montserrat"],
+                    "quote-brush": ["Epilogue"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                    "body-main": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(245, 0, 87, 0.05);
+        }
+
+        .heartbeat-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 79, 114, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 20px rgba(255, 79, 114, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 79, 114, 0); }
+        }
+
+        .input-glow:focus {
+            border-bottom-color: #ffb2ba;
+            box-shadow: 0 4px 12px -2px rgba(255, 178, 186, 0.3);
+            outline: none;
+        }
+
+        .success-overlay {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .success-active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="font-body-main selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(255,178,186,0.15)] flex items-center justify-between px-6 h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200" onclick="toggleMenu()">menu</span>
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr83h8TcI7QCp_tPl5aPRnaeHkWwHSKqovERCFxfkoQrW4xKRnwsIP0ilV9YUlCy2mMSwQ0GMTMS7gYnBTg9Md9TKGlrPbvWfMutCCfMqK8DNbQbwFyyDIf4LdSytz6N1KULLdSOTTzhioRRydHG-rdEK9tJocg9hf2CR7B2guhee7GkkulSQ2bQ7JdFx5CvpRAGo52Lz0Plw_Lq3ETAEctAevklsXDUVKvu_9XZdLBI_Ai49RO_84YPRoNOv_oRIGQA" alt="LIVING Logo" class="h-10 w-auto object-contain cursor-pointer">
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-nav-link text-nav-link text-primary transition-colors" href="#">Conectar</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Adoración</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Eventos</a>
+</nav>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/30 cursor-pointer hover:border-primary transition-all">
+<img alt="Perfil de Usuario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL3r_WkOcSGaYyWmos081n1OYxHifS6TA72IUa8MahQHc8pDwK8f62t9ZNoX2wcaenQkcc5UfMr_u3ApssbrpdbTdgkGLfzJK_RPYtFP1TApAu7q7ULLe_iGRCkghzbON6hDU2ykA1r4P0TMz5nEvvNIpSIskc-ciSSzD9Wq8Bm_--vy8pZqsmBIrcVBB4uJgwKy27qIlKeeAF6JBhiHHi9ANMG0X9OgAanvato0t7wE-LlqvIhts1">
+</div>
+</div>
+</header>
+<!-- Mobile Sidebar Menu -->
+<div class="fixed inset-y-0 left-0 w-64 bg-surface-container-highest z-[60] shadow-2xl p-6 flex flex-col gap-6" id="mobile-menu">
+<div class="flex justify-between items-center mb-8">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMgri6VcvRWhzy4EmhrdhtETFM4Gr2TnNaK_ZndyNqc7Kh8qKJS2RotKF2VMzq-UQqU6UR65wv64yB97-D4nDufw4_VpURlLJ8mHIg7cl6xhvyL2HD_-dQuiAWpeuV49xyW-Z0zXc86vYQWvTD4ST7I0Bo4nLq3YBJTgwq9C7RtZwotFpC8s0Iv1VaAFCm0BmJQIlxZQU5X-HPgyGxtzH5BVqChYBRjKIhq-UcF28IexURvVkGqdSBAn_7D8-xIvga1w" alt="LIVING Logo" class="h-8 w-auto object-contain">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" onclick="toggleMenu()">close</span>
+</div>
+<a class="font-nav-link text-lg text-primary flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">sensors</span> Conectar</a>
+<a class="font-nav-link text-lg text-on-surface flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">music_note</span> Adoración</a>
+<a class="font-nav-link text-lg text-on-surface flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">calendar_today</span> Eventos</a>
+<a class="font-nav-link text-lg text-on-surface flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">favorite</span> Oración</a>
+<div class="mt-auto border-t border-white/10 pt-6">
+<a class="font-nav-link text-on-surface-variant flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">logout</span> Cerrar Sesión</a>
+</div>
+</div>
+<div class="fixed inset-0 bg-black/60 z-[55] hidden transition-opacity" id="menu-overlay" onclick="toggleMenu()"></div>
+<main class="relative min-h-screen pt-32 pb-40 px-6">
+<div class="max-w-4xl mx-auto relative z-10">
+<!-- Hero Header -->
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-display-hero text-headline-lg-mobile md:text-headline-lg text-white leading-tight">
+                ¿Listo para ser parte de la <span class="text-primary">familia?</span>
+</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto text-lg">
+                Únete a un movimiento que es más que una simple reunión. Encuentra tu propósito, tu comunidad y tu latido.
+            </p>
+</div>
+<!-- Form Container -->
+<div class="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden" id="join-form-container">
+<!-- Registration Form -->
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8" id="join-living-form">
+<!-- Name -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Nombre Completo</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="Juan Pérez" required="" type="text">
+</div>
+<!-- Age -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Edad</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="18" required="" type="number">
+</div>
+<!-- Email -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Correo Electrónico</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="hola@living.com" required="" type="email">
+</div>
+<!-- Phone -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Número de Teléfono</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="+54 (555) 000-0000" required="" type="tel">
+</div>
+<!-- Area -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Área / Campus</label>
+<select class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all appearance-none">
+<option class="bg-surface-container" disabled="" selected="" value="">Selecciona tu ubicación</option>
+<option class="bg-surface-container" value="downtown">Campus Centro</option>
+<option class="bg-surface-container" value="north">Distrito Norte</option>
+<option class="bg-surface-container" value="south">Sede Sur</option>
+<option class="bg-surface-container" value="online">Comunidad Online</option>
+</select>
+</div>
+<!-- How did you hear? -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">¿Cómo te enteraste de nosotros?</label>
+<textarea class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all resize-none" placeholder="Redes sociales, un amigo, un evento..." rows="3"></textarea>
+</div>
+<!-- CTA Button -->
+<div class="md:col-span-2 pt-8 flex justify-center">
+<button class="heartbeat-pulse w-full md:w-auto px-12 py-5 bg-gradient-to-r from-primary-container to-[#b20150] rounded-full text-on-primary-container font-headline-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl" type="submit">
+                        Quiero Unirme
+                    </button>
+</div>
+</form>
+<!-- Success State Overlay -->
+<div class="success-overlay absolute inset-0 glass-panel z-20 flex-col items-center justify-center text-center p-12 space-y-6" id="success-state">
+<div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline-md text-white text-3xl">¡Bienvenido a Casa!</h3>
+<p class="text-on-surface-variant text-lg">
+                    ¡Gracias por contactarnos! Un líder de Living se pondrá en contacto contigo pronto para ayudarte a ser parte de nuestra comunidad.
+                </p>
+<button class="font-nav-link text-primary uppercase tracking-widest hover:underline pt-8" onclick="resetForm()">
+                    Volver al sitio
+                </button>
+</div>
+</div>
+<!-- Support Content -->
+<div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-8 rounded-2xl border-l-4 border-l-primary cursor-pointer hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">groups</span>
+<h4 class="font-headline-md text-white text-lg mb-2">Grupos de Conexión</h4>
+<p class="text-sm text-on-surface-variant">Pequeñas reuniones semanales en tu área para compartir la vida juntos.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl transform md:translate-y-8 cursor-pointer hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">bolt</span>
+<h4 class="font-headline-md text-white text-lg mb-2">Equipos de Impacto</h4>
+<p class="text-sm text-on-surface-variant">Usa tus dones y talentos para servir a la ciudad y a la casa.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl border-r-4 border-r-primary cursor-pointer hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">auto_awesome</span>
+<h4 class="font-headline-md text-white text-lg mb-2">Próximos Pasos</h4>
+<p class="text-sm text-on-surface-variant">Un viaje de 4 semanas para descubrir tu propósito en la familia de Dios.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-surface-container/60 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
+<div class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(255,178,186,0.6)] cursor-pointer active:scale-90 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span class="font-nav-link text-nav-link text-[10px]">Inicio</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-nav-link text-nav-link text-[10px]">Conectar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="font-nav-link text-nav-link text-[10px]">Orar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="font-nav-link text-nav-link text-[10px]">Perfil</span>
+</div>
+</nav>
+<script>
+    const form = document.getElementById('join-living-form');
+    const successOverlay = document.getElementById('success-state');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('hidden');
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Simulation of form submission
+        form.style.filter = 'blur(4px)';
+        form.style.pointerEvents = 'none';
+        
+        setTimeout(() => {
+            successOverlay.classList.add('success-active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 600);
+    });
+
+    function resetForm() {
+        successOverlay.classList.remove('success-active');
+        form.reset();
+        form.style.filter = 'none';
+        form.style.pointerEvents = 'auto';
+    }
+
+    // Add a subtle mouse move parallax to the glass panel
+    document.addEventListener('mousemove', (e) => {
+        const panel = document.getElementById('join-form-container');
+        const x = (window.innerWidth / 2 - e.pageX) / 80;
+        const y = (window.innerHeight / 2 - e.pageY) / 80;
+        panel.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+
+    // Handle touch interactions for mobile navigation icons
+    document.querySelectorAll('nav div').forEach(item => {
+        item.addEventListener('touchstart', function() {
+            this.classList.add('text-primary');
+        });
+    });
+</script>
+
+
+
+
+</body></html>
