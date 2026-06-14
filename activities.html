@@ -1,0 +1,390 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LIVING | Actividades</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Epilogue:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .heartbeat-pulse {
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(245, 0, 87, 0.2)); opacity: 0.8; }
+            50% { filter: drop-shadow(0 0 20px rgba(245, 0, 87, 0.6)); opacity: 1; }
+        }
+        .living-gradient {
+            background: linear-gradient(135deg, #ff4f72 0%, #910030 100%);
+        }
+        body {
+            background-color: #050505;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#400010",
+                      "on-secondary-fixed": "#3f0018",
+                      "on-primary-fixed-variant": "#910030",
+                      "surface-container-lowest": "#0d0e0f",
+                      "on-secondary-container": "#ffc1cd",
+                      "inverse-surface": "#e2e2e2",
+                      "surface-tint": "#ffb2ba",
+                      "outline-variant": "#5d3f42",
+                      "surface-variant": "#333535",
+                      "on-primary": "#670020",
+                      "on-secondary": "#66002b",
+                      "surface-container": "#1e2020",
+                      "on-surface-variant": "#e7bcbf",
+                      "primary-container": "#ff4f72",
+                      "surface-container-low": "#1a1c1c",
+                      "secondary": "#ffb1c2",
+                      "on-background": "#e2e2e2",
+                      "primary-fixed": "#ffd9dc",
+                      "background": "#121414",
+                      "surface-dim": "#121414",
+                      "error-container": "#93000a",
+                      "surface": "#121414",
+                      "primary": "#ffb2ba",
+                      "inverse-on-surface": "#2f3131",
+                      "tertiary-fixed": "#89f8bd",
+                      "on-tertiary": "#003822",
+                      "secondary-fixed-dim": "#ffb1c2",
+                      "on-secondary-fixed-variant": "#8f003f",
+                      "on-primary-container": "#5a001b",
+                      "surface-container-high": "#282a2b",
+                      "on-tertiary-container": "#00311d",
+                      "tertiary-fixed-dim": "#6cdba2",
+                      "outline": "#ad878a",
+                      "secondary-fixed": "#ffd9df",
+                      "surface-bright": "#38393a",
+                      "primary-fixed-dim": "#ffb2ba",
+                      "on-tertiary-fixed-variant": "#005233",
+                      "inverse-primary": "#bd0041",
+                      "on-tertiary-fixed": "#002112",
+                      "error": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "on-surface": "#e2e2e2",
+                      "tertiary": "#6cdba2",
+                      "tertiary-container": "#2da46f",
+                      "secondary-container": "#b20150",
+                      "surface-container-highest": "#333535",
+                      "on-error": "#690005"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "section-gap": "120px",
+                      "margin-mobile": "20px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "nav-link": ["Montserrat"],
+                      "display-hero": ["Epilogue"],
+                      "headline-md": ["Montserrat"],
+                      "body-main": ["Montserrat"],
+                      "quote-brush": ["Epilogue"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                      "body-main": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                      "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="font-body-main">
+<!-- Mobile Side Menu Overlay -->
+<div class="fixed inset-y-0 left-0 w-64 bg-surface z-[60] shadow-2xl border-r border-white/10 p-6 flex flex-col gap-8 md:hidden" id="mobile-menu">
+<div class="flex items-center justify-between">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnZYpxQYBn3npcHyKZaxwJZLScqdEHR3SP7qmHVymEaa7PsJjsn-chNC6yLlKCDhm-zZCXBVcDoJS5Tu3FeJqliqB7rUKBezSnH-kgkCNRwBF46bDKpzfjycTdeKsZZtXwJND86ToTWs_cAmTxVbA5aaw0XCOQuWCH5PYKb80A47dXtfS_XGBDCab02bSwm6AzNAr4vrNEUPAmMcyOpRQgNGUYv6QZ85b4BU-eYUg7N9JDbowcpyLsrjyjaN53GuQcPw" alt="LIVING Logo" class="h-8 w-auto object-contain">
+<span class="material-symbols-outlined text-on-surface cursor-pointer" id="close-menu">close</span>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="font-nav-link text-nav-link text-primary transition-colors" href="#">Inicio</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Actividades</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Comunidad</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Conectar</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Orar</a>
+</nav>
+</div>
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] hidden md:hidden" id="menu-backdrop"></div>
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(255,178,186,0.15)] flex items-center justify-between px-6 h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200" id="open-menu">menu</span>
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8rvZY3fOaL9-rYHZyy_awsXAwtJtcTDYNDaDMUlWMz0s1qHOM_jE_5uPue9G4j7ZcEKeoeOd1UnsJTDmo5yyv9VOJ9O5Loao_XI9wEI8tajYKpFMd2QTiRSPK7rXWLXel0yppThAnHEXevVxl6A5J8tTmEUHfAgvIsXtUySY2LD-0YkMFQ9NKNDtnhiiSYorOAoSNgynpqYd-aj4c1yLWrZPdIMTpzhIYFqchsBOX42xFul38EwALLrudFX5PbpUz0g" alt="LIVING Logo" class="h-8 md:h-10 w-auto object-contain">
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="font-nav-link text-nav-link text-primary transition-colors" href="#">Actividades</a>
+<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Comunidad</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary/20 overflow-hidden cursor-pointer">
+<img alt="Usuario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6bqkqO1AY0rsI8QE_YmjYOTYjE-J2eXYGLDAb7JVnNKdpbQZ-3SgcGcn4UJ7K9FCLJlZq-Kx_--4YyQsSycaoW02H-VsPsYX968ruihH2hk3PKHLxcnAO4n82UZkncdgVspJMxepjnQ-09tVCWWNYgg7rrTJRnZaifvxkXEYA3dGKQaOBvgzYXlXPrW2e4-Xq2SijlksNpcKi7vtIb7-FpF16hp8N3Z6cCvatUCIRHQO44xvePfI8">
+</div>
+</header>
+<main class="pt-32 pb-40 px-6 max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<div class="relative overflow-hidden rounded-[3rem] p-12 lg:p-24 bg-surface-container-low min-h-[500px] flex flex-col justify-end">
+<div class="absolute inset-0 z-0">
+<img alt="Ambiente de festival" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRVuqlePzEZhNihui4y0a8MJhuTFRXjcVS8xpfXDKhHdN2JETKGQlEwOjOhy_3QfkhyYBOJzmNDHRrhYfziR0ecS3tv8MfrHJwS7zXKw10nFfMfQa9_QA5HPMxKnMrFFBvGbQy6iqiePknQoY2bJzCRr9BCiBr3UQH81JYd2IbmxpiBO-TR1PuSz7DdyPNSbS3K1k84CzzdTULerNXn-aBKlLiXpTXEbTcVkje4nR6-QaKy9NGEGB">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="text-primary font-nav-link uppercase tracking-widest mb-4 block">Energiza tu Alma</span>
+<h2 class="font-display-hero text-headline-lg lg:text-[100px] leading-tight mb-8">EL PULSO DEL<br><span class="text-primary">MOVIMIENTO.</span></h2>
+<p class="max-w-xl text-on-surface-variant text-body-main mb-12">Conéctate a través del sudor, el espíritu y los círculos sociales. Cada evento es un latido en nuestra comunidad.</p>
+</div>
+</div>
+</section>
+<!-- Filter UI -->
+<section class="mb-16">
+<div class="flex flex-wrap items-center gap-4 justify-center">
+<button class="px-8 py-3 rounded-full living-gradient text-on-primary-container font-nav-link shadow-[0_0_20px_rgba(245,0,87,0.4)] active:scale-90 transition-transform">Todos</button>
+<button class="px-8 py-3 rounded-full glass-card text-on-surface hover:text-primary transition-all font-nav-link active:scale-90" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">Deportes</button>
+<button class="px-8 py-3 rounded-full glass-card text-on-surface hover:text-primary transition-all font-nav-link active:scale-90" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">Adoración</button>
+<button class="px-8 py-3 rounded-full glass-card text-on-surface hover:text-primary transition-all font-nav-link active:scale-90" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">Sociales</button>
+</div>
+</section>
+<!-- Featured Activities Bento-style Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-section-gap">
+<!-- Basketball (Large) -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<img alt="Baloncesto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANsnJJ9ubGKr95Il_gWfNyFf3167iTMNnJaFl4e13x72LCHwC34zalF93PjIdtHhEwkcTZULmp1QkDv8kmQGkKPXgucx7Dy9Tz0M4ElqjFu-Uwofn9vKd2fN0abXyWMzS0CXg0cgZEc5Z-4QnwHfqsFyuFd3kGdndckwmiPsTdG4ZuJI1vDj9_734N8ko14TlGsL2AkbmY5jv9GJH1z05USLWrTFzQj7PJbNUMw74R6LB26pQ5Q3s7">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="living-gradient w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">Deportes</span>
+<h3 class="font-headline-md text-white mb-2">Baloncesto de Medianoche</h3>
+<p class="text-on-surface-variant/80 mb-6 max-w-sm">Torneo 3v3 de alta intensidad bajo luces de neón. Demuestra tu habilidad.</p>
+<button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link hover:bg-primary hover:text-on-primary transition-all">Saber más</button>
+</div>
+</div>
+<!-- Worship Night -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<img alt="Adoración" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVHAkq5sjEsLs1IqLiIBOYIrX7c9EZaaufEFFRTzhM0DB_WpPQA2gjLg03X6e3LPGT8O-Nirz_UiOyOyt6q6l1hoU9hnlylk94HSd-ofU09J1TbHFremHG95ohWMmRSqKe6CXy8N3l_p7afBgTteZrb7YH4RrkatUhB63fkFVn_KliKKCKKCjQSFWNFQVZI3lCElDzNK1-hepIqsYkpRTceJWMh7eqTfcTmTrV7mYvXHGnkIQ5Jbvq">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="bg-tertiary-container w-fit px-4 py-1 rounded-full text-[10px] text-white font-bold uppercase tracking-widest mb-4">Adoración</span>
+<h3 class="font-headline-md text-white mb-2">Alabanza Neón</h3>
+<p class="text-on-surface-variant/80 mb-6">Una noche de intimidad acústica y adoración con sintetizadores potentes.</p>
+<button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link hover:bg-primary hover:text-on-primary transition-all">Saber más</button>
+</div>
+</div>
+<!-- Socials -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<img alt="Social" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi7CB6ysD_u2VS0McEqPC9ybCCYOjjjmgTQQIdIc4Q-lpmaImm2kmgP0TDkU0MWb698DBsxqbFV9K9wZtArtnXsu8NWEripenqPCQ2Gnvy3AdKvc7pvUiNnFd6_WNftcl6Gk72HK_SzLWlL2alao0U594h_yn9AWu_Z7O8QdlJR1YJiiFmLo6aJ_Vz2PhGRFxrYRyU75L-OGFYscAYSxCZpVspa2rD2UmmjavCHi7oWwSHMWDqt6v1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="bg-secondary-container w-fit px-4 py-1 rounded-full text-[10px] text-white font-bold uppercase tracking-widest mb-4">Sociales</span>
+<h3 class="font-headline-md text-white mb-2">Bocados Callejeros</h3>
+<p class="text-on-surface-variant/80 mb-6">Conectando a través de las mejores joyas gastronómicas de la ciudad.</p>
+<button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link hover:bg-primary hover:text-on-primary transition-all">Saber más</button>
+</div>
+</div>
+<!-- Hikes -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<img alt="Senderismo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8LUB39Idgk7XpU76UtAylD1-JFriJhUewjRVY7nQ_Y25N2Fpn5sBQoznn4p_RFg8NwF7IaMbjKBOiWtg86y6ElwIYCjvGKPDuyk6hizwtnVNVYpV7vUp95RzOV8RtS__UOOYP4YMrCkONm9mPhyHDcKl_9MwpVopXahrNgK7JtwTlIdbJsF9ySg0Ael659OxaZq0j9MtGMUv2BOVkKBn7DK1pWzralrH4pn51wipmESya3UN6Q7sm">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="living-gradient w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">Sociales</span>
+<h3 class="font-headline-md text-white mb-2">Buscadores de Cumbres</h3>
+<p class="text-on-surface-variant/80 mb-6 max-w-sm">Carrera por senderos al amanecer y devocionales en la cima. Supera tus límites.</p>
+<button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link hover:bg-primary hover:text-on-primary transition-all">Saber más</button>
+</div>
+</div>
+</section>
+<!-- Rhythmic Separator -->
+<div class="w-full h-32 flex items-center justify-center mb-section-gap">
+<svg class="w-full h-full opacity-50 heartbeat-pulse stroke-primary" fill="none" viewBox="0 0 1000 100">
+<path d="M0 50 L300 50 L320 20 L340 80 L360 50 L600 50 L620 10 L640 90 L660 50 L1000 50" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+<!-- Upcoming Section -->
+<section class="max-w-4xl mx-auto">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline-lg text-white">PRÓXIMOS <span class="text-primary">LATIDOS</span></h2>
+<span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:translate-x-1 transition-transform">keyboard_arrow_right</span>
+</div>
+<div class="space-y-6">
+<!-- Event Row 1 -->
+<div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group cursor-pointer border-l-4 border-l-primary" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<div class="flex flex-col items-center justify-center min-w-[80px]">
+<span class="text-primary font-display-hero text-headline-md">14</span>
+<span class="text-on-surface-variant text-xs uppercase tracking-widest">OCT</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="font-headline-md text-white group-hover:text-primary transition-colors">Remate de Voleibol</h4>
+<p class="text-on-surface-variant">Canchas de Central Park • 06:00 PM</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="usuario" class="w-8 h-8 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4MJwF_Eev1J2QbJXmp_GJZDyuElSTord5oI72fNVciK00P8M-PklVLslJyGSs5e04I_Hg8GrNblaQ1ECQIpx8cf1zUCV_YGDmpRUrXUo0WmXJJgqCz2DIyuAsfcLj6QXFrPmqSJHJPjI8Gs4f63mdgFmOXrVDicPqfOtDGC9m0rZ_31mTvYo6Phj_ArzYZgGpLZmpi917opt41_WpHBXTvvD7gRreIp_Mf0dN7IWGOggN_ypWX9Cj">
+<img alt="usuario" class="w-8 h-8 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLCNiVhWH3MysDrl8HhEWb3H4CREDQaF-5NlmxnZ7BZCkfaQqzV7mL5i2z8bWXOFnTKA6cWOIYVXYuPMFuwq0YU5Wkf7nAtinbGGG5HKLC7UUNmsTKzAWDLm3T7KSis_DWwIsH9M6_dxMgGVYEnNTXyGYpnFeaVpyX0OW8WZdrcdtNmZ9oHX6hpmdOy1OXzlu7XHZ7Eh1tPrB8TQML35x-lgUj-iKZocIpgjot_gWMIshmGPi90UL">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-primary-container flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Event Row 2 -->
+<div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group cursor-pointer" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<div class="flex flex-col items-center justify-center min-w-[80px]">
+<span class="text-on-surface font-display-hero text-headline-md">18</span>
+<span class="text-on-surface-variant text-xs uppercase tracking-widest">OCT</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="font-headline-md text-white group-hover:text-primary transition-colors">Caminata Urbana de Oración</h4>
+<p class="text-on-surface-variant">Estación del Centro • 08:30 PM</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="usuario" class="w-8 h-8 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4tAwODmPLqZiuezU3xMslMpF7q3O8sCbiMbWG6DAfW-0vpr3I3s69kuFsubwJu-ray1kGYOxRYbMjvDNLkoua4CEdMNUk7O3qJRtPaRXC9eTrFbaGxj9zHGQ2f8q20C-64qKHaHFgGOEZV8Qnuu7Gdt_LrgMZJeWUWwPcyprDuAoWmBOFh9eB_yEZRRPBSgP5flB6MeMAVPT8eArCpc0YNFrOrb-zQTRaWYthgi-_SvVYBRKWOllq">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-primary-container flex items-center justify-center text-[10px] font-bold">+45</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Event Row 3 -->
+<div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group cursor-pointer border-l-4 border-l-tertiary" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+<div class="flex flex-col items-center justify-center min-w-[80px]">
+<span class="text-tertiary font-display-hero text-headline-md">22</span>
+<span class="text-on-surface-variant text-xs uppercase tracking-widest">OCT</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="font-headline-md text-white group-hover:text-primary transition-colors">Hub Creativo: Noche de Diseño</h4>
+<p class="text-on-surface-variant">Living HQ • 07:00 PM</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="usuario" class="w-8 h-8 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVAps5DDfQfg9DW52UJDZIcQmfGRVSHZDK4eQyssjk85XFoXYk_laSpYdRlD4SH8cS7yN7jjBHPE5IlRozTGtKHRqOr0hniqYgQ-qfZ6Hk-WAS2shcjFSPQIdqX-E9ZqoZYmWKhnNCex_vsN3x5OSUfbQsEWkFCukVSZmpaeQuzIUE_ads0aBL_VBRvuj0aWQ8oIIot3yNu6zOBMdnKSxPNVIp-hyoVCd8hdG-I-SaZ35dk7-dAj8h">
+<img alt="usuario" class="w-8 h-8 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9owhlr72JrC3ynDFRmnA94Lu_0cvsJNyNhtSoPcB422fulrNyOBG_HOdeFX254MDbrD3w0dshhlJO4LHpmd9pD5M6nZ5tWmcvypNCS7f8T2U5eCuAszVxLzrrfAnX7rD_Re6l2oSsh8EorgDyXKqZ5GQuuLtDeIvW44tlqTbhEf5RtGDTYxA2yxoKfjszgD0yBL2ioy8JKLwpYZ783DMUXLiyie_dCfivvjMElTnKi_2Ybo3R9sf4">
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="font-nav-link text-primary uppercase tracking-[0.2em] border-b-2 border-primary pb-2 hover:opacity-70 transition-opacity active:scale-95">Cargar más actividades</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-surface-container/60 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-nav-link text-[10px]">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(255,178,186,0.6)] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="font-nav-link text-[10px]">Conectar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="font-nav-link text-[10px]">Orar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-nav-link text-[10px]">Perfil</span>
+</a>
+</nav>
+<!-- Decorative Heartbeat Background element -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<svg class="absolute top-1/2 left-0 w-full opacity-5 stroke-primary" fill="none" viewBox="0 0 1000 100">
+<path d="M0 50 L300 50 L320 20 L340 80 L360 50 L600 50 L620 10 L640 90 L660 50 L1000 50" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+<script>
+        // Hamburger Menu Logic
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            menuBackdrop.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        menuBackdrop.addEventListener('click', toggleMenu);
+
+        // Micro-interaction for filter buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('glass-card')) {
+                    const parent = this.parentElement;
+                    parent.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('living-gradient', 'shadow-[0_0_20px_rgba(245,0,87,0.4)]', 'text-on-primary-container');
+                        b.classList.add('glass-card', 'text-on-surface');
+                    });
+                    this.classList.remove('glass-card', 'text-on-surface');
+                    this.classList.add('living-gradient', 'shadow-[0_0_20px_rgba(245,0,87,0.4)]', 'text-on-primary-container');
+                }
+            });
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s ease-out";
+            observer.observe(card);
+        });
+    </script>
+
+
+
+
+</body></html>
