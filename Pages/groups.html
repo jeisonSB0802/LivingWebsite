@@ -119,6 +119,54 @@
         <img alt="Usuario" class="w-full h-full object-cover" src="../assets/images/profile.avif">
     </div>
 </header>
+<!-- Sidebar Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
+    <div class="p-8 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
+                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+                </div>
+                <div>
+                    <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
+                    <p class="text-xs text-on-surface-variant opacity-60">Stay Living</p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-nav-link uppercase tracking-widest">Inicio</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/aboutUs.html">
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="font-nav-link uppercase tracking-widest">Nosotros</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/activities.html">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="font-nav-link uppercase tracking-widest">Actividades</span>
+            </a>
+            <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 transition-all border border-primary/20" href="/Pages/groups.html">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/joinUs.html">
+                <span class="material-symbols-outlined">sensors</span>
+                <span class="font-nav-link uppercase tracking-widest">Únete</span>
+            </a>
+        </div>
+        <div class="mt-auto pt-6 border-t border-white/10">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-nav-link uppercase tracking-widest">Configuración</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/70 z-[95] opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
 <main class="relative">
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -269,8 +317,8 @@
 </div>
 <div class="mt-16 text-center">
 <p class="text-on-surface-variant mb-6 italic">¿No ves un grupo en tu área o estilo?</p>
-<a class="inline-flex items-center gap-2 text-primary font-bold group" href="#">
-          Ver los 42 grupos <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+<a class="inline-flex items-center gap-2 text-primary font-bold group" href="/Pages/allGroups.html">
+          Ver todos los grupos <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </a>
 </div>
 </section>
