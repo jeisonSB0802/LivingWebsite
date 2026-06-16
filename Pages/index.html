@@ -1,196 +1,180 @@
 <!DOCTYPE html><html class="dark" lang="es" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>LIVING | Red de Jóvenes</title>
+<title>Red Living | Red de Jóvenes</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Epilogue:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<style>
-        body {
-            background-color: #050505;
-            color: #e2e2e2;
-            overflow-x: hidden;
+    <style>
+       body {
+        background-color: #000000;
+        color: #FFFFFF;
+        overflow-x: hidden;
         }
+
         .glass-card {
-            background: rgba(18, 18, 18, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
+
         .glow-pink {
-            box-shadow: 0 0 30px rgba(255, 178, 186, 0.15);
+            box-shadow: 0 0 30px rgba(229, 5, 86, 0.3);
         }
+
         .text-glow-pink {
-            text-shadow: 0 0 15px rgba(255, 178, 186, 0.6);
+            text-shadow: 0 0 15px rgba(229, 5, 86, 0.5);
         }
+
         .pulse-pink {
             animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse-ring {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: .7; transform: scale(1.05); }
+            50%       { opacity: .7; transform: scale(1.05); }
         }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        #mobile-menu-overlay {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-primary-fixed": "#400010",
-                      "on-secondary-fixed": "#3f0018",
-                      "on-primary-fixed-variant": "#910030",
-                      "surface-container-lowest": "#0d0e0f",
-                      "on-secondary-container": "#ffc1cd",
-                      "inverse-surface": "#e2e2e2",
-                      "surface-tint": "#ffb2ba",
-                      "outline-variant": "#5d3f42",
-                      "surface-variant": "#333535",
-                      "on-primary": "#670020",
-                      "on-secondary": "#66002b",
-                      "surface-container": "#1e2020",
-                      "on-surface-variant": "#e7bcbf",
-                      "primary-container": "#ff4f72",
-                      "surface-container-low": "#1a1c1c",
-                      "secondary": "#ffb1c2",
-                      "on-background": "#e2e2e2",
-                      "primary-fixed": "#ffd9dc",
-                      "background": "#121414",
-                      "surface-dim": "#121414",
-                      "error-container": "#93000a",
-                      "surface": "#121414",
-                      "primary": "#ffb2ba",
-                      "inverse-on-surface": "#2f3131",
-                      "tertiary-fixed": "#89f8bd",
-                      "on-tertiary": "#003822",
-                      "secondary-fixed-dim": "#ffb1c2",
-                      "on-secondary-fixed-variant": "#8f003f",
-                      "on-primary-container": "#5a001b",
-                      "surface-container-high": "#282a2b",
-                      "on-tertiary-container": "#00311d",
-                      "tertiary-fixed-dim": "#6cdba2",
-                      "outline": "#ad878a",
-                      "secondary-fixed": "#ffd9df",
-                      "surface-bright": "#38393a",
-                      "primary-fixed-dim": "#ffb2ba",
-                      "on-tertiary-fixed-variant": "#005233",
-                      "inverse-primary": "#bd0041",
-                      "on-tertiary-fixed": "#002112",
-                      "error": "#ffb4ab",
-                      "on-error-container": "#ffdad6",
-                      "on-surface": "#e2e2e2",
-                      "tertiary": "#6cdba2",
-                      "tertiary-container": "#2da46f",
-                      "secondary-container": "#b20150",
-                      "surface-container-highest": "#333535",
-                      "on-error": "#690005"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "container-max": "1280px",
-                      "gutter": "24px",
-                      "section-gap": "120px",
-                      "margin-mobile": "20px",
-                      "unit": "8px"
-              },
-              "fontFamily": {
-                      "headline-lg-mobile": ["Montserrat"],
-                      "headline-lg": ["Montserrat"],
-                      "nav-link": ["Montserrat"],
-                      "display-hero": ["Epilogue"],
-                      "headline-md": ["Montserrat"],
-                      "body-main": ["Montserrat"],
-                      "quote-brush": ["Epilogue"]
-              },
-              "fontSize": {
-                      "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
-                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
-                      "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
-                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
-                      "body-main": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
-                      "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "700"}]
-              }
-            },
-          },
-        }
-      </script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                    colors: {
+                        "primary":                    "#E50556",
+                        "on-primary":                 "#FFFFFF",
+                        "background":                 "#000000",
+                        "surface":                    "#000000",
+                        "surface-container":          "#0d0d0d",
+                        "surface-container-lowest":   "#000000",
+                        "surface-container-low":      "#0a0a0a",
+                        "surface-container-high":     "#111111",
+                        "on-surface":                 "#FFFFFF",
+                        "on-surface-variant":         "#AAAAAA",
+                        "primary-container":          "#E50556",
+                        "on-primary-container":       "#FFFFFF",
+                        "secondary":                  "#E50556",
+                        "secondary-container":        "#E50556",
+                        "outline":                    "#E50556",
+                        "outline-variant":            "#333333",
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Old Standard TT", "serif"],
+                        "headline-lg":        ["Old Standard TT", "serif"],
+                        "nav-link":           ["Old Standard TT", "serif"],
+                        "display-hero":       ["Old Standard TT", "serif"],
+                        "headline-md":        ["Old Standard TT", "serif"],
+                        "body-main":          ["Old Standard TT", "serif"],
+                        "quote-brush":        ["Old Standard TT", "serif"],
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg":        ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "nav-link":           ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em",  "fontWeight": "400"}],
+                        "display-hero":       ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-md":        ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-main":          ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "quote-brush":        ["36px", {"lineHeight": "44px", "fontWeight": "400", "fontStyle": "italic"}],
+                    }
+                    }
+                }
+                }
+        </script>
 </head>
 <body class="bg-background selection:bg-primary selection:text-on-primary-container">
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 z-[100] bg-surface-container-lowest/95 backdrop-blur-2xl translate-x-full md:hidden flex flex-col p-8" id="mobile-menu-overlay">
-<div class="flex justify-between items-center mb-12">
-<h1 class="font-display-hero text-headline-md tracking-tighter text-primary">LIVING</h1>
-<button class="material-symbols-outlined text-on-surface text-3xl" id="close-menu">close</button>
+<!-- Sidebar Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
+    <div class="p-8 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
+                    <img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhV90ph90pZ71lYTvvGTIH5S_iY8YpdkJ-6gmXEIsblYGROsmbbcGSJv6ISrsHCdnK5qXdTeK6kT9z7wtUe1VnGbfJn5ZxzdglHckYJtm9aaa5SjMRvluUUQS6M_hFlzEf_gVdxef1_hDjVB_bCe5rjM-O5Yg2U2KWUvJ4i6x2Dskbd3rm7AZeicghlQPB0gXEsGUFFqsX82UEimC0gWrXlpMH5oROaO2ckWYKB7ziKywA4ZxhP16X">
+                </div>
+                <div>
+                    <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
+                    <p class="text-xs text-on-surface-variant opacity-60">Stay Living</p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 transition-all border border-primary/20" href="/Pages/index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-nav-link uppercase tracking-widest">Inicio</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/aboutUs.html">
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="font-nav-link uppercase tracking-widest">Nosotros</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/activities.html">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="font-nav-link uppercase tracking-widest">Actividades</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/groups.html">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/joinUs.html">
+                <span class="material-symbols-outlined">sensors</span>
+                <span class="font-nav-link uppercase tracking-widest">Únete</span>
+            </a>
+        </div>
+        <div class="mt-auto pt-6 border-t border-white/10">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-nav-link uppercase tracking-widest">Configuración</span>
+            </a>
+        </div>
+    </div>
 </div>
-<nav class="flex flex-col gap-6">
-<a class="font-display-hero text-3xl text-primary" href="#home">Inicio</a>
-<a class="font-display-hero text-3xl text-on-surface" href="/Pages/aboutUs.html">Sobre Nosotros</a>
-<a class="font-display-hero text-3xl text-on-surface" href="/Pages/activities.html">Actividades</a>
-<a class="font-display-hero text-3xl text-on-surface" href="/Pages/groups.html">Grupos de Amistad</a>
-<a class="font-display-hero text-3xl text-on-surface" href="/Pages/joinUs.html">Únete</a>
-</nav>
-<div class="mt-auto border-t border-white/10 pt-8">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/30 p-0.5">
-<img alt="Perfil" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhV90ph90pZ71lYTvvGTIH5S_iY8YpdkJ-6gmXEIsblYGROsmbbcGSJv6ISrsHCdnK5qXdTeK6kT9z7wtUe1VnGbfJn5ZxzdglHckYJtm9aaa5SjMRvluUUQS6M_hFlzEf_gVdxef1_hDjVB_bCe5rjM-O5Yg2U2KWUvJ4i6x2Dskbd3rm7AZeicghlQPB0gXEsGUFFqsX82UEimC0gWrXlpMH5oROaO2ckWYKB7ziKywA4ZxhP16X">
-</div>
-<div>
-<p class="font-nav-link text-white">Mi Perfil</p>
-<p class="text-xs text-on-surface-variant">stayliving@network.com</p>
-</div>
-</div>
-</div>
-</div>
+
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/70 z-[95] opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
 <!-- Top Navigation -->
-<header class="fixed top-0 w-full z-50 bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(255,178,186,0.15)] h-20 px-6 flex items-center justify-between">
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary text-2xl" id="open-menu">menu</button>
-<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-10 w-auto object-contain">
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="font-nav-link text-nav-link text-primary transition-colors" href="/Pages/index.html">Inicio</a>
-<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="/Pages/aboutUs.html">Nosotros</a>
-<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="/Pages/activities.html">Actividades</a>
-<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Grupos</a>
-<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="/Pages/joinUs.html">Únete</a>
-</nav>
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full border border-primary/30 p-0.5">
-<img alt="Perfil de Usuario" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhV90ph90pZ71lYTvvGTIH5S_iY8YpdkJ-6gmXEIsblYGROsmbbcGSJv6ISrsHCdnK5qXdTeK6kT9z7wtUe1VnGbfJn5ZxzdglHckYJtm9aaa5SjMRvluUUQS6M_hFlzEf_gVdxef1_hDjVB_bCe5rjM-O5Yg2U2KWUvJ4i6x2Dskbd3rm7AZeicghlQPB0gXEsGUFFqsX82UEimC0gWrXlpMH5oROaO2ckWYKB7ziKywA4ZxhP16X">
-</div>
-</div>
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center justify-between px-6 h-20">
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
+    </div>
+    <nav class="hidden md:flex gap-8">
+        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+    </nav>
+    <div class="w-10 h-10 rounded-full border border-primary/30 overflow-hidden cursor-pointer">
+        <img alt="Usuario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhV90ph90pZ71lYTvvGTIH5S_iY8YpdkJ-6gmXEIsblYGROsmbbcGSJv6ISrsHCdnK5qXdTeK6kT9z7wtUe1VnGbfJn5ZxzdglHckYJtm9aaa5SjMRvluUUQS6M_hFlzEf_gVdxef1_hDjVB_bCe5rjM-O5Yg2U2KWUvJ4i6x2Dskbd3rm7AZeicghlQPB0gXEsGUFFqsX82UEimC0gWrXlpMH5oROaO2ckWYKB7ziKywA4ZxhP16X">
+    </div>
 </header>
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
-<img alt="Fondo de Comunidad" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMqxon419cIjP2MO6YZ-bbT_X_92BKuSlfJIN0H6UscPDVBh0bJHnnA5X4YLwOwEzHM3oQ9XtKIo070_yyfnjYRAQbn1y-k42nFj1l_K-iT3Re4kLxOGhVVy-k9pt7oSwHG0o3ru6ejMdS2ctMM9H46Ei8zlufuL7uAFpM2GgkLZBxv679blB4J18GwukDeVRWXiZGyKXSJd1SpX-dv9DMY3Z1sRQGzE5jp4yYjNn23F3PTJe_RVxK">
+<img alt="Fondo de Comunidad" class="w-full h-full object-cover" src="../assets/images/574322687_834609929158575_4808697869825666859_n.jpg">
 </div>
 <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-<h2 class="font-display-hero text-headline-lg-mobile md:text-display-hero text-primary mb-4 tracking-tighter drop-shadow-2xl">LIVING</h2>
+<h2 class="font-display-hero text-headline-lg-mobile md:text-display-hero text-primary mb-4 tracking-tighter drop-shadow-2xl">Red Living</h2>
 <p class="font-headline-md text-headline-md text-white mb-10 max-w-2xl mx-auto opacity-90">Un lugar donde tu vida encuentra propósito.</p>
 <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-<a class="w-full md:w-auto px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary-container text-on-primary-container font-nav-link text-nav-link uppercase tracking-widest glow-pink active:scale-95 duration-200 text-center block" href="/Pages/joinUs.html">
-                    Unirse a Living
-                </a>
-<a class="w-full md:w-auto px-10 py-4 rounded-full border border-primary/50 text-primary font-nav-link text-nav-link uppercase tracking-widest hover:bg-primary/10 active:scale-95 duration-200 text-center block" href="/Pages/activities.html">
-                    Explorar Actividades
-                </a>
+<!-- Botón principal -->
+<a class="px-10 py-4 rounded-full font-nav-link text-nav-link uppercase tracking-widest
+          bg-[#E50556] text-white hover:bg-[#c0044a] active:scale-95 duration-200"
+   href="/Pages/joinUs.html">
+  Unirse a Living
+</a>
+<!-- Botón secundario -->
+<a class="px-10 py-4 rounded-full font-nav-link text-nav-link uppercase tracking-widest
+          border border-[#E50556] text-[#E50556] hover:bg-[#E50556]/10 active:scale-95 duration-200"
+   href="/Pages/activities.html">
+  Explorar Actividades
+</a>
 </div>
 </div>
 </section>
@@ -198,7 +182,7 @@
 <div class="relative h-24 w-full -mt-12 z-20 pointer-events-none">
 <div class="absolute inset-0 w-full h-full" id="animated-svg-ANIMATION_3">
 <svg class="w-full h-full opacity-60" preserveAspectRatio="none" viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 50 L300 50 L310 40 L325 70 L340 10 L355 90 L370 40 L380 50 L800 50" fill="none" stroke="#ffb2ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<path d="M0 50 L300 50 L310 40 L325 70 L340 10 L355 90 L370 40 L380 50 L800 50" fill="none" stroke="#E50556" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
 <animate attributeName="stroke-dasharray" dur="3s" from="0, 1000" repeatCount="indefinite" to="1000, 0"></animate>
 </path>
 </svg>
@@ -220,44 +204,44 @@
 <!-- Card 1 -->
 <div class="flex-shrink-0 w-80 glass-card rounded-3xl overflow-hidden group">
 <div class="h-96 relative">
-<img alt="Baloncesto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAILQyfoPEdKqWb495PqnW9N7AgKq0zolhIvCSKxMi1o-EQSCA1Hfbke64-zLPYWU8gik5kXv4yC1XGT8aRp3yC2MuYmW8lwhlJIEp0N360hJIZTpee2qviPD7Ob4eQu5tt5L36K1JQshzm-sjMYSBzF0Uy2ujvYuGfKO38twhUKemW3zklEKhTeVOq-GwHoHadmeifNU6Ed4bkoZP8Jkn2NG_UBFDDUEAGgspoF5QzOQALgqDVMII">
+<img alt="Baloncesto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/WhatsApp%20Image%202026-06-15%20at%2011.46.39%20PM.jpeg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div class="absolute bottom-6 left-6">
 <span class="bg-primary/20 backdrop-blur-md text-primary text-[12px] font-bold px-3 py-1 rounded-full mb-2 inline-block">DEPORTES</span>
-<h4 class="font-headline-md text-headline-md text-white">Court Kings</h4>
+<h4 class="font-headline-md text-headline-md text-white">Basketball</h4>
 </div>
 </div>
 </div>
 <!-- Card 2 -->
 <div class="flex-shrink-0 w-80 glass-card rounded-3xl overflow-hidden group">
 <div class="h-96 relative">
-<img alt="Adoración" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiqBcSfahgxLeR6eHAvo1gf1fOC0gpIfq-r4Hryu0M9MWr8a2Z0poNCyt7_kfmAkW2pPsCkiiLCrKPPkA8B-F8ESMf34ZG0gis8avjDLSSYD_3ToSquWIoVl0zyXql4j1xlCn231c3jbslbMdTkvQ8-himO-2Cbx5pLDYO_NYSkfwinNrtBEC47COARBLYYqRaqQMJqrn9B8QN_j5WQTqLfyvl_8mdzhMighi0HvJ1FlSSNqYQ-8Bv">
+<img alt="Adoración" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/518273696_747414177878151_1969115000001681979_n.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div class="absolute bottom-6 left-6">
 <span class="bg-primary/20 backdrop-blur-md text-primary text-[12px] font-bold px-3 py-1 rounded-full mb-2 inline-block">ESPIRITUAL</span>
-<h4 class="font-headline-md text-headline-md text-white">Live Worship</h4>
+<h4 class="font-headline-md text-headline-md text-white">Servicio</h4>
 </div>
 </div>
 </div>
 <!-- Card 3 -->
 <div class="flex-shrink-0 w-80 glass-card rounded-3xl overflow-hidden group">
 <div class="h-96 relative">
-<img alt="Social" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVqg3ZDdu-6-DzE2if8YVGCK4v4tY0Q299rqN4ybEc22m8y_1oeMjRHxiM1UoDg1VV37bszMQ61lGTSt9h4e1GUZ9eMJDxCuocvTWic7948sSRjn-oe3TDxuvBnPvXFcYN51fVAfHh_AwFC9E9kj1am4T1bFa3PomEyyFCFZ9W4-S_kXdV7Zw1RVE-HvzOF-KjkBWJbjBg98lyKYkzshEI2af3hzd-NNFrF36HbdWabZRU8ospzmBs">
+<img alt="Social" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/648330636_938460755440158_427077252894296920_n.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div class="absolute bottom-6 left-6">
 <span class="bg-primary/20 backdrop-blur-md text-primary text-[12px] font-bold px-3 py-1 rounded-full mb-2 inline-block">COMUNIDAD</span>
-<h4 class="font-headline-md text-headline-md text-white">The Hangout</h4>
+<h4 class="font-headline-md text-headline-md text-white">Socializar</h4>
 </div>
 </div>
 </div>
 <!-- Card 4 -->
 <div class="flex-shrink-0 w-80 glass-card rounded-3xl overflow-hidden group">
 <div class="h-96 relative">
-<img alt="Podcast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAelbdv73W5PLyrcHnNb8ceF_sm1SAYxPzNJ9THNF2BwyQdRGEf0pw31uO5aTZoCqjuWNV8ywBuWh2r9lBYSP8qwy9Bvys-TDIEJAwHHaaGs2d4_ene2h7gQvYsq1uYHOfXEANAPrZaTS2leEfPbvLnTd_kOyGR4QhdkBcBcwRuVysghwNjEbZo4gFM6i6Jh32LA-ErlokzaOoYq060r2r8aF7F4TFonxqBUVo-Kx9ekn0eL26DDdKt">
+<img alt="Podcast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/NocheDeTalentos.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div class="absolute bottom-6 left-6">
 <span class="bg-primary/20 backdrop-blur-md text-primary text-[12px] font-bold px-3 py-1 rounded-full mb-2 inline-block">MEDIA</span>
-<h4 class="font-headline-md text-headline-md text-white">Voice Lab</h4>
+<h4 class="font-headline-md text-headline-md text-white">Talentos</h4>
 </div>
 </div>
 </div>
@@ -268,27 +252,27 @@
 <h3 class="font-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mb-12 text-center">Momentos sin Filtro</h3>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
 <div class="md:col-span-8 relative rounded-3xl overflow-hidden glass-card group h-[400px] md:h-full">
-<img alt="Festival" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRfKCzpdkePj2-MEK8aSjA5ilA10vG-a1gVkaHZkCjFhBqi1DZhANOXFY0iIbto6zrypdcWP_phrBktO42L-fWQ6prHPaHOrFLb5yJBGbHUKkxqw3GJ1J_WRHhNCUifD7Mf0L4wTn27DYhMyecVi16blCQ8em8AofugZZXh5qdYpy_SeiL64LC-NIgscuKYJVBURfUbCXZqa_vpuoX9s3wjuH4JBT7QGE9slu77Wv4mmiyAW0YzpoP">
+<img alt="Festival" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="../assets/images/574322687_834609929158575_4808697869825666859_n.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-10">
-<h4 class="font-headline-lg text-headline-lg text-white text-glow-pink">Summer Pulse '24</h4>
+<h4 class="font-headline-lg text-headline-lg text-white text-glow-pink">Noche de Talentos</h4>
 <p class="text-on-surface-variant max-w-md">Nuestro encuentro más grande hasta ahora. Sé testigo del latido de la generación.</p>
 </div>
 </div>
 <div class="md:col-span-4 relative rounded-3xl overflow-hidden glass-card group h-[300px] md:h-full">
-<img alt="Grupos Pequeños" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU7RKIxnfO0KhxeitaEbkR4fUo2vYLEeSIgkB86mFi_xtkLcB_XMmODbRaIJztIUEOLYgD1EUzN3kjgDeUiDENhwuePkOsxOwfyQcUe1KlTXVoz5Zl0DruWP3t9ctd_lBlixskEUGSkBo17pbqjGspubXPnEnD8zJUQwHNICL2CWcxObheNZejQW7PzJsndMxhRMVXFOXqK4UZIULF1pYh--pBN1NTUrwB9dgkFQvUofsS2uGdwVt-">
+<img alt="Grupos Pequeños" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="../assets/images/512707140_730916309527938_5799243163266868971_n.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-8">
 <h4 class="font-headline-md text-headline-md text-white text-glow-pink">Grupos Pequeños</h4>
 <p class="text-on-surface-variant text-sm">Charlas reales. Gente real. Crecimiento real.</p>
 </div>
 </div>
 <div class="md:col-span-4 relative rounded-3xl overflow-hidden glass-card group h-[300px] md:h-full">
-<img alt="Danza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk5UujRf4JrfMvEeA6z_aqKpW8AtPM4dNOVmMZvsckClEtOWtcWylgya0qADG7i_hcpq7-S2_a8HcDOPmBzPp79WWd_97PF6RFAkVOVrZdczuDJKHH4vQYza5F5IM7iGcPCXjb2szXXpR1R3qKwOKZu61FaRoKV3S-9vCgJZZoOcbfq1N_XO_GDjYmI7KxwHvl59_hSfWN5d9omjRQPnFolgXadC7CSZWmvNm2jb6dCqjQdWyGSUxS">
+<img alt="Danza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="../assets/images/572779145_834609919158576_928928034236382429_n.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-8">
 <h4 class="font-headline-md text-headline-md text-white text-glow-pink">Artes Creativas</h4>
 </div>
 </div>
 <div class="md:col-span-8 relative rounded-3xl overflow-hidden glass-card group h-[400px] md:h-full">
-<img alt="Impacto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDHpMbDyL9L94fRkx00cb4gMgz552SSF5XEW6NRe00c0LxmWuQjHl9yfxx4FnMfcbZ27SV4ExOZnHHpE_9W-sF4Er2p3hCKDKtpVqboNv2rp6CTR5ZnfMAtK2uJnyaU4BXyPUzkLJSmfBKbC5oVPtAJv-DFSEqHUcnZjkwgwlhloRRA9aHqLBU8qAb0HkoWOtqLDpMer-mVXuAJTtoP6y2aTITHo0GcrWDVH605A4aJjGJoJitpNDz">
+<img alt="Impacto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="../assets/images/587001129_858128676806700_5831846834105292702_n.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-10">
 <h4 class="font-headline-lg text-headline-lg text-white text-glow-pink">Impacto en la Ciudad</h4>
 <p class="text-on-surface-variant max-w-md">Cambiando nuestro mundo, una vida a la vez.</p>
@@ -314,10 +298,10 @@
 <!-- Review 1 -->
 <div class="glass-card p-10 rounded-3xl flex flex-col h-full hover:border-primary/40 transition-colors">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Sarah" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1LHZk4AyD6gSo0Kza73gG8pit390bxAAaZGqAa7pgDQ6MYtiay5zm4KTvFkx6bOmxfgFPzMxxGFw_SXkLIqynVZvEfXEk3z5DGCAZkcO9ZaR63Je0zuPHAJ_9LrvtcMCnrzkL5hiEPWMpP0_8ui0a0ujPJokqOXE_GWl_kQ99iOUtqEa9XMEUURcHAHCJGZKLfcZOjSolqHYVNORbvvQexSQPtDR9jRXuNUM8R3kYJhyNM8Iz50Nq">
+<img alt="Marcos Novo" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="../assets/images/Lider%20Marcos.jpg">
 <div>
-<h5 class="font-headline-md text-white text-lg">Sarah Jenkins</h5>
-<p class="text-on-surface-variant text-sm">21 • New York</p>
+<h5 class="font-headline-md text-white text-lg">Marcos Novo</h5>
+<p class="text-on-surface-variant text-sm">28 años</p>
 </div>
 </div>
 <div class="flex text-primary mb-4">
@@ -332,10 +316,10 @@
 <!-- Review 2 -->
 <div class="glass-card p-10 rounded-3xl flex flex-col h-full hover:border-primary/40 transition-colors">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Marcus" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKXIh9JbRziGIevHX1ObVMsVrQ5quZyripWHqxuCKiXkKk4X9Zl8P51LdUmm1s3CBOW3s_14cJZkeZwQyJvtFmL9ZIIEQGJuO7WdY6CCi8ERh6IplDac34Wb7I2ovxHXHCslwaZDDoFk_6Sbga8575SymYgFp5Il2m3EO9iGIOtkfVYjXJ0DKIoB6MCZS5T6e7SeDmf0SBZ-fK_Yp1ypETtSQx39HuVdeB1mTit_puWTaytqNyirqv">
+<img alt="David Herrera" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="../assets/images/David.jpg">
 <div>
-<h5 class="font-headline-md text-white text-lg">Marcus Thorne</h5>
-<p class="text-on-surface-variant text-sm">19 • Chicago</p>
+<h5 class="font-headline-md text-white text-lg">David Herrera</h5>
+<p class="text-on-surface-variant text-sm">25 años</p>
 </div>
 </div>
 <div class="flex text-primary mb-4">
@@ -350,10 +334,10 @@
 <!-- Review 3 -->
 <div class="glass-card p-10 rounded-3xl flex flex-col h-full hover:border-primary/40 transition-colors">
 <div class="flex items-center gap-4 mb-6">
-<img alt="Elena" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYbMjIlO4ZPZV63LhD5XDNy3xGc2UP3Y2Wq2F1FOf1PW4Wv5QzVzZ5-dgtdFoRZzhXBtWK8PX0XLtJtLAoN7cJdYyF1ngm6Yq0okY71E1stsghCWLSvSLcsmP-APn-9Et1EIrrDNvz1njZ4yUejnsMMTriiU87lB_QyqHtGDD1ICw8EpwRBqoT9KXJSVY-bKM6ngiAs2-_ZZ308QWKD0TySAr57uWKKHtdPUBXR3w93Qy3R8529iyw">
+<img alt="Esteban Leitón" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="../assets/images/Esteban.jpg">
 <div>
-<h5 class="font-headline-md text-white text-lg">Elena Rodriguez</h5>
-<p class="text-on-surface-variant text-sm">23 • London</p>
+<h5 class="font-headline-md text-white text-lg">Esteban Leitón</h5>
+<p class="text-on-surface-variant text-sm">22 años</p>
 </div>
 </div>
 <div class="flex text-primary mb-4">
@@ -371,8 +355,8 @@
 <footer class="bg-surface-container-lowest py-20 px-gutter border-t border-white/5">
 <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
 <div class="col-span-1 md:col-span-2">
-<h1 class="font-display-hero text-headline-md text-primary mb-6">LIVING</h1>
-<p class="text-on-surface-variant max-w-sm mb-8">Sin disculpas moderno. Intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
+<h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
+<p class="text-[#AAAAAA] max-w-sm mb-8">Sin disculpas moderno. Intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
 <div class="flex gap-4">
 <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
 <span class="material-symbols-outlined text-sm">sensors</span>
@@ -398,27 +382,27 @@
 <h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Soporte</h6>
 <ul class="space-y-4">
 <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_8}}">Encuentra un Grupo</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
 <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
 <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-white/5 text-center text-on-surface-variant text-sm">
-            © 2024 LIVING Network. Todos los derechos reservados. Diseñado para la generación del ahora.
+            © 2026 Red Living. Todos los derechos reservados. Diseñado para la generación del ahora.
         </div>
 </footer>
 <!-- Bottom Nav (Mobile) -->
-<nav class="md:hidden fixed bottom-0 w-full z-[90] rounded-t-3xl bg-surface-container/60 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
-<a class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(255,178,186,0.6)]" href="{{DATA:SCREEN:SCREEN_3}}">
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-black/80 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
+<a class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(229,5,86,0.6)]" href="/Pages/index.html">
 <span class="material-symbols-outlined">home</span>
 <span class="font-nav-link text-[10px] mt-1">Inicio</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="{{DATA:SCREEN:SCREEN_8}}">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="/Pages/groups.html">
 <span class="material-symbols-outlined">sensors</span>
-<span class="font-nav-link text-[10px] mt-1">Conecta</span>
+<span class="font-nav-link text-[10px] mt-1">Conectar</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="{{DATA:SCREEN:SCREEN_7}}">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="/Pages/joinUs.html">
 <span class="material-symbols-outlined">favorite_border</span>
 <span class="font-nav-link text-[10px] mt-1">Únete</span>
 </a>
@@ -429,23 +413,38 @@
 </nav>
 <!-- Interactions Script -->
 <script>
-    // Mobile Menu Toggle logic
-    const openMenuBtn = document.getElementById('open-menu');
-    const closeMenuBtn = document.getElementById('close-menu');
-    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    // Mobile Sidebar Drawer logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
 
-    openMenuBtn.addEventListener('click', () => {
-        mobileOverlay.classList.remove('translate-x-full');
-    });
+    function toggleMenu() {
+        const isOpen = sidebar.classList.contains('translate-x-0');
+        if (isOpen) {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        } else {
+            sidebar.classList.remove('-translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+        }
+    }
 
-    closeMenuBtn.addEventListener('click', () => {
-        mobileOverlay.classList.add('translate-x-full');
-    });
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    closeSidebar.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
 
     // Close menu when clicking on links
-    mobileOverlay.querySelectorAll('a').forEach(link => {
+    sidebar.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileOverlay.classList.add('translate-x-full');
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
         });
     });
 
