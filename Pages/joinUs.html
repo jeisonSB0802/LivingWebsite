@@ -3,7 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Únete a Living | Movimiento Juvenil</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Epilogue:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
       tailwind.config = {
@@ -11,53 +11,23 @@
         theme: {
           extend: {
             "colors": {
-                    "on-primary-fixed": "#400010",
-                    "on-secondary-fixed": "#3f0018",
-                    "on-primary-fixed-variant": "#910030",
-                    "surface-container-lowest": "#0d0e0f",
-                    "on-secondary-container": "#ffc1cd",
-                    "inverse-surface": "#e2e2e2",
-                    "surface-tint": "#ffb2ba",
-                    "outline-variant": "#5d3f42",
-                    "surface-variant": "#333535",
-                    "on-primary": "#670020",
-                    "on-secondary": "#66002b",
-                    "surface-container": "#1e2020",
-                    "on-surface-variant": "#e7bcbf",
-                    "primary-container": "#ff4f72",
-                    "surface-container-low": "#1a1c1c",
-                    "secondary": "#ffb1c2",
-                    "on-background": "#e2e2e2",
-                    "primary-fixed": "#ffd9dc",
-                    "background": "#121414",
-                    "surface-dim": "#121414",
-                    "error-container": "#93000a",
-                    "surface": "#121414",
-                    "primary": "#ffb2ba",
-                    "inverse-on-surface": "#2f3131",
-                    "tertiary-fixed": "#89f8bd",
-                    "on-tertiary": "#003822",
-                    "secondary-fixed-dim": "#ffb1c2",
-                    "on-secondary-fixed-variant": "#8f003f",
-                    "on-primary-container": "#5a001b",
-                    "surface-container-high": "#282a2b",
-                    "on-tertiary-container": "#00311d",
-                    "tertiary-fixed-dim": "#6cdba2",
-                    "outline": "#ad878a",
-                    "secondary-fixed": "#ffd9df",
-                    "surface-bright": "#38393a",
-                    "primary-fixed-dim": "#ffb2ba",
-                    "on-tertiary-fixed-variant": "#005233",
-                    "inverse-primary": "#bd0041",
-                    "on-tertiary-fixed": "#002112",
-                    "error": "#ffb4ab",
-                    "on-error-container": "#ffdad6",
-                    "on-surface": "#e2e2e2",
-                    "tertiary": "#6cdba2",
-                    "tertiary-container": "#2da46f",
-                    "secondary-container": "#b20150",
-                    "surface-container-highest": "#333535",
-                    "on-error": "#690005"
+                    "primary":                  "#E50556",
+                    "on-primary":               "#FFFFFF",
+                    "background":               "#000000",
+                    "surface":                  "#000000",
+                    "surface-container":        "#0d0d0d",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-low":    "#0a0a0a",
+                    "surface-container-high":   "#111111",
+                    "surface-container-highest":"#1a1a1a",
+                    "on-surface":               "#FFFFFF",
+                    "on-surface-variant":       "#AAAAAA",
+                    "primary-container":        "#E50556",
+                    "on-primary-container":     "#FFFFFF",
+                    "secondary":                "#E50556",
+                    "secondary-container":      "#E50556",
+                    "outline":                  "#E50556",
+                    "outline-variant":          "#333333"
             },
             "borderRadius": {
                     "DEFAULT": "0.25rem",
@@ -73,22 +43,22 @@
                     "unit": "8px"
             },
             "fontFamily": {
-                    "headline-lg-mobile": ["Montserrat"],
-                    "headline-lg": ["Montserrat"],
-                    "nav-link": ["Montserrat"],
-                    "display-hero": ["Epilogue"],
-                    "headline-md": ["Montserrat"],
-                    "body-main": ["Montserrat"],
-                    "quote-brush": ["Epilogue"]
+                    "headline-lg-mobile": ["Old Standard TT", "serif"],
+                    "headline-lg": ["Old Standard TT", "serif"],
+                    "nav-link": ["Old Standard TT", "serif"],
+                    "display-hero": ["Old Standard TT", "serif"],
+                    "headline-md": ["Old Standard TT", "serif"],
+                    "body-main": ["Old Standard TT", "serif"],
+                    "quote-brush": ["Old Standard TT", "serif"]
             },
             "fontSize": {
-                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
-                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
-                    "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
                     "body-main": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
-                    "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "700"}]
+                    "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "400", "fontStyle": "italic"}]
             }
           },
         },
@@ -96,16 +66,17 @@
     </script>
 <style>
         body {
-            background-color: #050505;
-            color: #e2e2e2;
+            background-color: #000000;
+            color: #FFFFFF;
             overflow-x: hidden;
+            font-family: 'Old Standard TT', serif;
         }
 
         .glass-panel {
-            background: rgba(18, 18, 18, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(245, 0, 87, 0.05);
+            box-shadow: 0 0 30px rgba(229, 5, 86, 0.1);
         }
 
         .heartbeat-pulse {
@@ -113,14 +84,14 @@
         }
 
         @keyframes pulse-ring {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 79, 114, 0.7); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 20px rgba(255, 79, 114, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 79, 114, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 5, 86, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 20px rgba(229, 5, 86, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 5, 86, 0); }
         }
 
         .input-glow:focus {
-            border-bottom-color: #ffb2ba;
-            box-shadow: 0 4px 12px -2px rgba(255, 178, 186, 0.3);
+            border-bottom-color: #E50556;
+            box-shadow: 0 4px 12px -2px rgba(229, 5, 86, 0.3);
             outline: none;
         }
 
@@ -135,50 +106,74 @@
             opacity: 1;
         }
 
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(-100%);
-        }
-
-        #mobile-menu.active {
-            transform: translateX(0);
-        }
     </style>
 </head>
 <body class="font-body-main selection:bg-primary selection:text-on-primary">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(255,178,186,0.15)] flex items-center justify-between px-6 h-20">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200" onclick="toggleMenu()">menu</span>
-<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr83h8TcI7QCp_tPl5aPRnaeHkWwHSKqovERCFxfkoQrW4xKRnwsIP0ilV9YUlCy2mMSwQ0GMTMS7gYnBTg9Md9TKGlrPbvWfMutCCfMqK8DNbQbwFyyDIf4LdSytz6N1KULLdSOTTzhioRRydHG-rdEK9tJocg9hf2CR7B2guhee7GkkulSQ2bQ7JdFx5CvpRAGo52Lz0Plw_Lq3ETAEctAevklsXDUVKvu_9XZdLBI_Ai49RO_84YPRoNOv_oRIGQA" alt="LIVING Logo" class="h-10 w-auto object-contain cursor-pointer">
-</div>
-<div class="flex items-center gap-6">
-<nav class="hidden md:flex gap-8">
-<a class="font-nav-link text-nav-link text-primary transition-colors" href="/Pages/index.html">Inicio</a>
-<a class="font-nav-link text-nav-link text-primary transition-colors" href="#">Conectar</a>
-<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Adoración</a>
-<a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors" href="#">Eventos</a>
-</nav>
-<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/30 cursor-pointer hover:border-primary transition-all">
-<img alt="Perfil de Usuario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL3r_WkOcSGaYyWmos081n1OYxHifS6TA72IUa8MahQHc8pDwK8f62t9ZNoX2wcaenQkcc5UfMr_u3ApssbrpdbTdgkGLfzJK_RPYtFP1TApAu7q7ULLe_iGRCkghzbON6hDU2ykA1r4P0TMz5nEvvNIpSIskc-ciSSzD9Wq8Bm_--vy8pZqsmBIrcVBB4uJgwKy27qIlKeeAF6JBhiHHi9ANMG0X9OgAanvato0t7wE-LlqvIhts1">
-</div>
-</div>
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center justify-between px-6 h-20">
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
+    </div>
+    <nav class="hidden md:flex gap-8">
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos</a>
+        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+    </nav>
+    <div class="w-10 h-10 rounded-full border border-primary/30 overflow-hidden cursor-pointer">
+        <img alt="Usuario" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+    </div>
 </header>
-<!-- Mobile Sidebar Menu -->
-<div class="fixed inset-y-0 left-0 w-64 bg-surface-container-highest z-[60] shadow-2xl p-6 flex flex-col gap-6" id="mobile-menu">
-<div class="flex justify-between items-center mb-8">
-<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMgri6VcvRWhzy4EmhrdhtETFM4Gr2TnNaK_ZndyNqc7Kh8qKJS2RotKF2VMzq-UQqU6UR65wv64yB97-D4nDufw4_VpURlLJ8mHIg7cl6xhvyL2HD_-dQuiAWpeuV49xyW-Z0zXc86vYQWvTD4ST7I0Bo4nLq3YBJTgwq9C7RtZwotFpC8s0Iv1VaAFCm0BmJQIlxZQU5X-HPgyGxtzH5BVqChYBRjKIhq-UcF28IexURvVkGqdSBAn_7D8-xIvga1w" alt="LIVING Logo" class="h-8 w-auto object-contain">
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" onclick="toggleMenu()">close</span>
+<!-- Sidebar Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
+    <div class="p-8 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
+                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+                </div>
+                <div>
+                    <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
+                    <p class="text-xs text-on-surface-variant opacity-60">Stay Living</p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-nav-link uppercase tracking-widest">Inicio</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/aboutUs.html">
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="font-nav-link uppercase tracking-widest">Nosotros</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/activities.html">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="font-nav-link uppercase tracking-widest">Actividades</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/groups.html">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+            </a>
+            <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 transition-all border border-primary/20" href="/Pages/joinUs.html">
+                <span class="material-symbols-outlined">sensors</span>
+                <span class="font-nav-link uppercase tracking-widest">Únete</span>
+            </a>
+        </div>
+        <div class="mt-auto pt-6 border-t border-white/10">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-nav-link uppercase tracking-widest">Configuración</span>
+            </a>
+        </div>
+    </div>
 </div>
-<a class="font-nav-link text-lg text-primary flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">sensors</span> Conectar</a>
-<a class="font-nav-link text-lg text-on-surface flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">music_note</span> Adoración</a>
-<a class="font-nav-link text-lg text-on-surface flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">calendar_today</span> Eventos</a>
-<a class="font-nav-link text-lg text-on-surface flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">favorite</span> Oración</a>
-<div class="mt-auto border-t border-white/10 pt-6">
-<a class="font-nav-link text-on-surface-variant flex items-center gap-4" href="#" onclick="toggleMenu()"><span class="material-symbols-outlined">logout</span> Cerrar Sesión</a>
-</div>
-</div>
-<div class="fixed inset-0 bg-black/60 z-[55] hidden transition-opacity" id="menu-overlay" onclick="toggleMenu()"></div>
+
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/70 z-[95] opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
 <main class="relative min-h-screen pt-32 pb-40 px-6">
 <div class="max-w-4xl mx-auto relative z-10">
 <!-- Hero Header -->
@@ -232,7 +227,7 @@
 </div>
 <!-- CTA Button -->
 <div class="md:col-span-2 pt-8 flex justify-center">
-<button class="heartbeat-pulse w-full md:w-auto px-12 py-5 bg-gradient-to-r from-primary-container to-[#b20150] rounded-full text-on-primary-container font-headline-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl" type="submit">
+<button class="heartbeat-pulse w-full md:w-auto px-12 py-5 bg-gradient-to-r from-primary-container to-[#8a003f] rounded-full text-on-primary-container font-headline-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl" type="submit">
                         Quiero Unirme
                     </button>
 </div>
@@ -272,42 +267,67 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-surface-container/60 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
-<div class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(255,178,186,0.6)] cursor-pointer active:scale-90 transition-transform">
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-black/80 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90" href="/Pages/index.html">
 <span class="material-symbols-outlined">home</span>
 <span class="font-nav-link text-nav-link text-[10px]">Inicio</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90">
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90" href="/Pages/groups.html">
 <span class="material-symbols-outlined">sensors</span>
 <span class="font-nav-link text-nav-link text-[10px]">Conectar</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90">
+</a>
+<a class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(229,5,86,0.6)] cursor-pointer active:scale-90 transition-transform" href="/Pages/joinUs.html">
 <span class="material-symbols-outlined">favorite_border</span>
-<span class="font-nav-link text-nav-link text-[10px]">Orar</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90">
+<span class="font-nav-link text-nav-link text-[10px]">Únete</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90" href="#">
 <span class="material-symbols-outlined">person</span>
 <span class="font-nav-link text-nav-link text-[10px]">Perfil</span>
-</div>
+</a>
 </nav>
 <script>
     const form = document.getElementById('join-living-form');
     const successOverlay = document.getElementById('success-state');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOverlay = document.getElementById('menu-overlay');
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
 
     function toggleMenu() {
-        mobileMenu.classList.toggle('active');
-        menuOverlay.classList.toggle('hidden');
+        const isOpen = sidebar.classList.contains('translate-x-0');
+        if (isOpen) {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        } else {
+            sidebar.classList.remove('-translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+        }
     }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    closeSidebar.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        });
+    });
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Simulation of form submission
         form.style.filter = 'blur(4px)';
         form.style.pointerEvents = 'none';
-        
+
         setTimeout(() => {
             successOverlay.classList.add('success-active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
