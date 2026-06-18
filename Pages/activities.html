@@ -130,7 +130,7 @@
             </a>
             <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/groups.html">
                 <span class="material-symbols-outlined">groups</span>
-                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos de Amistad</span>
             </a>
             <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/joinUs.html">
                 <span class="material-symbols-outlined">sensors</span>
@@ -150,38 +150,35 @@
 <div class="fixed inset-0 bg-black/70 z-[95] opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
 
 <!-- Top AppBar -->
-<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center justify-between px-6 h-20">
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center px-6 h-20">
     <div class="flex items-center gap-4">
         <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
     </div>
-    <nav class="hidden md:flex gap-8">
+    <nav class="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
         <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
-        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos de Amistad</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
     </nav>
-    <div class="w-10 h-10 rounded-full border border-primary/30 overflow-hidden cursor-pointer">
-        <img alt="Usuario" class="w-full h-full object-cover" src="../assets/images/profile.avif">
-    </div>
 </header>
 
 <main class="pt-32 pb-40 px-6 max-w-container-max mx-auto">
 
     <!-- Hero Section -->
     <section class="mb-section-gap">
-        <div class="relative overflow-hidden rounded-[3rem] p-12 lg:p-24 min-h-[500px] flex flex-col justify-end border border-white/10">
+        <div class="relative overflow-hidden rounded-[3rem] p-12 lg:p-24 min-h-[500px] flex flex-col justify-end">
             <div class="absolute inset-0 z-0">
-                <img alt="Ambiente de festival" class="w-full h-full object-cover opacity-35" src="../assets/images/588445084_858128670140034_8934498439946371381_n.jpg">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <img alt="Ambiente de festival" class="w-full h-full object-cover object-center opacity-30" src="../assets/images/Encuentros/683638225_980710767881823_2845405648641059159_n.jpg">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
             </div>
             <div class="relative z-10">
-                <span class="text-primary font-nav-link uppercase tracking-[0.3em] mb-4 block">Energiza tu Alma</span>
-                <h2 class="font-display-hero text-headline-lg md:text-[80px] leading-tight mb-8 text-white">
-                    EL PULSO DEL<br><span class="text-primary">MOVIMIENTO.</span>
+                <span class="text-white/80 font-nav-link uppercase tracking-[0.3em] mb-4 block">Transforma tu Fe</span>
+                <h2 class="font-display-hero text-headline-lg md:text-[80px] leading-tight mb-8 text-white drop-shadow-lg">
+                    EL PULSO DEL<br><span class="text-white">MOVIMIENTO.</span>
                 </h2>
-                <p class="max-w-xl text-on-surface-variant mb-12">Conéctate a través del sudor, el espíritu y los círculos sociales. Cada evento es un latido en nuestra comunidad.</p>
+                <p class="max-w-xl text-white/90 mb-12">Conéctate a través del amor, el espíritu y los círculos sociales. Cada evento es un latido en nuestra comunidad.</p>
             </div>
         </div>
     </section>
@@ -189,56 +186,152 @@
     <!-- Filter UI -->
     <section class="mb-16">
         <div class="flex flex-wrap items-center gap-4 justify-center">
-            <button class="filter-btn active px-8 py-3 rounded-full living-btn font-nav-link uppercase tracking-widest">Todos</button>
-            <button class="filter-btn px-8 py-3 rounded-full glass-card text-white hover:text-primary transition-all font-nav-link uppercase tracking-widest active:scale-90">Deportes</button>
-            <button class="filter-btn px-8 py-3 rounded-full glass-card text-white hover:text-primary transition-all font-nav-link uppercase tracking-widest active:scale-90">Adoración</button>
-            <button class="filter-btn px-8 py-3 rounded-full glass-card text-white hover:text-primary transition-all font-nav-link uppercase tracking-widest active:scale-90">Sociales</button>
+            <button class="filter-btn bg-primary text-white px-8 py-3 rounded-full font-nav-link uppercase tracking-widest" data-filter="deportes">Deportes</button>
+            <button class="filter-btn glass-card text-white hover:text-primary transition-all px-8 py-3 rounded-full font-nav-link uppercase tracking-widest" data-filter="sociales">Sociales</button>
+            <button class="filter-btn glass-card text-white hover:text-primary transition-all px-8 py-3 rounded-full font-nav-link uppercase tracking-widest" data-filter="adoracion">Adoración</button>
         </div>
     </section>
 
-    <!-- Featured Activities Bento Grid -->
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-section-gap">
+    <!-- Bento Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-section-gap" id="activities-grid">
 
-        <!-- Basketball (Grande) -->
-        <div class="md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]">
-            <img alt="Baloncesto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/WhatsApp%20Image%202026-06-15%20at%2011.46.39%20PM.jpeg">
+        <!-- DEPORTES -->
+        <div class="activity-card md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Baloncesto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/WhatsApp%20Image%202026-06-15%20at%2011.46.39%20PM.jpeg">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
                 <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
-                <h3 class="font-headline-md text-white mb-2">Baloncesto de Medianoche</h3>
-                <p class="text-on-surface-variant mb-6 max-w-sm">Torneo 3v3 de alta intensidad bajo luces de neón. Demuestra tu habilidad.</p>
+                <h3 class="font-headline-md text-white mb-2">Baloncesto</h3>
+                <p class="text-on-surface-variant mb-6 max-w-sm">Cancha abierta, competencia real. Únete al equipo y demuestra tu juego.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Escalar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/Escalar.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Escalar</h3>
+                <p class="text-on-surface-variant mb-6">Supera tus límites verticales. Cada roca es un reto que vale la pena.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Fútbol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/Futbol.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Fútbol</h3>
+                <p class="text-on-surface-variant mb-6">Equipo, pasión y goles. La cancha es donde la comunidad se une.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Patines" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/Patines.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Patines</h3>
+                <p class="text-on-surface-variant mb-6 max-w-sm">Ruedas, velocidad y adrenalina. Una noche sobre patines que no olvidarás.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Pulsos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/Pulsos.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Pulsos</h3>
+                <p class="text-on-surface-variant mb-6">Fuerza, concentración y carácter. El duelo más puro entre dos voluntades.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Deportes de Contacto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/De%20contacto.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Deportes de Contacto</h3>
+                <p class="text-on-surface-variant mb-6">Intensidad, disciplina y respeto. Entrena con propósito.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Volleyball Acuático" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/Volleyball%20acuatico.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Volleyball Acuático</h3>
+                <p class="text-on-surface-variant mb-6 max-w-sm">La cancha está en el agua. Diversión, equipo y salpicones garantizados.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="deportes">
+            <img alt="Fútbol Rápido" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/futbol2.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Deportes</span>
+                <h3 class="font-headline-md text-white mb-2">Fútbol Rápido</h3>
+                <p class="text-on-surface-variant mb-6">Más velocidad, menos espacio, el mismo gol. El fútbol en su forma más intensa.</p>
                 <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
             </div>
         </div>
 
-        <!-- Worship Night -->
-        <div class="md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]">
-            <img alt="Adoración" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/490717428_679387164680853_9209282679439809238_n.jpg">
+        <!-- SOCIALES -->
+        <div class="activity-card md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="sociales" style="display:none">
+            <img alt="Caminata" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/Caminata.jpeg">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
-                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] text-white font-bold uppercase tracking-widest mb-4">Adoración</span>
-                <h3 class="font-headline-md text-white mb-2">Alabanza Neón</h3>
-                <p class="text-on-surface-variant mb-6">Una noche de intimidad acústica y adoración con sintetizadores potentes.</p>
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Sociales</span>
+                <h3 class="font-headline-md text-white mb-2">Caminatas</h3>
+                <p class="text-on-surface-variant mb-6 max-w-sm">Naturaleza, conversación y comunidad. Cada paso es una historia compartida.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="sociales" style="display:none">
+            <img alt="Noche de Mujeres" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/NocheMujeres.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Sociales</span>
+                <h3 class="font-headline-md text-white mb-2">Noche de Mujeres</h3>
+                <p class="text-on-surface-variant mb-6">Un espacio para ellas. Risas, profundidad y conexión real entre mujeres.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="sociales" style="display:none">
+            <img alt="Mega Grupo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/megagrupo.jpeg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Sociales</span>
+                <h3 class="font-headline-md text-white mb-2">Mega Grupos</h3>
+                <p class="text-on-surface-variant mb-6">Todos los grupos, un solo lugar. La comunidad entera reunida en una noche.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="sociales" style="display:none">
+            <img alt="Noche de Hombres" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/NocheHombres.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Sociales</span>
+                <h3 class="font-headline-md text-white mb-2">Noche de Hombres</h3>
+                <p class="text-on-surface-variant mb-6 max-w-sm">Un espacio para ellos. Conversaciones que edifican, hombres que se afilan mutuamente.</p>
                 <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
             </div>
         </div>
 
-        <!-- Socials -->
-        <div class="md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]">
-            <img alt="Social" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/571477526_834610399158528_7233706143996492024_n.jpg">
+        <!-- ADORACIÓN -->
+        <div class="activity-card md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="adoracion" style="display:none">
+            <img alt="Fogata" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Eventos/fogata.jpeg">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
-                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] text-white font-bold uppercase tracking-widest mb-4">Sociales</span>
-                <h3 class="font-headline-md text-white mb-2">Bocados Callejeros</h3>
-                <p class="text-on-surface-variant mb-6">Conectando a través de las mejores joyas gastronómicas de la ciudad.</p>
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Adoración</span>
+                <h3 class="font-headline-md text-white mb-2">Fogata</h3>
+                <p class="text-on-surface-variant mb-6 max-w-sm">Fuego, cielo abierto y la presencia de Dios. Una noche que no se olvida.</p>
                 <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
             </div>
         </div>
-
-        <!-- Hikes (Grande) -->
-        <div class="md:col-span-8 group relative overflow-hidden rounded-3xl glass-card h-[450px]">
-            <img alt="Senderismo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/WhatsApp%20Image%202026-06-15%20at%2011.53.45%20PM%20(7).jpeg">
+        <div class="activity-card md:col-span-4 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="adoracion" style="display:none">
+            <img alt="Campamento de Oración" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/images/Iglesia/CampamentoDeOracion.jpg">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
-                <span class="bg-primary w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Sociales</span>
-                <h3 class="font-headline-md text-white mb-2">Buscadores de Cumbres</h3>
-                <p class="text-on-surface-variant mb-6 max-w-sm">Carrera por senderos al amanecer y devocionales en la cima. Supera tus límites.</p>
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Adoración</span>
+                <h3 class="font-headline-md text-white mb-2">Campamento de Oración</h3>
+                <p class="text-on-surface-variant mb-6">Días apartados para buscar a Dios. Oración profunda, ayuno y revelación.</p>
+                <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
+            </div>
+        </div>
+        <div class="activity-card md:col-span-12 group relative overflow-hidden rounded-3xl glass-card h-[450px]" data-category="adoracion" style="display:none">
+            <img alt="Noches de Ministración" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" src="../assets/images/Iglesia/NochesDeMinistracion.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Adoración</span>
+                <h3 class="font-headline-md text-white mb-2">Noches de Ministración</h3>
+                <p class="text-on-surface-variant mb-6 max-w-2xl">Espacios de encuentro íntimo con Dios donde la adoración y la ministración se fusionan. Una noche que transforma.</p>
                 <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
             </div>
         </div>
@@ -329,6 +422,37 @@
 
 </main>
 
+<footer class="bg-surface-container-lowest py-20 border-t border-white/5">
+<div class="px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
+<p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">sensors</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">favorite</span></a>
+</div>
+</div>
+<div>
+<h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/devocional.html">Devocional Diario</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/0gINZ1DaGbmSd0gIwa2mYX?si=cNLbSKcFT_ypnyO0655izw" target="_blank">Música</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/calendario.html">Calendario de Eventos</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Soporte</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-white/5 text-center text-on-surface-variant text-sm">© 2026 Red Living. Todos los derechos reservados. Diseñado para la generación del ahora.</div>
+</footer>
 <!-- Bottom Navigation (Mobile) -->
 <nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-black/80 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
     <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all" href="/Pages/index.html">
@@ -391,15 +515,22 @@
         });
     });
 
-    // Filtros
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    // Filtros de actividades
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const activityCards = document.querySelectorAll('.activity-card');
+
+    filterBtns.forEach(btn => {
         btn.addEventListener('click', function () {
-            document.querySelectorAll('.filter-btn').forEach(b => {
-                b.classList.remove('living-btn');
-                b.classList.add('glass-card', 'text-white');
+            const filter = this.dataset.filter;
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('glass-card', 'text-white', 'hover:text-primary');
             });
-            this.classList.add('living-btn');
-            this.classList.remove('glass-card', 'text-white');
+            this.classList.add('bg-primary', 'text-white');
+            this.classList.remove('glass-card', 'hover:text-primary');
+            activityCards.forEach(card => {
+                card.style.display = card.dataset.category === filter ? '' : 'none';
+            });
         });
     });
 
