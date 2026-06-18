@@ -1,0 +1,371 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Únete a Living | Movimiento Juvenil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary":                  "#E50556",
+                    "on-primary":               "#FFFFFF",
+                    "background":               "#000000",
+                    "surface":                  "#000000",
+                    "surface-container":        "#0d0d0d",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-low":    "#0a0a0a",
+                    "surface-container-high":   "#111111",
+                    "surface-container-highest":"#1a1a1a",
+                    "on-surface":               "#FFFFFF",
+                    "on-surface-variant":       "#AAAAAA",
+                    "primary-container":        "#E50556",
+                    "on-primary-container":     "#FFFFFF",
+                    "secondary":                "#E50556",
+                    "secondary-container":      "#E50556",
+                    "outline":                  "#E50556",
+                    "outline-variant":          "#333333"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Old Standard TT", "serif"],
+                    "headline-lg": ["Old Standard TT", "serif"],
+                    "nav-link": ["Old Standard TT", "serif"],
+                    "display-hero": ["Old Standard TT", "serif"],
+                    "headline-md": ["Old Standard TT", "serif"],
+                    "body-main": ["Old Standard TT", "serif"],
+                    "quote-brush": ["Old Standard TT", "serif"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-main": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "400", "fontStyle": "italic"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            font-family: 'Old Standard TT', serif;
+        }
+
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(229, 5, 86, 0.1);
+        }
+
+        .heartbeat-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 5, 86, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 20px rgba(229, 5, 86, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 5, 86, 0); }
+        }
+
+        .input-glow:focus {
+            border-bottom-color: #E50556;
+            box-shadow: 0 4px 12px -2px rgba(229, 5, 86, 0.3);
+            outline: none;
+        }
+
+        .success-overlay {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .success-active {
+            display: flex;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body class="font-body-main selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center justify-between px-6 h-20">
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
+    </div>
+    <nav class="hidden md:flex gap-8">
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos</a>
+        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+    </nav>
+    <div class="w-10 h-10 rounded-full border border-primary/30 overflow-hidden cursor-pointer">
+        <img alt="Usuario" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+    </div>
+</header>
+<!-- Sidebar Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
+    <div class="p-8 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
+                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+                </div>
+                <div>
+                    <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
+                    <p class="text-xs text-on-surface-variant opacity-60">Stay Living</p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-nav-link uppercase tracking-widest">Inicio</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/aboutUs.html">
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="font-nav-link uppercase tracking-widest">Nosotros</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/activities.html">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="font-nav-link uppercase tracking-widest">Actividades</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/groups.html">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+            </a>
+            <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 transition-all border border-primary/20" href="/Pages/joinUs.html">
+                <span class="material-symbols-outlined">sensors</span>
+                <span class="font-nav-link uppercase tracking-widest">Únete</span>
+            </a>
+        </div>
+        <div class="mt-auto pt-6 border-t border-white/10">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-nav-link uppercase tracking-widest">Configuración</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/70 z-[95] opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
+<main class="relative min-h-screen pt-32 pb-40 px-6">
+<div class="max-w-4xl mx-auto relative z-10">
+<!-- Hero Header -->
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-display-hero text-headline-lg-mobile md:text-headline-lg text-white leading-tight">
+                ¿Listo para ser parte de la <span class="text-primary">familia?</span>
+</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto text-lg">
+                Únete a un movimiento que es más que una simple reunión. Encuentra tu propósito, tu comunidad y tu latido.
+            </p>
+</div>
+<!-- Form Container -->
+<div class="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden" id="join-form-container">
+<!-- Registration Form -->
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8" id="join-living-form">
+<!-- Name -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Nombre Completo</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="Juan Pérez" required="" type="text">
+</div>
+<!-- Age -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Edad</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="18" required="" type="number">
+</div>
+<!-- Email -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Correo Electrónico</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="hola@gmail.com" required="" type="email">
+</div>
+<!-- Phone -->
+<div class="space-y-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Número de Teléfono</label>
+<input class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all" placeholder="+506 0000-0000" required="" type="tel">
+</div>
+<!-- Area -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">Provincia</label>
+<select class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all appearance-none">
+<option class="bg-surface-container" disabled="" selected="" value="">Selecciona tu ubicación</option>
+<option class="bg-surface-container" value="san-jose">San José</option>
+<option class="bg-surface-container" value="alajuela">Alajuela</option>
+<option class="bg-surface-container" value="cartago">Cartago</option>
+<option class="bg-surface-container" value="heredia">Heredia</option>
+<option class="bg-surface-container" value="guanacaste">Guanacaste</option>
+<option class="bg-surface-container" value="puntarenas">Puntarenas</option>
+<option class="bg-surface-container" value="limon">Limón</option>
+</select>
+</div>
+<!-- How did you hear? -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">¿Cómo te enteraste de nosotros?</label>
+<textarea class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all resize-none" placeholder="Redes sociales, un amigo, un evento..." rows="3"></textarea>
+</div>
+<!-- Prayer Request -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-nav-link text-primary uppercase text-[10px] tracking-widest">¿Alguna petición de oración?</label>
+<textarea class="w-full bg-black/40 border-0 border-b border-white/20 p-4 font-body-main text-white input-glow transition-all resize-none" placeholder="Cuéntanos cómo podemos orar por ti..." rows="3"></textarea>
+</div>
+<!-- CTA Button -->
+<div class="md:col-span-2 pt-8 flex justify-center">
+<button class="heartbeat-pulse w-full md:w-auto px-12 py-5 bg-gradient-to-r from-primary-container to-[#8a003f] rounded-full text-on-primary-container font-headline-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl" type="submit">
+                        Quiero Unirme
+                    </button>
+</div>
+</form>
+<!-- Success State Overlay -->
+<div class="success-overlay absolute inset-0 glass-panel z-20 flex-col items-center justify-center text-center p-12 space-y-6" id="success-state">
+<div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline-md text-white text-3xl">¡Bienvenido a Casa!</h3>
+<p class="text-on-surface-variant text-lg">
+                    ¡Gracias por contactarnos! Un líder de Living se pondrá en contacto contigo pronto para ayudarte a ser parte de nuestra comunidad.
+                </p>
+<button href="/Pages/index.html" class="font-nav-link text-primary uppercase tracking-widest hover:underline pt-8" onclick="resetForm()">
+                    Volver al sitio
+                </button>
+</div>
+</div>
+<!-- Support Content -->
+<div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-8 rounded-2xl border-l-4 border-l-primary cursor-pointer hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">groups</span>
+<h4 class="font-headline-md text-white text-lg mb-2">Grupos de Conexión</h4>
+<p class="text-sm text-on-surface-variant">Pequeñas reuniones semanales en tu área para compartir la vida juntos.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl transform md:translate-y-8 cursor-pointer hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">bolt</span>
+<h4 class="font-headline-md text-white text-lg mb-2">Equipos de Impacto</h4>
+<p class="text-sm text-on-surface-variant">Usa tus dones y talentos para servir a la ciudad y a la casa.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl border-r-4 border-r-primary cursor-pointer hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-4">auto_awesome</span>
+<h4 class="font-headline-md text-white text-lg mb-2">Próximos Pasos</h4>
+<p class="text-sm text-on-surface-variant">Un viaje de 4 semanas para descubrir tu propósito en la familia de Dios.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-black/80 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90" href="/Pages/index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-nav-link text-nav-link text-[10px]">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90" href="/Pages/groups.html">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-nav-link text-nav-link text-[10px]">Conectar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(229,5,86,0.6)] cursor-pointer active:scale-90 transition-transform" href="/Pages/joinUs.html">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="font-nav-link text-nav-link text-[10px]">Únete</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all cursor-pointer active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-nav-link text-nav-link text-[10px]">Perfil</span>
+</a>
+</nav>
+<script>
+    const form = document.getElementById('join-living-form');
+    const successOverlay = document.getElementById('success-state');
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleMenu() {
+        const isOpen = sidebar.classList.contains('translate-x-0');
+        if (isOpen) {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        } else {
+            sidebar.classList.remove('-translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+        }
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    closeSidebar.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        });
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Simulation of form submission
+        form.style.filter = 'blur(4px)';
+        form.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            successOverlay.classList.add('success-active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 600);
+    });
+
+    function resetForm() {
+        successOverlay.classList.remove('success-active');
+        form.reset();
+        form.style.filter = 'none';
+        form.style.pointerEvents = 'auto';
+    }
+
+    // Add a subtle mouse move parallax to the glass panel
+    document.addEventListener('mousemove', (e) => {
+        const panel = document.getElementById('join-form-container');
+        const x = (window.innerWidth / 2 - e.pageX) / 80;
+        const y = (window.innerHeight / 2 - e.pageY) / 80;
+        panel.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+
+    // Handle touch interactions for mobile navigation icons
+    document.querySelectorAll('nav div').forEach(item => {
+        item.addEventListener('touchstart', function() {
+            this.classList.add('text-primary');
+        });
+    });
+</script>
+
+
+
+
+</body></html>

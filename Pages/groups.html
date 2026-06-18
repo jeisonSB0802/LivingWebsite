@@ -1,0 +1,417 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Living | Grupos de Amistad</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .living-gradient-text {
+      color: #E50556;
+    }
+    .living-btn-gradient {
+      background: #E50556;
+      box-shadow: 0 0 20px rgba(229, 5, 86, 0.3);
+    }
+    .heartbeat-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: pulse-line 4s linear infinite;
+    }
+    @keyframes pulse-line {
+      to { stroke-dashoffset: 0; }
+    }
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      overflow-x: hidden;
+      min-height: max(884px, 100dvh);
+      font-family: 'Old Standard TT', serif;
+    }
+    .ecg-bg {
+      mask-image: linear-gradient(to right, transparent, black, transparent);
+    }
+
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary":                  "#E50556",
+            "on-primary":               "#FFFFFF",
+            "background":               "#000000",
+            "surface":                  "#000000",
+            "surface-container":        "#0d0d0d",
+            "surface-container-lowest": "#000000",
+            "surface-container-low":    "#0a0a0a",
+            "surface-container-high":   "#111111",
+            "surface-container-highest":"#1a1a1a",
+            "on-surface":               "#FFFFFF",
+            "on-surface-variant":       "#AAAAAA",
+            "primary-container":        "#E50556",
+            "on-primary-container":     "#FFFFFF",
+            "secondary":                "#E50556",
+            "secondary-container":      "#E50556",
+            "outline":                  "#E50556",
+            "outline-variant":          "#333333"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "container-max": "1280px",
+            "gutter": "24px",
+            "section-gap": "120px",
+            "margin-mobile": "20px",
+            "unit": "8px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Old Standard TT", "serif"],
+            "headline-lg": ["Old Standard TT", "serif"],
+            "nav-link": ["Old Standard TT", "serif"],
+            "display-hero": ["Old Standard TT", "serif"],
+            "headline-md": ["Old Standard TT", "serif"],
+            "body-main": ["Old Standard TT", "serif"],
+            "quote-brush": ["Old Standard TT", "serif"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+            "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-main": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+            "quote-brush": ["36px", {"lineHeight": "44px", "fontWeight": "400", "fontStyle": "italic"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-body-main text-body-main">
+<!-- TopAppBar Component -->
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center justify-between px-6 h-20">
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
+    </div>
+    <nav class="hidden md:flex gap-8">
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
+        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/groups.html">Grupos</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+    </nav>
+    <div class="w-10 h-10 rounded-full border border-primary/30 overflow-hidden cursor-pointer">
+        <img alt="Usuario" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+    </div>
+</header>
+<!-- Sidebar Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
+    <div class="p-8 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
+                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+                </div>
+                <div>
+                    <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
+                    <p class="text-xs text-on-surface-variant opacity-60">Stay Living</p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-nav-link uppercase tracking-widest">Inicio</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/aboutUs.html">
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="font-nav-link uppercase tracking-widest">Nosotros</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/activities.html">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="font-nav-link uppercase tracking-widest">Actividades</span>
+            </a>
+            <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 transition-all border border-primary/20" href="/Pages/groups.html">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+            </a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/joinUs.html">
+                <span class="material-symbols-outlined">sensors</span>
+                <span class="font-nav-link uppercase tracking-widest">Únete</span>
+            </a>
+        </div>
+        <div class="mt-auto pt-6 border-t border-white/10">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-nav-link uppercase tracking-widest">Configuración</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/70 z-[95] opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 w-full h-full opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+<span class="living-gradient-text font-bold uppercase tracking-widest text-sm mb-4 block">Juntos es mejor</span>
+<h2 class="font-display-hero text-headline-lg-mobile md:text-display-hero leading-tight mb-8">Encuentra tu <br><span class="text-white">Familia.</span></h2>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Los Grupos de Amistad son el latido de la Red Living. Son pequeñas comunidades donde puedes ser tú mismo, crecer en fe y encontrar personas que realmente caminen contigo.
+        </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="living-btn-gradient px-8 py-4 rounded-full font-bold text-white shadow-[0_0_20px_rgba(229,5,86,0.4)] active:scale-95 transition-all">Únete a un Grupo</button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
+</section>
+<!-- Community Grid: Explainer -->
+<section class="py-section-gap px-6 max-w-container-max mx-auto relative">
+<div class="text-center mb-16">
+<h3 class="font-display-hero text-headline-md md:text-headline-lg text-primary mb-4">La Vida es Vibrante</h3>
+<p class="text-on-surface-variant">Cuatro formas en las que nos conectamos y crecemos juntos.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1: Bible Study -->
+<div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-500 duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">menu_book</span>
+</div>
+<h4 class="font-headline-md text-white mb-4">La Palabra</h4>
+<p class="text-on-surface-variant text-sm">Inmersiones profundas en las escrituras que realmente se aplican a tu lunes por la mañana, no solo al servicio dominical.</p>
+</div>
+<!-- Card 2: Expression -->
+<div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-500 duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">palette</span>
+</div>
+<h4 class="font-headline-md text-white mb-4">Flujo Creativo</h4>
+<p class="text-on-surface-variant text-sm">Expresa tu adoración a través del arte, la música y la creación digital en un espacio colaborativo seguro.</p>
+</div>
+<!-- Card 3: Support -->
+<div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-500 duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">favorite</span>
+</div>
+<h4 class="font-headline-md text-white mb-4">Apoyo Real</h4>
+<p class="text-on-surface-variant text-sm">Salud mental, luchas de la vida y preguntas difíciles. Sin juicios, solo hermandad auténtica.</p>
+</div>
+<!-- Card 4: Friendship -->
+<div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-500 duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">local_cafe</span>
+</div>
+<h4 class="font-headline-md text-white mb-4">Vibras Puras</h4>
+<p class="text-on-surface-variant text-sm">A veces es solo café, senderismo o videojuegos. Construyendo vínculos que duran toda la vida a través del gozo compartido.</p>
+</div>
+</div>
+</section>
+<!-- ECG Pulse Divider -->
+<div class="w-full overflow-hidden opacity-30 ecg-bg my-12">
+<svg class="w-full h-24 stroke-primary fill-none stroke-2" viewBox="0 0 1000 100">
+<path class="heartbeat-line" d="M0,50 L400,50 L410,40 L420,50 L430,10 L445,90 L460,50 L470,50 L1000,50"></path>
+</svg>
+</div>
+<!-- Group Locator Section -->
+<section class="py-section-gap px-6 max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+<div>
+<h3 class="font-display-hero text-headline-md md:text-headline-lg text-white">Grupos de Amistad Cercanos</h3>
+<p class="text-on-surface-variant">Nos reunimos en hogares y compartimos la palara de Dios.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-3 rounded-full border border-white/10 hover:border-primary transition-all"><span class="material-symbols-outlined">filter_list</span></button>
+<div class="relative">
+<input class="bg-black/50 border-0 border-b border-white/20 focus:ring-0 focus:border-primary rounded-none px-4 py-3 w-64 placeholder:text-white/30" placeholder="¿Dónde vives?" type="text">
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Group Card 1 -->
+<div class="glass-card overflow-hidden rounded-[2rem] group hover:translate-y-[-8px] transition-all duration-300 duration-700 opacity-100 translate-y-0">
+<div class="h-48 relative overflow-hidden">
+<img alt="GA San Juan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="../assets/images/GA%20San%20Juan.jpeg">
+<div class="absolute top-4 right-4 bg-primary text-on-primary-container px-4 py-1 rounded-full text-xs font-bold">Grupo de Amistad</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h5 class="font-headline-md text-white">GA San Juan</h5>
+<p class="text-on-surface-variant text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">location_on</span> San Ramón, San Juan</p>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Líder" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPtWfImSCj_n0daYIt4UgL-lGOpFc3YRFWmkNxX12VgHLYgmOE8G39LAR7nkkRoJ9NwQ9f4V_E_Z2WjLKnyAFOMLmV7ZckpwPX-KGcfWj-tm_CtwjLHvSqJAbdWoDFSoCHUi5ZbSDm14AMJsdC3ZWfIPaQZfAc4Xr-LPhWLIOoNUJJL249Uzel29sdZpO6hFNjH_Q19q_tojhAmiXABnebPZyCyd-ds16P_hEY1R5XXOo7hY78vDH6">
+</div>
+</div>
+<div class="flex items-center gap-4 mb-8 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-primary text-sm">calendar_today</span> Miércoles</span>
+<span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-primary text-sm">schedule</span> 7:00 PM</span>
+</div>
+<button class="w-full py-4 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-on-primary-container font-bold transition-all">Solicitar Unirse</button>
+</div>
+</div>
+<!-- Group Card 2 -->
+<div class="glass-card overflow-hidden rounded-[2rem] group hover:translate-y-[-8px] transition-all duration-300 duration-700 opacity-100 translate-y-0">
+<div class="h-48 relative overflow-hidden">
+<img alt="GA San Miguel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="../assets/images/GA%20San%20Miguel.jpeg">
+<div class="absolute top-4 right-4 bg-primary text-on-primary-container px-4 py-1 rounded-full text-xs font-bold">Grupo de Amistad</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h5 class="font-headline-md text-white">GA San Miguel</h5>
+<p class="text-on-surface-variant text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">location_on</span> Naranjo, San Miguel</p>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Líder" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbfkrfCArEkJTxVye-jINx_0OPNokZq-K3sXGWvbHQY9lDCbY_ZChwINg8Z_PQbPIvTn6qA8_2PCKf5wV7y7g-P7FNFAJoUEXaxREM0sGlLx98zGBTXDrwPhxs-zSejflDhRz4BckAWuW6FYUOyusl_Elfmroq96-Mh1QLGTndVTrbR0mPG4CAHMWycAP1tYWm4bI25ahpnLu3Eim4fTbZFEiB718-b737VM7HgXuHDKGzCWpWFBly">
+</div>
+</div>
+<div class="flex items-center gap-4 mb-8 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-primary text-sm">calendar_today</span> Jueves</span>
+<span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-primary text-sm">schedule</span> 7:00 PM</span>
+</div>
+<button class="w-full py-4 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-on-primary-container font-bold transition-all">Solicitar Unirse</button>
+</div>
+</div>
+<!-- Group Card 3 -->
+<div class="glass-card overflow-hidden rounded-[2rem] group hover:translate-y-[-8px] transition-all duration-300 duration-700 opacity-100 translate-y-0">
+<div class="h-48 relative overflow-hidden">
+<img alt="GA Naranjo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="../assets/images/GA%20Naranjo.jpeg">
+<div class="absolute top-4 right-4 bg-primary text-on-primary-container px-4 py-1 rounded-full text-xs font-bold">Grupo de Amistad</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h5 class="font-headline-md text-white">GA Naranjo</h5>
+<p class="text-on-surface-variant text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">location_on</span> Naranjo, El Rosario</p>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Líder" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUHH8bSVSe_UaG6ALjbXLRc5As6RWpfvs-qx4AVd-r6bo4BNJZZGUdn-mtxlHzO34Y1BzfZKty_NQ7yUvZBLq0u6EdzYKbe7pLI5egBIN2_TI0Zdvbl4niS52Khnh8FpOkM_zG7vNHe3ghOyKUK6vvaiifoPAmQuPLTDDWKM1h9pfkdGyioMnApf09hrVIMoeZahS0mM7mhTqMvtmmlp2mZI8YquFa5b9rgZgGvvKUo8AgUVtZVmYe">
+</div>
+</div>
+<div class="flex items-center gap-4 mb-8 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-primary text-sm">calendar_today</span> Sábados</span>
+<span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-primary text-sm">schedule</span> 7:00 PM</span>
+</div>
+<button class="w-full py-4 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-on-primary-container font-bold transition-all">Solicitar Unirse</button>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="text-on-surface-variant mb-6 italic">¿No ves un grupo en tu área o estilo?</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold group" href="/Pages/allGroups.html">
+          Ver todos los grupos <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Bottom Call to Action -->
+<section class="py-section-gap px-6 bg-gradient-to-b from-background to-on-primary-fixed/20 relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h3 class="font-display-hero text-headline-md md:text-headline-lg mb-8 leading-tight">¿Listo para ser parte de <br>este movimiento?</h3>
+<p class="text-on-surface-variant mb-12 text-lg">Creemos que nadie debería caminar solo. Tu comunidad está a solo un clic de distancia.</p>
+<div class="glass-card p-1 md:p-2 rounded-full inline-flex items-center gap-2 max-w-md w-full transition-all duration-700 opacity-100 translate-y-0">
+<input class="bg-transparent border-0 focus:ring-0 px-6 py-3 flex-grow text-white placeholder:text-white/40" placeholder="Tu número de teléfono" type="tel">
+<button class="living-btn-gradient px-8 py-3 rounded-full font-bold text-white whitespace-nowrap">Unirse</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Shell (BottomNavBar for Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-black/80 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
+
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform" href="/Pages/index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-nav-link text-nav-link text-[10px]">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(229,5,86,0.6)] active:scale-90 transition-transform" href="/Pages/groups.html">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-nav-link text-nav-link text-[10px]">Conectar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform" href="/Pages/joinUs.html">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="font-nav-link text-nav-link text-[10px]">Únete</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-nav-link text-nav-link text-[10px]">Perfil</span>
+</a>
+</nav>
+<script>
+    // Mobile Sidebar Drawer logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleMenu() {
+        const isOpen = sidebar.classList.contains('translate-x-0');
+        if (isOpen) {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        } else {
+            sidebar.classList.remove('-translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    closeSidebar.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+        });
+    });
+
+    // Smooth scroll interactions for cards
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(card);
+    });
+  </script>
+
+
+
+
+</body></html>
