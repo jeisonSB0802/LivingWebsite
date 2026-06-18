@@ -1,0 +1,320 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Calendario de Eventos | Red Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#E50556", "on-primary": "#FFFFFF",
+            "background": "#000000", "surface": "#000000",
+            "surface-container": "#0d0d0d", "surface-container-lowest": "#000000",
+            "surface-container-low": "#0a0a0a", "surface-container-high": "#111111",
+            "on-surface": "#FFFFFF", "on-surface-variant": "#AAAAAA",
+            "primary-container": "#E50556", "on-primary-container": "#FFFFFF",
+            "secondary": "#E50556", "secondary-container": "#E50556",
+            "outline": "#E50556", "outline-variant": "#333333"
+          },
+          "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          "spacing": { "container-max": "1280px", "gutter": "24px", "section-gap": "120px" },
+          "fontFamily": {
+            "headline-lg-mobile": ["Old Standard TT","serif"], "headline-lg": ["Old Standard TT","serif"],
+            "nav-link": ["Old Standard TT","serif"], "display-hero": ["Old Standard TT","serif"],
+            "headline-md": ["Old Standard TT","serif"], "body-main": ["Old Standard TT","serif"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],
+            "headline-lg": ["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],
+            "nav-link": ["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"400"}],
+            "display-hero": ["84px",{"lineHeight":"90px","letterSpacing":"-0.04em","fontWeight":"700"}],
+            "headline-md": ["24px",{"lineHeight":"32px","fontWeight":"700"}],
+            "body-main": ["16px",{"lineHeight":"26px","fontWeight":"400"}]
+          }
+        }
+      }
+    }
+</script>
+<style>
+    body { background-color:#000; color:#fff; overflow-x:hidden; font-family:'Old Standard TT',serif; }
+    .glass-card { background:rgba(0,0,0,0.7); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.12); }
+    .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .cal-day-event { position:relative; }
+    .cal-day-event::after { content:''; position:absolute; bottom:3px; left:50%; transform:translateX(-50%); width:4px; height:4px; border-radius:50%; background:#E50556; }
+    .event-card { transition: transform 0.2s, border-color 0.2s; }
+    .event-card:hover { transform: translateY(-3px); border-color: rgba(229,5,86,0.4); }
+</style>
+</head>
+<body class="font-body-main">
+
+<!-- Navbar -->
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center px-6 h-20">
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
+    </div>
+    <nav class="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos de Amistad</a>
+        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+    </nav>
+</header>
+
+<!-- Sidebar Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl transform -translate-x-full transition-transform duration-300" id="sidebar-drawer">
+    <div class="p-8 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+            <p class="font-headline-md text-primary text-sm">Red Living</p>
+            <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/index.html"><span class="material-symbols-outlined">home</span><span class="font-nav-link uppercase tracking-widest">Inicio</span></a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/aboutUs.html"><span class="material-symbols-outlined">favorite</span><span class="font-nav-link uppercase tracking-widest">Nosotros</span></a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/activities.html"><span class="material-symbols-outlined">calendar_today</span><span class="font-nav-link uppercase tracking-widest">Actividades</span></a>
+            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/groups.html"><span class="material-symbols-outlined">sensors</span><span class="font-nav-link uppercase tracking-widest">Grupos de Amistad</span></a>
+            <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 border border-primary/20" href="/Pages/joinUs.html"><span class="material-symbols-outlined">volunteer_activism</span><span class="font-nav-link uppercase tracking-widest">Únete</span></a>
+        </div>
+    </div>
+</div>
+<div class="fixed inset-0 z-[99] bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
+
+<main class="pt-20">
+
+    <!-- Hero -->
+    <section class="relative py-20 px-gutter text-center overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <p class="font-nav-link text-nav-link text-primary tracking-[0.4em] uppercase mb-4">Lo que viene</p>
+            <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-6">Calendario de Eventos</h1>
+            <p class="text-on-surface-variant text-lg">Encuentra cuándo nos reunimos, qué celebramos y dónde estar presente.</p>
+        </div>
+    </section>
+
+    <!-- Calendario + Lista -->
+    <section class="px-gutter max-w-container-max mx-auto pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+            <!-- Mini Calendario -->
+            <div class="lg:col-span-1 glass-card rounded-3xl p-6 sticky top-28">
+                <div class="flex items-center justify-between mb-6">
+                    <button id="prev-month" class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">
+                        <span class="material-symbols-outlined text-on-surface-variant" style="font-size:20px;">chevron_left</span>
+                    </button>
+                    <h3 id="calendar-title" class="font-bold text-white tracking-wide"></h3>
+                    <button id="next-month" class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">
+                        <span class="material-symbols-outlined text-on-surface-variant" style="font-size:20px;">chevron_right</span>
+                    </button>
+                </div>
+                <div class="grid grid-cols-7 text-center mb-2">
+                    <span class="text-on-surface-variant text-xs font-bold py-1">D</span>
+                    <span class="text-on-surface-variant text-xs font-bold py-1">L</span>
+                    <span class="text-on-surface-variant text-xs font-bold py-1">M</span>
+                    <span class="text-on-surface-variant text-xs font-bold py-1">X</span>
+                    <span class="text-on-surface-variant text-xs font-bold py-1">J</span>
+                    <span class="text-on-surface-variant text-xs font-bold py-1">V</span>
+                    <span class="text-on-surface-variant text-xs font-bold py-1">S</span>
+                </div>
+                <div id="calendar-grid" class="grid grid-cols-7 text-center gap-y-1"></div>
+
+                <!-- Leyenda -->
+                <div class="mt-6 pt-5 border-t border-white/10 space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+                        <span class="text-on-surface-variant text-xs">Encuentro</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span>
+                        <span class="text-on-surface-variant text-xs">Grupo de Amistad</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                        <span class="text-on-surface-variant text-xs">Evento Especial</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de eventos -->
+            <div class="lg:col-span-2 space-y-4" id="events-list"></div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-20 px-gutter border-t border-white/5">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
+<p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">sensors</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">favorite</span></a>
+</div>
+</div>
+<div>
+<h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/devocional.html">Devocional Diario</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/0gINZ1DaGbmSd0gIwa2mYX?si=cNLbSKcFT_ypnyO0655izw" target="_blank">Música</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/calendario.html">Calendario de Eventos</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Soporte</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-white/5 text-center text-on-surface-variant text-sm">© 2026 Red Living. Todos los derechos reservados. Diseñado para la generación del ahora.</div>
+</footer>
+
+<script>
+// ── Eventos ──────────────────────────────────────────────────────────────────
+const EVENTS = [
+    { date: "2026-06-19", title: "Encuentro Red Living", time: "07:00 PM", location: "Sede Central", category: "encuentro", desc: "Nuestro encuentro semanal de adoración, palabra y comunidad." },
+    { date: "2026-06-20", title: "GA Sábado – Grupo Jeison", time: "05:00 PM", location: "San José", category: "grupo", desc: "Grupo de amistad semanal. Comidas, palabra y conexión." },
+    { date: "2026-06-21", title: "GA Sábado – Grupo Marcos", time: "04:00 PM", location: "Heredia", category: "grupo", desc: "Grupo de amistad con Marcos. Bienvenidos todos." },
+    { date: "2026-06-26", title: "Encuentro Red Living", time: "07:00 PM", location: "Sede Central", category: "encuentro", desc: "Nuestro encuentro semanal de adoración, palabra y comunidad." },
+    { date: "2026-06-27", title: "Noche de Talentos", time: "06:00 PM", location: "Sede Central", category: "especial", desc: "Una noche para celebrar los dones que Dios puso en la generación." },
+    { date: "2026-07-03", title: "Encuentro Red Living", time: "07:00 PM", location: "Sede Central", category: "encuentro", desc: "Nuestro encuentro semanal de adoración, palabra y comunidad." },
+    { date: "2026-07-04", title: "GA Sábado – Grupo Jennifer", time: "04:30 PM", location: "Alajuela", category: "grupo", desc: "Grupo de amistad con Jennifer." },
+    { date: "2026-07-10", title: "Encuentro Red Living", time: "07:00 PM", location: "Sede Central", category: "encuentro", desc: "Nuestro encuentro semanal de adoración, palabra y comunidad." },
+    { date: "2026-07-17", title: "Encuentro Red Living", time: "07:00 PM", location: "Sede Central", category: "encuentro", desc: "Nuestro encuentro semanal de adoración, palabra y comunidad." },
+    { date: "2026-07-24", title: "Retiro Red Living", time: "08:00 AM", location: "Por confirmar", category: "especial", desc: "Dos días de encuentro profundo con Dios. Detalles próximamente." },
+];
+
+const CATEGORY_STYLE = {
+    encuentro: { color: "#E50556", bg: "rgba(229,5,86,0.12)", label: "Encuentro", icon: "sensors" },
+    grupo:     { color: "#3B82F6", bg: "rgba(59,130,246,0.12)", label: "Grupo de Amistad", icon: "groups" },
+    especial:  { color: "#FBBF24", bg: "rgba(251,191,36,0.12)", label: "Evento Especial", icon: "star" },
+};
+
+const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+let currentYear = new Date().getFullYear();
+let currentMonth = new Date().getMonth();
+
+function eventDatesForMonth(year, month) {
+    const prefix = `${year}-${String(month+1).padStart(2,'0')}`;
+    return EVENTS.filter(e => e.date.startsWith(prefix)).map(e => parseInt(e.date.split('-')[2]));
+}
+
+function renderCalendar() {
+    const title = document.getElementById('calendar-title');
+    const grid  = document.getElementById('calendar-grid');
+    title.textContent = `${MONTHS_ES[currentMonth]} ${currentYear}`;
+
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const eventDays = eventDatesForMonth(currentYear, currentMonth);
+    const today = new Date();
+    const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() === currentMonth;
+
+    grid.innerHTML = '';
+    for (let i = 0; i < firstDay; i++) {
+        grid.innerHTML += `<div></div>`;
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+        const hasEvent = eventDays.includes(d);
+        const isToday  = isCurrentMonth && d === today.getDate();
+        grid.innerHTML += `<div class="relative flex items-center justify-center w-8 h-8 mx-auto rounded-full text-sm cursor-pointer transition-all
+            ${isToday ? 'bg-primary text-white font-bold' : 'hover:bg-white/10 text-on-surface-variant'}
+            ${hasEvent && !isToday ? 'cal-day-event' : ''}
+            ">${d}</div>`;
+    }
+}
+
+function renderEvents() {
+    const list = document.getElementById('events-list');
+    const now  = new Date(); now.setHours(0,0,0,0);
+    const upcoming = EVENTS
+        .filter(e => new Date(e.date + 'T00:00:00') >= now)
+        .sort((a,b) => a.date.localeCompare(b.date));
+
+    if (!upcoming.length) {
+        list.innerHTML = `<div class="glass-card rounded-3xl p-10 text-center text-on-surface-variant">No hay eventos próximos.</div>`;
+        return;
+    }
+
+    let lastMonth = '';
+    list.innerHTML = '';
+    upcoming.forEach(ev => {
+        const d = new Date(ev.date + 'T00:00:00');
+        const monthLabel = `${MONTHS_ES[d.getMonth()]} ${d.getFullYear()}`;
+        const style = CATEGORY_STYLE[ev.category];
+        const dayName = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][d.getDay()];
+
+        if (monthLabel !== lastMonth) {
+            list.innerHTML += `<h4 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest pt-4 pb-1 first:pt-0">${monthLabel}</h4>`;
+            lastMonth = monthLabel;
+        }
+
+        list.innerHTML += `
+        <div class="glass-card event-card rounded-2xl p-6 flex gap-5 items-start border border-white/10 cursor-default">
+            <div class="flex-shrink-0 w-14 text-center">
+                <div class="text-3xl font-bold text-white leading-none">${String(d.getDate()).padStart(2,'0')}</div>
+                <div class="text-xs text-on-surface-variant uppercase mt-1">${dayName.slice(0,3)}</div>
+            </div>
+            <div class="w-px self-stretch bg-white/10"></div>
+            <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap gap-2 items-center mb-2">
+                    <span class="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full" style="background:${style.bg};color:${style.color};">
+                        <span class="material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1;">${style.icon}</span>
+                        ${style.label}
+                    </span>
+                </div>
+                <h3 class="text-white font-bold text-lg leading-tight mb-1">${ev.title}</h3>
+                <p class="text-on-surface-variant text-sm mb-3">${ev.desc}</p>
+                <div class="flex flex-wrap gap-4 text-xs text-on-surface-variant">
+                    <span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span>${ev.time}</span>
+                    <span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span>${ev.location}</span>
+                </div>
+            </div>
+        </div>`;
+    });
+}
+
+document.getElementById('prev-month').addEventListener('click', () => {
+    currentMonth--; if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+    renderCalendar();
+});
+document.getElementById('next-month').addEventListener('click', () => {
+    currentMonth++; if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+    renderCalendar();
+});
+
+renderCalendar();
+renderEvents();
+
+// Sidebar
+const menuToggle = document.getElementById('menu-toggle');
+const closeSidebar = document.getElementById('close-sidebar');
+const sidebar = document.getElementById('sidebar-drawer');
+const overlay = document.getElementById('sidebar-overlay');
+function toggleMenu() {
+    const isOpen = sidebar.classList.contains('translate-x-0');
+    if (isOpen) {
+        sidebar.classList.remove('translate-x-0'); sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('opacity-0','pointer-events-none'); overlay.classList.remove('opacity-100');
+    } else {
+        sidebar.classList.remove('-translate-x-full'); sidebar.classList.add('translate-x-0');
+        overlay.classList.remove('opacity-0','pointer-events-none'); overlay.classList.add('opacity-100');
+    }
+}
+menuToggle.addEventListener('click', toggleMenu);
+closeSidebar.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+</script>
+</body></html>
