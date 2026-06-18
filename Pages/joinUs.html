@@ -110,21 +110,18 @@
 </head>
 <body class="font-body-main selection:bg-primary selection:text-on-primary">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center justify-between px-6 h-20">
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(229,5,86,0.1)] flex items-center px-6 h-20">
     <div class="flex items-center gap-4">
         <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200 md:hidden" id="menu-toggle">menu</span>
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FDvhhVF3fM4FcapjQwnM4hvXrBGvdDAdh3VNfRlKZysEMNwBicgquWikpVhTBh4lQIbUnnXe-XtSox8_7IWOWPFlRpAuS8Lzmc5DwbpLsSgaUU9gSjBntsJIhuAPwx-pyTGphQSgL3H4Xir5VL_2_AD91_3ZlX9fHRVz9-3MRqipVRLl4wE0uaFsUt5-2YcdeoNEkeg_6OdQQHAoiwA0Mkav63C9lHn8uUGvsi4qN8DhgzbUhZ8rEl3hCliWe2sXwg" alt="LIVING Logo" class="h-12 md:h-16 w-auto object-contain">
     </div>
-    <nav class="hidden md:flex gap-8">
+    <nav class="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/index.html">Inicio</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
-        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos de Amistad</a>
         <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
     </nav>
-    <div class="w-10 h-10 rounded-full border border-primary/30 overflow-hidden cursor-pointer">
-        <img alt="Usuario" class="w-full h-full object-cover" src="../assets/images/profile.avif">
-    </div>
 </header>
 <!-- Sidebar Drawer (Mobile) -->
 <div class="fixed inset-y-0 left-0 w-80 z-[100] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
@@ -156,7 +153,7 @@
             </a>
             <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/groups.html">
                 <span class="material-symbols-outlined">groups</span>
-                <span class="font-nav-link uppercase tracking-widest">Grupos</span>
+                <span class="font-nav-link uppercase tracking-widest">Grupos de Amistad</span>
             </a>
             <a class="bg-primary/15 text-primary rounded-2xl px-6 py-4 flex items-center gap-4 transition-all border border-primary/20" href="/Pages/joinUs.html">
                 <span class="material-symbols-outlined">sensors</span>
@@ -258,18 +255,18 @@
 <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="glass-panel p-8 rounded-2xl border-l-4 border-l-primary cursor-pointer hover:bg-white/5 transition-all">
 <span class="material-symbols-outlined text-primary mb-4">groups</span>
-<h4 class="font-headline-md text-white text-lg mb-2">Grupos de Conexión</h4>
-<p class="text-sm text-on-surface-variant">Pequeñas reuniones semanales en tu área para compartir la vida juntos.</p>
+<h4 class="font-headline-md text-white text-lg mb-2">Grupos de Amistad</h4>
+<p class="text-sm text-on-surface-variant">Pequeñas reuniones semanales para cerca tuyo para hablar sobre Dios y compartir la vida juntos.</p>
 </div>
 <div class="glass-panel p-8 rounded-2xl transform md:translate-y-8 cursor-pointer hover:bg-white/5 transition-all">
 <span class="material-symbols-outlined text-primary mb-4">bolt</span>
-<h4 class="font-headline-md text-white text-lg mb-2">Equipos de Impacto</h4>
-<p class="text-sm text-on-surface-variant">Usa tus dones y talentos para servir a la ciudad y a la casa.</p>
+<h4 class="font-headline-md text-white text-lg mb-2">Eventos</h4>
+<p class="text-sm text-on-surface-variant">Conecta con otro jóvenes y date cuenta de que Dios se ve de muchas formas fuera de lo ordinario.</p>
 </div>
 <div class="glass-panel p-8 rounded-2xl border-r-4 border-r-primary cursor-pointer hover:bg-white/5 transition-all">
 <span class="material-symbols-outlined text-primary mb-4">auto_awesome</span>
 <h4 class="font-headline-md text-white text-lg mb-2">Próximos Pasos</h4>
-<p class="text-sm text-on-surface-variant">Un viaje de 4 semanas para descubrir tu propósito en la familia de Dios.</p>
+<p class="text-sm text-on-surface-variant">Un viaje para descubrir tu propósito en la familia de Dios.</p>
 </div>
 </div>
 </div>
@@ -293,6 +290,37 @@
 <span class="font-nav-link text-nav-link text-[10px]">Perfil</span>
 </a>
 </nav>
+<footer class="bg-surface-container-lowest py-20 border-t border-white/5">
+<div class="px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
+<p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">sensors</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">favorite</span></a>
+</div>
+</div>
+<div>
+<h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/devocional.html">Devocional Diario</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/0gINZ1DaGbmSd0gIwa2mYX?si=cNLbSKcFT_ypnyO0655izw" target="_blank">Música</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/calendario.html">Calendario de Eventos</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Soporte</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-white/5 text-center text-on-surface-variant text-sm">© 2026 Red Living. Todos los derechos reservados. Diseñado para la generación del ahora.</div>
+</footer>
 <script>
     const form = document.getElementById('join-living-form');
     const successOverlay = document.getElementById('success-state');
