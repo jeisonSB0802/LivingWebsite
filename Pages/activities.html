@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Red Living</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <style>
     .material-symbols-outlined {
@@ -17,7 +17,7 @@
         color: #FFFFFF;
         overflow-x: hidden;
         min-height: max(884px, 100dvh);
-        font-family: 'Old Standard TT', serif;
+        font-family: 'Libre Baskerville', serif;
     }
     .glass-card {
         background: rgba(0, 0, 0, 0.7);
@@ -77,13 +77,13 @@
             "section-gap": "120px",
           },
           fontFamily: {
-            "headline-lg-mobile": ["Old Standard TT", "serif"],
-            "headline-lg":        ["Old Standard TT", "serif"],
-            "nav-link":           ["Old Standard TT", "serif"],
-            "display-hero":       ["Old Standard TT", "serif"],
-            "headline-md":        ["Old Standard TT", "serif"],
-            "body-main":          ["Old Standard TT", "serif"],
-            "quote-brush":        ["Old Standard TT", "serif"],
+            "headline-lg-mobile": ["Poppins", "sans-serif"],
+            "headline-lg":        ["Poppins", "sans-serif"],
+            "nav-link":           ["Poppins", "sans-serif"],
+            "display-hero":       ["Poppins", "sans-serif"],
+            "headline-md":        ["Poppins", "sans-serif"],
+            "body-main":          ["Libre Baskerville", "serif"],
+            "quote-brush":        ["Libre Baskerville", "serif"],
           },
           fontSize: {
             "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
@@ -107,7 +107,7 @@
         <div class="flex items-center justify-between mb-12">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
-                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/Recursos/profile.avif">
                 </div>
                 <div>
                     <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
@@ -177,9 +177,9 @@
             <div class="relative z-10">
                 <span class="text-white/80 font-nav-link uppercase tracking-[0.3em] mb-4 block">Transforma tu Fe</span>
                 <h2 class="font-display-hero text-headline-lg md:text-[80px] leading-tight mb-8 text-white drop-shadow-lg">
-                    EL PULSO DEL<br><span class="text-white">MOVIMIENTO.</span>
+                    EL PULSO DE LA <span class="text-white">RED.</span>
                 </h2>
-                <p class="max-w-xl text-white/90 mb-12">Conéctate a través del amor, el espíritu y los círculos sociales. Cada evento es un latido en nuestra comunidad.</p>
+                <p class="max-w-xl text-white/90 mb-12">Conéctate a través del amor, el espíritu y los círculos sociales. Cada evento es un latido en nuestra red.</p>
             </div>
         </div>
     </section>
@@ -294,7 +294,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
                 <span class="bg-white/20 w-fit px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Sociales</span>
                 <h3 class="font-headline-md text-white mb-2">Mega Grupos</h3>
-                <p class="text-on-surface-variant mb-6">Todos los grupos, un solo lugar. La comunidad entera reunida en una noche.</p>
+                <p class="text-on-surface-variant mb-6">Todos los grupos, un solo lugar. La red entera reunida en una noche.</p>
                 <button class="w-fit px-6 py-2 border border-primary text-primary rounded-full font-nav-link uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Saber más</button>
             </div>
         </div>
@@ -349,75 +349,15 @@
     <!-- Upcoming Events -->
     <section class="max-w-4xl mx-auto">
         <div class="flex items-center justify-between mb-12">
-            <h2 class="font-headline-lg text-white uppercase">Próximos <span class="text-primary">Latidos</span></h2>
+            <h2 class="font-headline-lg text-white uppercase">Próximos <span class="text-primary">Eventos</span></h2>
             <span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:translate-x-1 transition-transform">keyboard_arrow_right</span>
         </div>
-        <div class="space-y-6">
 
-            <!-- Evento 1 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group cursor-pointer border-l-4 border-l-primary">
-                <div class="flex flex-col items-center justify-center min-w-[80px]">
-                    <span class="text-primary font-display-hero text-headline-md">22</span>
-                    <span class="text-on-surface-variant text-xs uppercase tracking-widest">JUN</span>
-                </div>
-                <div class="flex-1 text-center md:text-left">
-                    <h4 class="font-headline-md text-white group-hover:text-primary transition-colors">Noches de Campamento</h4>
-                    <p class="text-on-surface-variant">Iglesia Cemilan • 08:00 PM</p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="flex -space-x-3">
-                        <img alt="usuario" class="w-8 h-8 rounded-full border-2 border-black" src="/assets/images/Recursos/Esteban.jpg">
-                        <img alt="usuario" class="w-8 h-8 rounded-full border-2 border-black" src="/assets/images/Recursos/Valery GA.png">
-                        <div class="w-8 h-8 rounded-full border-2 border-black bg-primary flex items-center justify-center text-[10px] font-bold text-white">+12</div>
-                    </div>
-                    <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                </div>
-            </div>
-
-            <!-- Evento 2 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group cursor-pointer border-l-4 border-l-white/20">
-                <div class="flex flex-col items-center justify-center min-w-[80px]">
-                    <span class="text-white font-display-hero text-headline-md">28</span>
-                    <span class="text-on-surface-variant text-xs uppercase tracking-widest">JUN</span>
-                </div>
-                <div class="flex-1 text-center md:text-left">
-                    <h4 class="font-headline-md text-white group-hover:text-primary transition-colors">Torneo de Baloncesto Red Living</h4>
-                    <p class="text-on-surface-variant">Gimnasio de San Pedro • 08:30 PM</p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="flex -space-x-3">
-                        <img alt="usuario" class="w-8 h-8 rounded-full border-2 border-black" src="/assets/images/Recursos/Jeison.jpg">
-                        <div class="w-8 h-8 rounded-full border-2 border-black bg-primary flex items-center justify-center text-[10px] font-bold text-white">+45</div>
-                    </div>
-                    <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                </div>
-            </div>
-
-            <!-- Evento 3 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group cursor-pointer border-l-4 border-l-white/20">
-                <div class="flex flex-col items-center justify-center min-w-[80px]">
-                    <span class="text-white font-display-hero text-headline-md">05</span>
-                    <span class="text-on-surface-variant text-xs uppercase tracking-widest">JUL</span>
-                </div>
-                <div class="flex-1 text-center md:text-left">
-                    <h4 class="font-headline-md text-white group-hover:text-primary transition-colors">Noche de Talentos Living</h4>
-                    <p class="text-on-surface-variant">Iglesia Cemilan • 07:00 PM</p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="flex -space-x-3">
-                        <img alt="usuario" class="w-8 h-8 rounded-full border-2 border-black" src="/assets/images/Recursos/Jennifer.jpg">
-                        <img alt="usuario" class="w-8 h-8 rounded-full border-2 border-black" src="/assets/images/Recursos/Fatima.jpg">
-                    </div>
-                    <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                </div>
-            </div>
-
-        </div>
 
         <div class="mt-12 text-center">
-            <button class="font-nav-link text-primary uppercase tracking-[0.2em] border-b-2 border-primary pb-2 hover:opacity-70 transition-opacity active:scale-95">
-                Cargar más actividades
-            </button>
+            <a href="/Pages/calendario.html" class="font-nav-link text-primary uppercase tracking-[0.2em] border-b-2 border-primary pb-2 hover:opacity-70 transition-opacity active:scale-95">
+                Ver calendario completo
+            </a>
         </div>
     </section>
 
@@ -438,7 +378,7 @@
 <h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
 <ul class="space-y-4">
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/devocional.html">Devocional Diario</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/0gINZ1DaGbmSd0gIwa2mYX?si=cNLbSKcFT_ypnyO0655izw" target="_blank">Música</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/3Mfj6OMVvEeLjXVUdnm4Ge?si=8cc8d5e7b31b4619" target="_blank">Música</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/calendario.html">Calendario de Eventos</a></li>
 </ul>
 </div>
@@ -551,6 +491,77 @@
         card.style.transition = "all 0.6s ease-out";
         observer.observe(card);
     });
+
+    // ── Próximos Latidos ─────────────────────────────────────────────────────
+    const EVENTOS = [
+        { date:"2026-06-20", title:"Encuentro Niños", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-06-28", title:"Consagración de Niños", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-06-30", title:"Noche de ADN", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-06", title:"Termina New Life I", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-12", title:"Santa Cena", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-13", title:"Inicia New Life IV", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-16", title:"Impact", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-17", title:"Impact", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-18", title:"Impact", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-19", title:"Banco de Alimentos", time:"9:00 AM", location:"Auditorio Cemilan" },
+        { date:"2026-07-26", title:"Consagración de Niños", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-27", title:"Inicia New Life II", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-07-28", title:"Noche de ADN", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-08-08", title:"Congreso de Mujeres", time:"9:00 AM", location:"Auditorio Cemilan" },
+        { date:"2026-08-09", title:"Santa Cena", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-08-25", title:"Noche de ADN", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-08-28", title:"Lanzamiento", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-08-29", title:"Lanzamiento", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-09-05", title:"Encuentro Living", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-09-12", title:"Encuentro Mujeres", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-09-13", title:"Santa Cena", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-09-19", title:"Encuentro Hombres", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-09-26", title:"Encuentro Young Living", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-09-29", title:"Noche de ADN", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-10-03", title:"Día del Adulto Mayor", time:"10:00 AM", location:"Auditorio Cemilan" },
+        { date:"2026-10-09", title:"Actividad de Matrimonios", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-10-11", title:"Santa Cena", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-10-24", title:"Bautizos · Actividad Soy Luz", time:"10:00 AM", location:"Auditorio Cemilan" },
+        { date:"2026-10-31", title:"Campamento de Jóvenes", time:"8:00 AM", location:"Por confirmar" },
+        { date:"2026-11-03", title:"Noche de ADN — Plan 2027", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-11-15", title:"Santa Cena", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-11-27", title:"Encuentro Servidores", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-12-05", title:"Última Cumbre del Año", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-12-06", title:"Experiencia de Fe de Visión", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-12-13", title:"Fiesta de las Cosechas", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-12-20", title:"Experiencia de Fe de Navidad", time:"7:00 PM", location:"Auditorio Cemilan" },
+        { date:"2026-12-27", title:"Última Experiencia de Fe del Año", time:"7:00 PM", location:"Auditorio Cemilan" },
+    ];
+    const MESES = ["ENE","FEB","MAR","ABR","MAY","JUN","JUL","AGO","SEP","OCT","NOV","DIC"];
+    (function renderProximosLatidos() {
+        const container = document.getElementById('proximos-latidos');
+        if (!container) return;
+        const now = new Date(); now.setHours(0,0,0,0);
+        const proximos = EVENTOS
+            .filter(e => new Date(e.date + 'T00:00:00') >= now)
+            .sort((a,b) => a.date.localeCompare(b.date))
+            .slice(0, 4);
+        if (!proximos.length) {
+            container.innerHTML = `<p class="text-on-surface-variant text-center">No hay eventos próximos.</p>`;
+            return;
+        }
+        proximos.forEach((ev, i) => {
+            const d = new Date(ev.date + 'T00:00:00');
+            container.innerHTML += `
+            <a href="/Pages/calendario.html" class="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 hover:bg-white/5 transition-all group border-l-4 ${i === 0 ? 'border-l-primary' : 'border-l-white/20'}">
+                <div class="flex flex-col items-center justify-center min-w-[80px]">
+                    <span class="${i === 0 ? 'text-primary' : 'text-white'} font-bold text-4xl leading-none">${String(d.getDate()).padStart(2,'0')}</span>
+                    <span class="text-on-surface-variant text-xs uppercase tracking-widest mt-1">${MESES[d.getMonth()]}</span>
+                </div>
+                <div class="w-px self-stretch bg-white/10 hidden md:block"></div>
+                <div class="flex-1 text-center md:text-left">
+                    <h4 class="font-headline-md text-white group-hover:text-primary transition-colors">${ev.title}</h4>
+                    <p class="text-on-surface-variant text-sm">${ev.location} • ${ev.time}</p>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </a>`;
+        });
+    })();
 </script>
 
 </body>

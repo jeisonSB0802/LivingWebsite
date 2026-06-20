@@ -1,10 +1,10 @@
-<!DOCTYPE html><html class="dark" lang="es"><head>
+﻿<!DOCTYPE html><html class="dark" lang="es"><head>
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="../assets/images/Recursos/Logo3.png">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Red Living</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <style>
     .material-symbols-outlined {
@@ -20,7 +20,7 @@
       color: #FFFFFF;
       overflow-x: hidden;
       min-height: max(884px, 100dvh);
-      font-family: 'Old Standard TT', serif;
+      font-family: 'Libre Baskerville', serif;
     }
   </style>
 <script id="tailwind-config">
@@ -61,13 +61,13 @@
             "unit": "8px"
           },
           "fontFamily": {
-            "headline-lg-mobile": ["Old Standard TT", "serif"],
-            "headline-lg": ["Old Standard TT", "serif"],
-            "nav-link": ["Old Standard TT", "serif"],
-            "display-hero": ["Old Standard TT", "serif"],
-            "headline-md": ["Old Standard TT", "serif"],
-            "body-main": ["Old Standard TT", "serif"],
-            "quote-brush": ["Old Standard TT", "serif"]
+            "headline-lg-mobile": ["Poppins", "sans-serif"],
+            "headline-lg": ["Poppins", "sans-serif"],
+            "nav-link": ["Poppins", "sans-serif"],
+            "display-hero": ["Poppins", "sans-serif"],
+            "headline-md": ["Poppins", "sans-serif"],
+            "body-main": ["Libre Baskerville", "serif"],
+            "quote-brush": ["Libre Baskerville", "serif"]
           },
           "fontSize": {
             "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
@@ -82,6 +82,7 @@
       },
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 </head>
 <body class="font-body-main text-body-main">
 <!-- TopAppBar Component -->
@@ -104,7 +105,7 @@
         <div class="flex items-center justify-between mb-12">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
-                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/profile.avif">
+                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/Recursos/profile.avif">
                 </div>
                 <div>
                     <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
@@ -152,11 +153,41 @@
     <div class="text-center mb-16">
         <a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors mb-6" href="/Pages/groups.html">
             <span class="material-symbols-outlined">arrow_back</span>
-            <span class="font-nav-link uppercase tracking-widest text-sm">Volver a Grupos</span>
+            <span class="font-nav-link uppercase tracking-widest text-sm">Volver</span>
         </a>
         <h2 class="font-display-hero text-headline-lg-mobile md:text-headline-lg text-white leading-tight mb-4">Todos los <span class="text-primary">Grupos de Amistad</span></h2>
         <p class="text-on-surface-variant max-w-2xl mx-auto">Encuentra el grupo que mejor se acomode a tu zona, día y horario. Todos te esperan con los brazos abiertos.</p>
     </div>
+
+    <!-- Nuestra Conquista -->
+    <section class="mb-16">
+        <div class="text-center mb-8">
+            <p class="text-primary font-nav-link text-nav-link uppercase tracking-widest text-xs mb-2">Avance del Reino</p>
+            <h3 class="font-display-hero text-headline-md text-white mb-2">Nuestra Conquista</h3>
+            <p class="text-on-surface-variant text-sm max-w-sm mx-auto">Cada comunidad donde la vida está siendo transformada.</p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mb-8 max-w-xs mx-auto">
+            <div class="glass-card rounded-2xl p-5 text-center">
+                <p class="text-3xl font-bold text-primary">20</p>
+                <p class="text-on-surface-variant text-[11px] mt-1 uppercase tracking-wider">Grupos</p>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center flex flex-col items-center justify-center">
+                <p class="text-3xl font-bold text-primary">3</p>
+                <p class="text-on-surface-variant text-[11px] mt-1 uppercase tracking-wider">Cantones</p>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+                <p class="text-3xl font-bold text-white/30">+4</p>
+                <p class="text-on-surface-variant text-[11px] mt-1 uppercase tracking-wider">Metas</p>
+            </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style="height:460px;background:#07070a;">
+            <svg id="cr-conquest" style="width:100%;height:100%;display:block;"></svg>
+        </div>
+        <div class="flex items-center justify-center gap-8 mt-4 text-xs text-on-surface-variant">
+            <span class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-primary"></span>Grupos activos</span>
+            <span class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full border-2 border-dashed border-white/40"></span>Meta futura</span>
+        </div>
+    </section>
 
     <!-- Day Filter Tabs -->
     <div class="flex flex-wrap gap-3 justify-center mb-12">
@@ -167,7 +198,6 @@
         <button class="group-tab px-5 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 text-xs" data-filter="jueves">Jueves</button>
         <button class="group-tab px-5 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 text-xs" data-filter="viernes">Viernes</button>
         <button class="group-tab px-5 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 text-xs" data-filter="sabado">Sábado</button>
-        <button class="group-tab px-5 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 text-xs" data-filter="campus">Campus</button>
     </div>
 
     <!-- Red de Jovenes Schedule -->
@@ -178,18 +208,17 @@
             <!-- San Juan | Lunes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="lunes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20San%20Juan.jpeg" alt="GA San Juan" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Juan%20(Soshil%20y%20Gen).jpg" alt="GA San Juan Lunes" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Lunes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Juan</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA San Juan</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, San Juan</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Soshil%20GA.jpg" alt="Soshil" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Soshil</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Genesis%20GA.jpg" alt="Génesis" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Génesis</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/profile.avif" alt="Soshil" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Soshil</p></div>
                     </div>
                     <a href="https://wa.me/50661056277" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -198,18 +227,18 @@
             <!-- Los Parques | Lunes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="lunes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/480283955_658137480139155_4473707160865691553_n.jpg" alt="Los Parques" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Los%20parques.jpg" alt="Los Parques" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Lunes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Los Parques</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Los Parques</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, Los Parques</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Melany%20GA.jpg" alt="Melany" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Melany</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Natanael%20GA.jpg" alt="Natanael" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Natanael</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Melany.png" alt="Melany" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Melany</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Natanael.png" alt="Natanael" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Natanael</p></div>
                     </div>
                     <a href="https://wa.me/50660229581" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -218,18 +247,18 @@
             <!-- San Juan | Martes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="martes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20San%20Juan.jpeg" alt="GA San Juan" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Juan%20(Marcos%20y%20Jessica).jpg" alt="GA San Juan Martes" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Martes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Juan</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 6:30 pm</p>
+                        <p class="text-white font-bold">GA San Juan</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 6:30 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, San Juan</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Marcos%20GA.jpg" alt="Marcos" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Marcos</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Jessica%20GA.jpg" alt="Jessica" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jessica</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Marcos.png" alt="Marcos" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Marcos</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Jessica.png" alt="Jessica" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jessica</p></div>
                     </div>
                     <a href="https://wa.me/50662332979" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -238,18 +267,18 @@
             <!-- San Pedro | Martes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="martes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/551276305_803996025553299_583223847671329415_n.jpg" alt="San Pedro" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Pedro%20(Dylan%20Z%20y%20Bianca).jpg" alt="San Pedro" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Martes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Pedro</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:30 pm</p>
+                        <p class="text-white font-bold">GA San Pedro</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:30 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, San Pedro</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Dylan%20Z%20GA.jpg" alt="Dylan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Dylan</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Bianca%20GA.jpg" alt="Bianca" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Bianca</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/profile.avif" alt="Dylan Z" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Dylan Z</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Bianca.png" alt="Bianca" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Bianca</p></div>
                     </div>
                     <a href="https://wa.me/50687053942" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -258,61 +287,79 @@
             <!-- San Juan | Miércoles -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="miercoles">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20San%20Juan.jpeg" alt="GA San Juan" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Juan%20(Vale%2C%20Raquel%2C%20Luisjo).jpg" alt="GA San Juan Miércoles" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Miércoles</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Juan</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA San Juan</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, San Juan</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Valery%20GA.png" alt="Valery" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Valery</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Raquel%20GA.jpg" alt="Raquel" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Raquel</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Luis%20Jose%20GA.jpg" alt="Luis José" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Luis José</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Valery.png" alt="Valery" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Valery</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Raquel.png" alt="Raquel" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Raquel</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/LuisJo.png" alt="Luis José" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Luis José</p></div>
                     </div>
                     <a href="https://wa.me/50684920810" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
+                </div>
+            </div>
+
+            <!-- Copán | Miércoles -->
+            <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="miercoles">
+                <div class="h-40 relative overflow-hidden">
+                    <img src="../assets/images/GruposDeAmistad/Cop%C3%A1n%20(Keisy%20y%20Gen).jpg" alt="Copán" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Miércoles</span>
+                    <div class="absolute bottom-3 left-4">
+                        <p class="text-white font-bold">GA Copán</p>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, Copán</span></div>
+                    <div class="flex flex-wrap gap-3 mb-5">
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/profile.avif" alt="Keisy" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Keisy</p></div>
+                    </div>
+                     <a href="https://wa.me/50671718381" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
             </div>
 
             <!-- San Rafael | Miércoles -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="miercoles">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/681352375_980710711215162_6811066996432991596_n.jpg" alt="San Rafael" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Rafel%20(Gael%20y%20Gen).jpg" alt="San Rafael" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Miércoles</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Rafael</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:30 pm</p>
+                        <p class="text-white font-bold">GA San Rafael</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:30 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, San Rafael</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/profile.avif" alt="Gael" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Gael</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Genesis%20GA.jpg" alt="Génesis" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Génesis</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Gael.png" alt="Gael" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Gael</p></div>
                     </div>
-                    <a href="https://wa.me/50661056277" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
+                    <a href="https://wa.me/50672643593" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
             </div>
 
             <!-- San Miguel | Miércoles -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="miercoles">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20San%20Miguel.jpeg" alt="GA San Miguel" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Miguel.jpg" alt="GA San Miguel" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Miércoles</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Miguel</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:30 pm</p>
+                        <p class="text-white font-bold">GA San Miguel</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:30 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Naranjo, San Miguel</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Bernal.jpg" alt="Bernal" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Bernal</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Jennifer%20GA.jpg" alt="Jennifer" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jennifer</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Yendry%20GA.jpg" alt="Yendry" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Yendry</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Steven%20GA.jpg" alt="Steven" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Steven</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Bernal.png" alt="Bernal" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Bernal</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/profile.avif" alt="Jennifer" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jennifer</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Yendry.png" alt="Yendry" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Yendry</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Steven.png" alt="Steven" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Steven</p></div>
                     </div>
                     <a href="https://wa.me/50670805428" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -321,18 +368,18 @@
             <!-- Las Lomas | Jueves -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="jueves">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/480491981_658137473472489_2742367670017237605_n.jpg" alt="Las Lomas" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Las%20lomas%20(G%C3%A9nesis%20y%20Dylan%20J).jpg" alt="Las Lomas" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jueves</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Las Lomas</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 6:30 pm</p>
+                        <p class="text-white font-bold">GA Las Lomas</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 6:30 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, Las Lomas</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Genesis%20GA.jpg" alt="Génesis" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Génesis</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Dylan%20Z%20GA.jpg" alt="Dylan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Dylan</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/profile.avif" alt="Génesis" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Génesis</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Dylan%20J.png" alt="Dylan J" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Dylan J</p></div>
                     </div>
                     <a href="https://wa.me/50663271765" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -341,20 +388,20 @@
             <!-- Virtual | Jueves -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="jueves">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/480506176_658137513472485_7617967124333093261_n.jpg" alt="Virtual" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Virtual.png" alt="Virtual" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jueves</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Virtual</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Virtual</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Virtual</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Josue%20GA.jpg" alt="Josué" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Josué</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Bryan%20GA.jpg" alt="Bryan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Bryan</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Yoselin%20GA.jpg" alt="Yoselin" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Yoselin</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Sharon%20GA.jpg" alt="Sharon" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Sharon</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Josue.png" alt="Josué" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Josué</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Bryan.png" alt="Bryan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Bryan</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Yoselin.png" alt="Yoselin" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Yoselin</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Sharon.png" alt="Sharon" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Sharon</p></div>
                     </div>
                     <a href="https://wa.me/50662782085" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -363,19 +410,19 @@
             <!-- Centro | Jueves -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="jueves">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/480660222_658137536805816_8313916369140775960_n.jpg" alt="Centro" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Centro%20(byrone%2C%20David%20y%20Nayeli).jpg" alt="Centro" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jueves</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Centro</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Centro</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Naranjo</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Byrone%20GA.jpg" alt="Byrone" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Byrone</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/David%20GA.jpg" alt="David" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">David</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Nayeli%20GA.jpg" alt="Nayeli" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Nayeli</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Byrone.png" alt="Byrone" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Byrone</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/David.png" alt="David" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">David</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Nayeli.png" alt="Nayeli" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Nayeli</p></div>
                     </div>
                     <a href="https://wa.me/50663658363" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -384,18 +431,18 @@
             <!-- San Juan | Jueves -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="jueves">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20San%20Juan.jpeg" alt="GA San Juan" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/San%20Juan%20(Esteban%20y%20Betsy).jpg" alt="GA San Juan Jueves" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jueves</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">San Juan</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA San Juan</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, San Juan</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Esteban%20GA.jpg" alt="Esteban" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Esteban</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Betsy%20GA.png" alt="Betsy" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Betsy</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Esteban.png" alt="Esteban" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Esteban</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Betsy.png" alt="Betsy" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Betsy</p></div>
                     </div>
                     <a href="https://wa.me/50686581740" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -404,18 +451,17 @@
             <!-- Pura Vida Misiones | Jueves -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="jueves">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/480663158_658137523472484_6362662774838046437_n.jpg" alt="Pura Vida Misiones" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/GA%20Naranjo.jpeg" alt="Pura Vida Misiones" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jueves</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Pura Vida Misiones</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Pura Vida Misiones</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, Pura Vida Misiones</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Aaron%20GA.jpg" alt="Aarón" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Aarón</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Genesis%20GA.jpg" alt="Génesis" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Génesis</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Aaron.png" alt="Aarón" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Aarón</p></div>
                     </div>
                     <a href="https://wa.me/50687660356" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -428,14 +474,14 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jueves</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Naranjo Centro</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Naranjo</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Naranjo</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Fatima%20GA.jpg" alt="Fátima" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Fátima</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Jeison%20GA.jpg" alt="Jeison" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jeison</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Fatima.png" alt="Fátima" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Fátima</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Jeison.png" alt="Jeison" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jeison</p></div>
                     </div>
                     <a href="https://wa.me/50671327606" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -444,18 +490,18 @@
             <!-- Virtual | Viernes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="viernes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/481045233_642037325082504_8585410702015294191_n.jpg" alt="Virtual" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Virtual.png" alt="Virtual" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Viernes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Virtual</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 10:00 am</p>
+                        <p class="text-white font-bold">GA Virtual</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 10:00 AM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Virtual</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Marcos%20GA.jpg" alt="Marcos" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Marcos</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Jessica%20GA.jpg" alt="Jessica" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jessica</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Marcos.png" alt="Marcos" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Marcos</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Jessica.png" alt="Jessica" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jessica</p></div>
                     </div>
                     <a href="https://wa.me/50689804970" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -464,19 +510,19 @@
             <!-- Volio 6pm | Viernes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="viernes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/481669543_642037211749182_1165435584531176327_n.jpg" alt="Volio" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Volio%20(Kevin).jpg" alt="Volio" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Viernes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Volio</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 6:00 pm</p>
+                        <p class="text-white font-bold">GA Volio</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 6:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, Volio</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Valery%20GA.png" alt="Valery" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Valery</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Raquel%20GA.jpg" alt="Raquel" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Raquel</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Luis%20Jose%20GA.jpg" alt="Luis José" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Luis José</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Valery.png" alt="Valery" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Valery</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Raquel.png" alt="Raquel" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Raquel</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/LuisJo.png" alt="Luis José" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Luis José</p></div>
                     </div>
                     <a href="https://wa.me/50684920810" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -485,18 +531,17 @@
             <!-- Volio 7pm | Viernes -->
             <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="viernes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/Encuentros/484809368_657577456861824_7726101275455353850_n.jpg" alt="Volio" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Volio%20(Kevin).jpg" alt="Volio" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Viernes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Volio</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Volio</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> San Ramón, Volio</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Kevin%20GA.jpg" alt="Kevin" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Kevin</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Eventos/Genesis%20GA.jpg" alt="Génesis" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Génesis</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Kevin.png" alt="Kevin" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Kevin</p></div>
                     </div>
                     <a href="https://wa.me/50687888341" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -509,52 +554,52 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sábado</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Naranjo Rosario</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA El Rosario</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Naranjo, El Rosario</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Fatima%20GA.jpg" alt="Fátima" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Fátima</p></div>
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Jeison%20GA.jpg" alt="Jeison" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jeison</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Fatima.png" alt="Fátima" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Fátima</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Jeison.png" alt="Jeison" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Jeison</p></div>
                     </div>
                     <a href="https://wa.me/50664717568" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
             </div>
 
             <!-- Cocaleca | Campus -->
-            <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="campus">
+            <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="miercoles">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20Palmares.jpeg" alt="Cocaleca" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Cocaleca.jpg" alt="Cocaleca" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                    <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Campus · Miércoles</span>
+                    <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Miércoles</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Cocaleca</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Cocaleca</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Palmares, Cocaleca</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Brayan%20GA.jpg" alt="Brayan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Brayan</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Brayan.png" alt="Brayan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Brayan</p></div>
                     </div>
                     <a href="https://wa.me/50689511113" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
             </div>
 
             <!-- Campus Palmares | Campus -->
-            <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="campus">
+            <div class="group-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300" data-day="viernes">
                 <div class="h-40 relative overflow-hidden">
-                    <img src="../assets/images/GruposDeAmistad/GA%20Palmares.jpeg" alt="Campus Palmares" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+                    <img src="../assets/images/GruposDeAmistad/Campus%20Palmares.jpg" alt="Campus Palmares" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                    <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Campus · Viernes</span>
+                    <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Viernes</span>
                     <div class="absolute bottom-3 left-4">
-                        <p class="text-white font-bold">Campus Palmares</p>
-                        <p class="text-white/70 text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7:00 pm</p>
+                        <p class="text-white font-bold">GA Palmares</p>
                     </div>
                 </div>
                 <div class="p-5">
+                    <div class="flex items-center gap-3 mb-4 text-xs text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">schedule</span> 7:00 PM</span><span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;">location_on</span> Palmares</span></div>
                     <div class="flex flex-wrap gap-3 mb-5">
-                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Iglesia/Brayan%20GA.jpg" alt="Brayan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Brayan</p></div>
+                        <div class="flex flex-col items-center gap-1"><div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden"><img src="../assets/images/Recursos/Brayan.png" alt="Brayan" class="w-full h-full object-cover" loading="lazy"></div><p class="text-[10px] text-on-surface-variant">Brayan</p></div>
                     </div>
                     <a href="https://wa.me/50689511113" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">chat</span> Unirse</a>
                 </div>
@@ -608,7 +653,7 @@
 <h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
 <ul class="space-y-4">
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/devocional.html">Devocional Diario</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/0gINZ1DaGbmSd0gIwa2mYX?si=cNLbSKcFT_ypnyO0655izw" target="_blank">Música</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://open.spotify.com/playlist/3Mfj6OMVvEeLjXVUdnm4Ge?si=8cc8d5e7b31b4619" target="_blank">Música</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/calendario.html">Calendario de Eventos</a></li>
 </ul>
 </div>
@@ -658,6 +703,106 @@
             overlay.classList.remove('opacity-100');
         });
     });
+
+    // ── Costa Rica conquest map ──
+    (function () {
+        if (typeof d3 === 'undefined') return;
+        var svgEl = document.getElementById('cr-conquest');
+        if (!svgEl) return;
+        var bbox = svgEl.parentElement.getBoundingClientRect();
+        var W = bbox.width  || 860;
+        var H = bbox.height || 460;
+        svgEl.setAttribute('width',  W);
+        svgEl.setAttribute('height', H);
+
+        // Real Costa Rica border (source: natural earth / world.geo.json)
+        var CRI = [[-82.965783,8.225028],[-83.508437,8.446927],[-83.711474,8.656836],[-83.596313,8.830443],[-83.632642,9.051386],[-83.909886,9.290803],[-84.303402,9.487354],[-84.647644,9.615537],[-84.713351,9.908052],[-84.97566,10.086723],[-84.911375,9.795992],[-85.110923,9.55704],[-85.339488,9.834542],[-85.660787,9.933347],[-85.797445,10.134886],[-85.791709,10.439337],[-85.659314,10.754331],[-85.941725,10.895278],[-85.71254,11.088445],[-85.561852,11.217119],[-84.903003,10.952303],[-84.673069,11.082657],[-84.355931,10.999226],[-84.190179,10.79345],[-83.895054,10.726839],[-83.655612,10.938764],[-83.40232,10.395438],[-83.015677,9.992982],[-82.546196,9.566135],[-82.932891,9.476812],[-82.927155,9.07433],[-82.719183,8.925709],[-82.868657,8.807266],[-82.829771,8.626295],[-82.913176,8.423517],[-82.965783,8.225028]];
+
+        // Approximate Alajuela province polygon
+        var ALA = [[-85.02,10.94],[-84.7,11.06],[-84.45,11.05],[-84.15,11.0],[-83.95,10.95],[-83.82,10.78],[-83.72,10.55],[-83.78,10.32],[-83.78,10.1],[-83.88,9.9],[-84.02,9.7],[-84.15,9.58],[-84.45,9.55],[-84.65,9.6],[-84.78,9.68],[-84.9,9.85],[-85.02,9.95],[-84.96,10.18],[-84.85,10.42],[-84.74,10.55],[-84.72,10.78],[-84.83,10.95],[-85.02,10.94]];
+
+        var criFeature  = {type:"Feature",properties:{},geometry:{type:"Polygon",coordinates:[CRI]}};
+        var alaFeature  = {type:"Feature",properties:{},geometry:{type:"Polygon",coordinates:[ALA]}};
+        var criGeo      = {type:"FeatureCollection",features:[criFeature]};
+
+        var svg  = d3.select('#cr-conquest');
+        var defs = svg.append('defs');
+
+        // Grid pattern
+        var pat = defs.append('pattern').attr('id','crg').attr('width',28).attr('height',28).attr('patternUnits','userSpaceOnUse');
+        pat.append('path').attr('d','M 28 0 L 0 0 0 28').attr('fill','none').attr('stroke','rgba(255,255,255,0.04)').attr('stroke-width',0.8);
+
+        // Glow filter
+        var gf = defs.append('filter').attr('id','crglow').attr('x','-80%').attr('y','-80%').attr('width','260%').attr('height','260%');
+        gf.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation',10).attr('result','blur');
+        var fm = gf.append('feMerge');
+        fm.append('feMergeNode').attr('in','blur');
+        fm.append('feMergeNode').attr('in','SourceGraphic');
+
+        // Radial gradient for active zone
+        var rg = defs.append('radialGradient').attr('id','crrg').attr('cx','50%').attr('cy','50%').attr('r','50%');
+        rg.append('stop').attr('offset','0%').attr('stop-color','#E50556').attr('stop-opacity',0.55);
+        rg.append('stop').attr('offset','100%').attr('stop-color','#E50556').attr('stop-opacity',0);
+
+        // Backgrounds
+        svg.append('rect').attr('width',W).attr('height',H).attr('fill','#07070a');
+        svg.append('rect').attr('width',W).attr('height',H).attr('fill','url(#crg)');
+
+        var LABEL_W = 260;
+        var MAP_W   = W - LABEL_W;
+
+        var proj = d3.geoMercator().fitExtent([[20,20],[MAP_W-20,H-20]], criGeo);
+        var path = d3.geoPath().projection(proj);
+
+        // Clip path = real Costa Rica outline
+        defs.append('clipPath').attr('id','cr-clip')
+            .append('path').datum(criFeature).attr('d', path);
+
+        // Country fill (real shape)
+        svg.append('path').datum(criFeature)
+            .attr('d', path)
+            .attr('fill','#111118')
+            .attr('stroke','rgba(255,255,255,0.18)')
+            .attr('stroke-width',1.2)
+            .attr('stroke-linejoin','round');
+
+        // Alajuela highlight clipped to real border
+        svg.append('path').datum(alaFeature)
+            .attr('clip-path','url(#cr-clip)')
+            .attr('d', path)
+            .attr('fill','rgba(229,5,86,0.25)')
+            .attr('stroke','rgba(229,5,86,0.7)')
+            .attr('stroke-width',1.5)
+            .attr('stroke-linejoin','round');
+
+        // Active zone glow + pin
+        var ap = proj([-84.44, 10.07]);
+        var ax = ap[0], ay = ap[1];
+        svg.append('circle').attr('cx',ax).attr('cy',ay).attr('r',68).attr('fill','url(#crrg)');
+        svg.append('circle').attr('cx',ax).attr('cy',ay).attr('r',15)
+            .attr('fill','#E50556').attr('stroke','white').attr('stroke-width',2.5).attr('filter','url(#crglow)');
+        svg.append('text').attr('x',ax).attr('y',ay+1).attr('text-anchor','middle').attr('dominant-baseline','middle')
+            .attr('fill','white').attr('font-size',10).attr('font-weight',700).attr('font-family','Poppins,sans-serif').text('20');
+
+        // Ghost pins (future targets)
+        [[-84.31,10.07],[-84.35,10.10],[-84.38,9.98],[-84.40,10.17]].forEach(function(c){
+            var tp = proj(c);
+            svg.append('circle').attr('cx',tp[0]).attr('cy',tp[1]).attr('r',8)
+                .attr('fill','none').attr('stroke','rgba(255,255,255,0.28)').attr('stroke-width',1.5).attr('stroke-dasharray','3,2');
+        });
+
+        // Labels
+        var lx = MAP_W + 18, ly = H / 2 - 55;
+        svg.append('line').attr('x1',ax+16).attr('y1',ay-6).attr('x2',lx).attr('y2',ly+10).attr('stroke','rgba(229,5,86,0.55)').attr('stroke-width',1);
+        svg.append('circle').attr('cx',lx).attr('cy',ly+10).attr('r',3.5).attr('fill','#E50556');
+        svg.append('text').attr('x',lx+10).attr('y',ly+7).attr('fill','#E50556').attr('font-size',11).attr('font-weight',700).attr('font-family','Poppins,sans-serif').text('San Ramón · Naranjo · Palmares');
+        svg.append('text').attr('x',lx+10).attr('y',ly+24).attr('fill','rgba(255,255,255,0.38)').attr('font-size',10).attr('font-family','Poppins,sans-serif').text('20 grupos activos · 3 cantones');
+
+        svg.append('line').attr('x1',ax+16).attr('y1',ay+8).attr('x2',lx).attr('y2',ly+65).attr('stroke','rgba(255,255,255,0.18)').attr('stroke-width',1).attr('stroke-dasharray','4,3');
+        svg.append('circle').attr('cx',lx).attr('cy',ly+65).attr('r',2.5).attr('fill','rgba(255,255,255,0.28)');
+        svg.append('text').attr('x',lx+10).attr('y',ly+62).attr('fill','rgba(255,255,255,0.4)').attr('font-size',11).attr('font-weight',600).attr('font-family','Poppins,sans-serif').text('Grecia · Sarchí · Atenas · Zarcero');
+        svg.append('text').attr('x',lx+10).attr('y',ly+79).attr('fill','rgba(255,255,255,0.2)').attr('font-size',10).attr('font-family','Poppins,sans-serif').text('Metas de expansión');
+    })();
 
     // Group filter tabs
     const groupTabs = document.querySelectorAll('.group-tab');
