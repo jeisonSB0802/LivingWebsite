@@ -41,6 +41,13 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        .cards-carousel {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .cards-carousel > div {
+            scroll-snap-align: start;
+        }
     </style>
         <script id="tailwind-config">
             tailwind.config = {
@@ -188,17 +195,11 @@
 </div>
 <!-- Activities Carousel -->
 <section class="py-section-gap px-gutter max-w-container-max mx-auto overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
-<div class="flex justify-between items-end mb-12">
-<div>
+<div class="text-center mb-12">
 <span class="text-primary font-nav-link text-nav-link uppercase tracking-[0.2em] mb-2 block">Nuestra Red</span>
-<h3 class="font-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface">Parte de los que Somos</h3>
+<h3 class="font-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface">Parte de lo que Somos</h3>
 </div>
-<div class="flex gap-4">
-<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5"><span class="material-symbols-outlined">chevron_left</span></button>
-<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5"><span class="material-symbols-outlined">chevron_right</span></button>
-</div>
-</div>
-<div class="flex gap-8 overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4">
+<div class="cards-carousel flex gap-8 overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4 md:justify-center">
 <!-- Card 1 -->
 <div class="flex-shrink-0 w-80 glass-card rounded-3xl overflow-hidden group">
 <div class="h-96 relative">
@@ -286,7 +287,7 @@
     </div>
     <!-- Category Filter Tabs -->
     <div class="flex flex-wrap gap-3 justify-center mb-10">
-        <button class="gallery-tab px-6 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest bg-primary text-white hover:border-primary hover:text-primary transition-all duration-200" data-category="Encuentros">Encuentros</button>
+        <button class="gallery-tab px-6 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200" data-category="Encuentros">Encuentros</button>
         <button class="gallery-tab px-6 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200" data-category="Eventos">Eventos</button>
         <button class="gallery-tab px-6 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200" data-category="Iglesia">Iglesia</button>
         <button class="gallery-tab px-6 py-2 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200" data-category="Servicio">Servicio</button>
@@ -1171,6 +1172,15 @@
             </div>
         </div>
         </div>
+    <!-- Estado vacío: sin categoría seleccionada -->
+    <div id="gallery-empty-state" class="text-center py-16">
+        <span class="material-symbols-outlined text-on-surface-variant text-5xl mb-4 block">photo_library</span>
+        <p class="text-on-surface-variant font-nav-link uppercase tracking-widest">Selecciona una categoría para ver las fotografías</p>
+    </div>
+    <!-- Botón Ver más (solo mobile) -->
+    <div id="gallery-load-more-wrapper" style="display:none" class="flex justify-center mt-8">
+        <button id="gallery-load-more" class="px-8 py-3 rounded-full font-nav-link text-nav-link uppercase tracking-widest border border-white/20 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">Ver más</button>
+    </div>
 </section>
 <!-- Scripture Highlight -->
 <section class="py-section-gap relative overflow-hidden flex items-center justify-center min-h-[500px] transition-all duration-1000 opacity-100 translate-y-0">
@@ -1239,7 +1249,7 @@
 <span class="material-symbols-outlined">star</span>
 <span class="material-symbols-outlined">star</span>
 </div>
-<p class="font-body-main text-body-main text-on-surface flex-grow italic">"La música, la gente, la misión. Todo en Living está diseñado para acercarte a tu verdadero propósito. La mejor decisión que he tomado."</p>
+<p class="font-body-main text-body-main text-on-surface flex-grow italic">"Una de las mejores decisiones de mi vida si no es que la mejor, es exactamente haberle dicho "Sí" a Dios. Él ha utilizado esta red para acercarme a él, me ha permitido conocerlo y descubrir el propósito que él tiene en mi vida. Y no solo en mi vida, si no en la vida de todos los jóvenes que han decidido seguirle verdaderamente."</p>
 </div>
 </div>
 </section>
@@ -1250,13 +1260,13 @@
 <h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
 <p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
 <div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/joinUs.html">
 <span class="material-symbols-outlined text-sm">sensors</span>
 </a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/groups.html">
 <span class="material-symbols-outlined text-sm">groups</span>
 </a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/aboutUs.html">
 <span class="material-symbols-outlined text-sm">favorite</span>
 </a>
 </div>
@@ -1290,16 +1300,16 @@
 <span class="font-nav-link text-[10px] mt-1">Inicio</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="/Pages/groups.html">
-<span class="material-symbols-outlined">sensors</span>
-<span class="font-nav-link text-[10px] mt-1">Conectar</span>
+<span class="material-symbols-outlined">groups</span>
+<span class="font-nav-link text-[10px] mt-1">Grupos</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="/Pages/joinUs.html">
-<span class="material-symbols-outlined">favorite_border</span>
+<span class="material-symbols-outlined">how_to_reg</span>
 <span class="font-nav-link text-[10px] mt-1">Únete</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="font-nav-link text-[10px] mt-1">Perfil</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70" href="/Pages/aboutUs.html">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-nav-link text-[10px] mt-1">Nosotros</span>
 </a>
 </nav>
 <!-- Interactions Script -->
@@ -1370,6 +1380,14 @@
     // Gallery category filter
     const galleryTabs = document.querySelectorAll('.gallery-tab');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryEmptyState = document.getElementById('gallery-empty-state');
+    const loadMoreWrapper = document.getElementById('gallery-load-more-wrapper');
+    const loadMoreBtn = document.getElementById('gallery-load-more');
+    const MOBILE_BATCH = 5;
+    let currentCategoryItems = [];
+    let visibleCount = 0;
+
+    function isMobile() { return window.innerWidth < 768; }
 
     function applyGalleryFilter(category) {
         galleryTabs.forEach(t => {
@@ -1381,16 +1399,42 @@
             activeTab.classList.add('bg-primary', 'text-white');
             activeTab.classList.remove('border', 'border-white/20', 'text-on-surface-variant');
         }
-        galleryItems.forEach(item => {
-            item.style.display = item.dataset.category === category ? '' : 'none';
-        });
+        galleryItems.forEach(item => { item.style.display = 'none'; });
+        galleryEmptyState.style.display = 'none';
+        currentCategoryItems = Array.from(galleryItems).filter(item => item.dataset.category === category);
+
+        if (isMobile()) {
+            visibleCount = Math.min(MOBILE_BATCH, currentCategoryItems.length);
+            currentCategoryItems.forEach((item, i) => { if (i < visibleCount) item.style.display = ''; });
+            loadMoreWrapper.style.display = currentCategoryItems.length > visibleCount ? 'flex' : 'none';
+        } else {
+            currentCategoryItems.forEach(item => { item.style.display = ''; });
+            loadMoreWrapper.style.display = 'none';
+        }
+    }
+
+    function loadMore() {
+        const toShow = Math.min(MOBILE_BATCH, currentCategoryItems.length - visibleCount);
+        currentCategoryItems.slice(visibleCount, visibleCount + toShow).forEach(item => { item.style.display = ''; });
+        visibleCount += toShow;
+        if (visibleCount >= currentCategoryItems.length) loadMoreWrapper.style.display = 'none';
     }
 
     galleryTabs.forEach(tab => {
         tab.addEventListener('click', () => applyGalleryFilter(tab.dataset.category));
     });
+    if (loadMoreBtn) loadMoreBtn.addEventListener('click', loadMore);
 
-    applyGalleryFilter('Encuentros');
+    window.addEventListener('resize', () => {
+        if (currentCategoryItems.length > 0 && !isMobile()) {
+            currentCategoryItems.forEach(item => { item.style.display = ''; });
+            loadMoreWrapper.style.display = 'none';
+        }
+    });
+
+    // Inicializar: ocultar todas las fotos y mostrar estado vacío
+    galleryItems.forEach(item => { item.style.display = 'none'; });
+    galleryEmptyState.style.display = 'block';
 </script>
 
 

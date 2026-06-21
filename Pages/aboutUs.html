@@ -197,30 +197,21 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="px-6 max-w-container-max mx-auto mb-[120px]">
-        <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
-            <div class="max-w-xl">
-                <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-white">Momentos de la Semana</h3>
-                <p class="text-on-surface-variant">Momentos reales, comunidad real, impacto real. Echa un vistazo a lo que significa estar verdaderamente vivo.</p>
-            </div>
-            <button class="living-pill-button px-8 py-4 rounded-full font-nav-link text-nav-link uppercase tracking-widest flex items-center gap-2">
-                Ver Todos los Momentos <span class="material-symbols-outlined">trending_flat</span>
-            </button>
+    <!-- Vision Section -->
+    <section class="relative py-24 mb-[120px] overflow-hidden flex items-center justify-center min-h-[500px]">
+        <div class="absolute inset-0 bg-primary/5"></div>
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/5 animate-pulse-slow"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-primary/8 animate-pulse-slow" style="animation-delay: 1.5s;"></div>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
-            <div class="col-span-2 row-span-2 rounded-3xl overflow-hidden glass-card border border-white/10">
-                <img alt="Comunidad Living" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="../assets/images/Encuentros/683638225_980710767881823_2845405648641059159_n.jpg">
-            </div>
-            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden glass-card border border-white/10">
-                <img alt="Momento de adoración" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="../assets/images/Iglesia/540175249_786400490646186_6664025568235547098_n.jpg">
-            </div>
-            <div class="col-span-1 row-span-2 rounded-3xl overflow-hidden glass-card border border-white/10">
-                <img alt="Unción y adoración" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="../assets/images/Iglesia/652325177_942211571731743_2248931381314772671_n.jpg">
-            </div>
-            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden glass-card border border-white/10">
-                <img alt="Momento de comunidad" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="../assets/images/Eventos/494755945_695763929709843_1387855809737540508_n.jpg">
-            </div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12 text-white">Nuestra Visión</h3>
+            <blockquote class="font-quote-brush text-quote-brush living-accent-text mb-10 leading-tight italic" style="text-shadow: 0 0 20px rgba(229,5,86,0.35);">
+                "Salvar, Sanar y Liberar a las personas, a través del Espíritu Santo. Para que se conviertan en discípulos de Jesús, sirvan en la visión y encuentren su propósito en el reino."
+            </blockquote>
+            <a href="#" class="living-pill-button px-10 py-4 rounded-full font-nav-link text-nav-link uppercase tracking-widest inline-flex items-center gap-2">
+                Entender nuestra visión <span class="material-symbols-outlined">play_circle</span>
+            </a>
         </div>
     </section>
 
@@ -233,17 +224,17 @@
         <div class="relative">
 
             <!-- Línea central -->
-            <div class="absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-white/10 overflow-hidden">
+            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-white/10 overflow-hidden">
                 <div class="absolute top-0 w-full h-32 bg-primary animate-[bounce_3s_infinite] opacity-60"></div>
             </div>
 
             <!-- Paso 1 -->
-            <div class="relative flex items-center justify-between mb-24 md:flex-row-reverse group">
+            <div class="relative flex items-center justify-between mb-8 md:mb-24 md:flex-row-reverse group">
                 <div class="w-[45%] hidden md:block"></div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-4 border-primary flex items-center justify-center z-10">
+                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-4 border-primary items-center justify-center z-10">
                     <div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
                 </div>
-                <div class="w-full md:w-[45%] glass-card p-8 rounded-3xl border-l-4 border-l-primary group-hover:translate-x-2 transition-transform">
+                <div class="w-full md:w-[45%] glass-card p-6 md:p-8 rounded-3xl border-l-4 border-l-primary group-hover:translate-x-2 transition-transform">
                     <span class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">Paso 01</span>
                     <h5 class="font-headline-md text-headline-md mb-3 text-white">Primera Visita</h5>
                     <p class="text-on-surface-variant text-sm">Cruza la puerta y forma parte. Sin expectativas, solo una invitación abierta a ver de qué tratamos.</p>
@@ -251,10 +242,10 @@
             </div>
 
             <!-- Paso 2 -->
-            <div class="relative flex items-center justify-between mb-24 group">
+            <div class="relative flex items-center justify-between mb-8 md:mb-24 group">
                 <div class="w-[45%] hidden md:block"></div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-4 border-primary/60 flex items-center justify-center z-10"></div>
-                <div class="w-full md:w-[45%] glass-card p-8 rounded-3xl border-r-4 border-r-primary/60 md:text-right group-hover:-translate-x-2 transition-transform">
+                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-4 border-primary/60 items-center justify-center z-10"></div>
+                <div class="w-full md:w-[45%] glass-card p-6 md:p-8 rounded-3xl border-l-4 md:border-l-0 border-l-primary/60 md:border-r-4 md:border-r-primary/60 md:text-right group-hover:-translate-x-2 transition-transform">
                     <span class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">Paso 02</span>
                     <h5 class="font-headline-md text-headline-md mb-3 text-white">Grupos de Amistad</h5>
                     <p class="text-on-surface-variant text-sm">Conéctate con un grupo. Comidas compartidas, historias y crecimiento espiritual profundo ocurren aquí.</p>
@@ -262,10 +253,10 @@
             </div>
 
             <!-- Paso 3 -->
-            <div class="relative flex items-center justify-between mb-24 md:flex-row-reverse group">
+            <div class="relative flex items-center justify-between mb-8 md:mb-24 md:flex-row-reverse group">
                 <div class="w-[45%] hidden md:block"></div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-4 border-primary/40 flex items-center justify-center z-10"></div>
-                <div class="w-full md:w-[45%] glass-card p-8 rounded-3xl border-l-4 border-l-primary/40 group-hover:translate-x-2 transition-transform">
+                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-4 border-primary/40 items-center justify-center z-10"></div>
+                <div class="w-full md:w-[45%] glass-card p-6 md:p-8 rounded-3xl border-l-4 border-l-primary/40 group-hover:translate-x-2 transition-transform">
                     <span class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">Paso 03</span>
                     <h5 class="font-headline-md text-headline-md mb-3 text-white">Preparación</h5>
                     <p class="text-on-surface-variant text-sm">Prepárate bajo los principios bíblicos, desarrolla tus habilidades y alcanza un entendimiento mayor.</p>
@@ -275,10 +266,10 @@
             <!-- Paso 4 -->
             <div class="relative flex items-center justify-between group">
                 <div class="w-[45%] hidden md:block"></div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10 shadow-[0_0_30px_rgba(229,5,86,0.7)]">
+                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-primary items-center justify-center z-10 shadow-[0_0_30px_rgba(229,5,86,0.7)]">
                     <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
                 </div>
-                <div class="w-full md:w-[45%] glass-card p-8 rounded-3xl border-r-4 border-r-primary md:text-right group-hover:-translate-x-2 transition-transform bg-primary/5">
+                <div class="w-full md:w-[45%] glass-card p-6 md:p-8 rounded-3xl border-l-4 md:border-l-0 border-l-primary md:border-r-4 md:border-r-primary md:text-right group-hover:-translate-x-2 transition-transform bg-primary/5">
                     <span class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">Paso 04</span>
                     <h5 class="font-headline-md text-headline-md mb-3 text-white">Líder Living</h5>
                     <p class="text-on-surface-variant text-sm">Entra en tu llamado. Lidera un grupo, sirve a la iglesia y ayuda a otros a encontrar su identidad en Cristo.</p>
@@ -312,9 +303,9 @@
 <h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
 <p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
 <div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">sensors</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">favorite</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/joinUs.html"><span class="material-symbols-outlined text-sm">sensors</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/groups.html"><span class="material-symbols-outlined text-sm">groups</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/aboutUs.html"><span class="material-symbols-outlined text-sm">favorite</span></a>
 </div>
 </div>
 <div>
@@ -344,16 +335,16 @@
         <span class="font-nav-link text-[10px] mt-1 uppercase">Inicio</span>
     </a>
     <a href="/Pages/groups.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-        <span class="material-symbols-outlined">sensors</span>
-        <span class="font-nav-link text-[10px] mt-1 uppercase">Conectar</span>
+        <span class="material-symbols-outlined">groups</span>
+        <span class="font-nav-link text-[10px] mt-1 uppercase">Grupos</span>
     </a>
     <a href="/Pages/joinUs.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-        <span class="material-symbols-outlined">favorite_border</span>
+        <span class="material-symbols-outlined">how_to_reg</span>
         <span class="font-nav-link text-[10px] mt-1 uppercase">Únete</span>
     </a>
-    <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-        <span class="material-symbols-outlined">person</span>
-        <span class="font-nav-link text-[10px] mt-1 uppercase">Perfil</span>
+    <a href="/Pages/aboutUs.html" class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(229,5,86,0.6)] active:scale-90 transition-all">
+        <span class="material-symbols-outlined">sensors</span>
+        <span class="font-nav-link text-[10px] mt-1 uppercase">Nosotros</span>
     </a>
 </nav>
 
