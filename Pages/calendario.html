@@ -143,7 +143,10 @@
             </div>
 
             <!-- Lista de eventos -->
-            <div class="lg:col-span-2 space-y-4" id="events-list"></div>
+            <div class="lg:col-span-2">
+                <div id="filter-bar" class="flex flex-wrap gap-2 mb-6"></div>
+                <div class="space-y-4" id="events-list"></div>
+            </div>
 
         </div>
     </section>
@@ -364,16 +367,27 @@ const RECURRING_GROUPS = [
 
 
 const CATEGORY_STYLE = {
-    encuentro: { color: "#E50556", bg: "rgba(229,5,86,0.12)",   label: "Encuentro",        icon: "sensors" },
-    grupo:     { color: "#3B82F6", bg: "rgba(59,130,246,0.12)", label: "Grupo de Amistad", icon: "groups" },
-    especial:  { color: "#FBBF24", bg: "rgba(251,191,36,0.12)", label: "Evento Especial",  icon: "star" },
+    encuentro: { color: "#E50556", bg: "rgba(229,5,86,0.12)",   label: "Encuentro",         icon: "sensors" },
+    grupo:     { color: "#3B82F6", bg: "rgba(59,130,246,0.12)", label: "Grupo de Amistad",  icon: "groups"  },
+    especial:  { color: "#FBBF24", bg: "rgba(251,191,36,0.12)", label: "Evento Especial",   icon: "star"    },
     formacion: { color: "#10B981", bg: "rgba(16,185,129,0.12)", label: "Formación New Life", icon: "school" },
 };
 
-const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const FILTERS = [
+    { id: 'all',       label: 'Todos'             },
+    { id: 'encuentro', label: 'Encuentros'         },
+    { id: 'grupo',     label: 'Grupos de Amistad' },
+    { id: 'especial',  label: 'Eventos Especiales' },
+    { id: 'formacion', label: 'Formación New Life' },
+];
 
-let currentYear = new Date().getFullYear();
+const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const DAYS_ES   = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+
+let currentYear  = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
+let selectedDay  = null;
+let activeFilter = 'all';
 
 function eventCategoriesForMonth(year, month) {
     const prefix = `${year}-${String(month+1).padStart(2,'0')}`;
@@ -386,30 +400,57 @@ function eventCategoriesForMonth(year, month) {
     return map;
 }
 
+function selectDay(day) {
+    selectedDay = (selectedDay === day) ? null : day;
+    renderCalendar();
+    renderEvents();
+}
+
+function setFilter(filterId) {
+    activeFilter = filterId;
+    renderFilterBar();
+    renderEvents();
+}
+
+function renderFilterBar() {
+    const bar = document.getElementById('filter-bar');
+    bar.innerHTML = FILTERS.map(f => {
+        const isActive = activeFilter === f.id;
+        const cs = CATEGORY_STYLE[f.id];
+        const activeStyle = cs
+            ? `background:${cs.bg};color:${cs.color};border-color:${cs.color};`
+            : `background:rgba(255,255,255,0.1);color:#FFFFFF;border-color:rgba(255,255,255,0.35);`;
+        const inactiveStyle = `background:transparent;color:#666666;border-color:rgba(255,255,255,0.1);`;
+        return `<button onclick="setFilter('${f.id}')" class="px-3 py-1.5 rounded-full text-xs font-bold border transition-all hover:opacity-90" style="${isActive ? activeStyle : inactiveStyle}">${f.label}</button>`;
+    }).join('');
+}
+
 function renderCalendar() {
     const title = document.getElementById('calendar-title');
     const grid  = document.getElementById('calendar-grid');
     title.textContent = `${MONTHS_ES[currentMonth]} ${currentYear}`;
 
-    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const firstDay    = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    const eventMap = eventCategoriesForMonth(currentYear, currentMonth);
-    const today = new Date();
+    const eventMap    = eventCategoriesForMonth(currentYear, currentMonth);
+    const today       = new Date();
     const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() === currentMonth;
 
     grid.innerHTML = '';
-    for (let i = 0; i < firstDay; i++) {
-        grid.innerHTML += `<div></div>`;
-    }
+    for (let i = 0; i < firstDay; i++) grid.innerHTML += `<div></div>`;
+
     for (let d = 1; d <= daysInMonth; d++) {
-        const cats = eventMap[d] ? [...eventMap[d]] : [];
-        const isToday = isCurrentMonth && d === today.getDate();
+        const cats       = eventMap[d] ? [...eventMap[d]] : [];
+        const isToday    = isCurrentMonth && d === today.getDate();
+        const isSelected = selectedDay === d;
+        const isPrimary  = isSelected || (isToday && !selectedDay);
         const dots = cats.map(cat =>
             `<span style="width:5px;height:5px;border-radius:50%;background:${CATEGORY_STYLE[cat].color};flex-shrink:0;"></span>`
         ).join('');
+        const ring = isSelected ? 'ring-2 ring-primary ring-offset-1 ring-offset-black' : '';
         grid.innerHTML += `
-        <div class="flex flex-col items-center justify-center w-9 h-10 mx-auto rounded-lg text-sm cursor-pointer transition-all
-            ${isToday ? 'bg-primary text-white font-bold' : 'hover:bg-white/10 text-on-surface-variant'}">
+        <div onclick="selectDay(${d})" class="flex flex-col items-center justify-center w-9 h-10 mx-auto rounded-lg text-sm cursor-pointer transition-all ${ring}
+            ${isPrimary ? 'bg-primary text-white font-bold' : 'hover:bg-white/10 text-on-surface-variant'}">
             <span>${d}</span>
             <div class="cal-dots" style="min-height:7px;">${dots}</div>
         </div>`;
@@ -419,20 +460,42 @@ function renderCalendar() {
 function renderEvents() {
     const list = document.getElementById('events-list');
     const prefix = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`;
-    const monthEvents = EVENTS
-        .filter(e => e.date.startsWith(prefix))
-        .sort((a, b) => a.date.localeCompare(b.date));
 
-    if (!monthEvents.length) {
-        list.innerHTML = `<div class="glass-card rounded-3xl p-10 text-center text-on-surface-variant">No hay eventos registrados para este mes.</div>`;
+    let events = EVENTS
+        .filter(e => e.date.startsWith(prefix))
+        .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+
+    if (activeFilter !== 'all') {
+        events = events.filter(e => e.category === activeFilter);
+    }
+    if (selectedDay !== null) {
+        const dayStr = String(selectedDay).padStart(2, '0');
+        events = events.filter(e => e.date === `${prefix}-${dayStr}`);
+    }
+
+    if (!events.length) {
+        const msg = selectedDay
+            ? `No hay eventos el ${selectedDay} de ${MONTHS_ES[currentMonth]}.`
+            : `No hay eventos registrados para este mes.`;
+        list.innerHTML = `<div class="glass-card rounded-3xl p-10 text-center text-on-surface-variant">${msg}</div>`;
         return;
     }
 
-    list.innerHTML = `<h4 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest pb-2">${MONTHS_ES[currentMonth]} ${currentYear}</h4>`;
-    monthEvents.forEach(ev => {
-        const d = new Date(ev.date + 'T00:00:00');
+    const heading = selectedDay !== null
+        ? `<div class="flex items-center gap-3 mb-4">
+               <button onclick="selectDay(${selectedDay})" class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors text-xs">
+                   <span class="material-symbols-outlined" style="font-size:16px;">arrow_back</span> Ver mes completo
+               </button>
+               <span class="text-white font-bold text-sm">${selectedDay} de ${MONTHS_ES[currentMonth]}</span>
+           </div>`
+        : `<h4 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest pb-2 mb-2">${MONTHS_ES[currentMonth]} ${currentYear}</h4>`;
+
+    list.innerHTML = heading;
+
+    events.forEach(ev => {
+        const d     = new Date(ev.date + 'T00:00:00');
         const style = CATEGORY_STYLE[ev.category];
-        const dayName = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][d.getDay()];
+        const dayName = DAYS_ES[d.getDay()];
         list.innerHTML += `
         <div class="glass-card event-card rounded-2xl p-6 flex gap-5 items-start border border-white/10 cursor-default">
             <div class="flex-shrink-0 w-14 text-center">
@@ -460,14 +523,17 @@ function renderEvents() {
 
 document.getElementById('prev-month').addEventListener('click', () => {
     currentMonth--; if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-    renderCalendar(); renderEvents();
+    selectedDay = null;
+    renderCalendar(); renderFilterBar(); renderEvents();
 });
 document.getElementById('next-month').addEventListener('click', () => {
     currentMonth++; if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-    renderCalendar(); renderEvents();
+    selectedDay = null;
+    renderCalendar(); renderFilterBar(); renderEvents();
 });
 
 renderCalendar();
+renderFilterBar();
 renderEvents();
 
 // Sidebar
