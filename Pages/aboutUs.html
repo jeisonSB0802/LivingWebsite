@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="dark" lang="es">
 <head>
 <meta charset="utf-8">
@@ -209,11 +209,57 @@
             <blockquote class="font-quote-brush text-quote-brush living-accent-text mb-10 leading-tight italic" style="text-shadow: 0 0 20px rgba(229,5,86,0.35);">
                 "Salvar, Sanar y Liberar a las personas, a través del Espíritu Santo. Para que se conviertan en discípulos de Jesús, sirvan en la visión y encuentren su propósito en el reino."
             </blockquote>
-            <a href="#" class="living-pill-button px-10 py-4 rounded-full font-nav-link text-nav-link uppercase tracking-widest inline-flex items-center gap-2">
+            <button id="open-vision-modal" class="living-pill-button px-10 py-4 rounded-full font-nav-link text-nav-link uppercase tracking-widest inline-flex items-center gap-2">
                 Entender nuestra visión <span class="material-symbols-outlined">play_circle</span>
-            </a>
+            </button>
         </div>
     </section>
+
+    <!-- Vision Modal -->
+    <div id="vision-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="vision-modal-backdrop"></div>
+        <div class="relative z-10 glass-card rounded-3xl p-8 md:p-12 max-w-2xl w-full border border-primary/20 shadow-[0_0_60px_rgba(229,5,86,0.15)] scale-95 transition-transform duration-300" id="vision-modal-box">
+            <button id="close-vision-modal" class="absolute top-5 right-5 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="text-center mb-8">
+                <span class="text-primary font-nav-link text-nav-link uppercase tracking-[0.2em] block mb-2">Lo que nos mueve</span>
+                <h4 class="font-headline-lg text-headline-lg-mobile md:text-headline-md text-white">Nuestra Misión en Simple</h4>
+            </div>
+            <div class="flex flex-col gap-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span class="material-symbols-outlined text-primary text-base">favorite</span>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold mb-1">Acercar</p>
+                        <p class="text-on-surface-variant text-sm">Queremos que cada joven encuentre una relación real con Dios, no solo una religión. Que lo conozca, lo experimente y lo siga de verdad.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span class="material-symbols-outlined text-primary text-base">groups</span>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold mb-1">Conectar</p>
+                        <p class="text-on-surface-variant text-sm">Creemos que nadie debe vivir solo. Creamos comunidad donde las personas se conocen, se apoyan y crecen juntas en la fe.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span class="material-symbols-outlined text-primary text-base">bolt</span>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold mb-1">Propósito</p>
+                        <p class="text-on-surface-variant text-sm">Cada joven tiene un llamado único. Queremos ayudarte a descubrir para qué fuiste creado y darte un lugar donde vivirlo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 text-center">
+                <p class="text-on-surface-variant text-sm italic">"Acercar a los jóvenes a Cristo para que descubran su identidad."</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Journey Section -->
     <section class="relative px-6 max-w-4xl mx-auto mb-[120px]">
@@ -302,11 +348,6 @@
 <div>
 <h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
 <p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/joinUs.html"><span class="material-symbols-outlined text-sm">sensors</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/groups.html"><span class="material-symbols-outlined text-sm">groups</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="/Pages/aboutUs.html"><span class="material-symbols-outlined text-sm">favorite</span></a>
-</div>
 </div>
 <div>
 <h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
@@ -321,46 +362,17 @@
 <ul class="space-y-4">
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-white/5 text-center text-on-surface-variant text-sm">© 2026 Red Living. Todos los derechos reservados. Diseñado para la generación del ahora.</div>
 </footer>
-<!-- Bottom Navigation (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-black/80 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-4 pb-4">
-    <a href="/Pages/index.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-        <span class="material-symbols-outlined">home</span>
-        <span class="font-nav-link text-[10px] mt-1 uppercase">Inicio</span>
-    </a>
-    <a href="/Pages/groups.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-        <span class="material-symbols-outlined">groups</span>
-        <span class="font-nav-link text-[10px] mt-1 uppercase">Grupos</span>
-    </a>
-    <a href="/Pages/joinUs.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-        <span class="material-symbols-outlined">how_to_reg</span>
-        <span class="font-nav-link text-[10px] mt-1 uppercase">Únete</span>
-    </a>
-    <a href="/Pages/aboutUs.html" class="flex flex-col items-center justify-center text-primary filter drop-shadow-[0_0_8px_rgba(229,5,86,0.6)] active:scale-90 transition-all">
-        <span class="material-symbols-outlined">sensors</span>
-        <span class="font-nav-link text-[10px] mt-1 uppercase">Nosotros</span>
-    </a>
-</nav>
+
 
 <!-- Sidebar Drawer (Mobile) -->
 <div class="fixed inset-y-0 left-0 w-80 z-[60] bg-black/95 backdrop-blur-2xl rounded-r-3xl shadow-2xl shadow-black/80 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-drawer">
     <div class="p-8 h-full flex flex-col">
-        <div class="flex items-center justify-between mb-12">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-primary/30">
-                    <img alt="User profile" class="w-full h-full object-cover" src="../assets/images/Recursos/profile.avif">
-                </div>
-                <div>
-                    <p class="font-headline-md text-primary leading-none mb-1 text-sm">Miembro</p>
-                    <p class="text-xs text-on-surface-variant opacity-60">Stay Living</p>
-                </div>
-            </div>
+        <div class="flex items-center justify-end mb-12">
             <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="close-sidebar">close</button>
         </div>
         <div class="flex flex-col gap-2">
@@ -383,12 +395,6 @@
             <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="/Pages/joinUs.html">
                 <span class="material-symbols-outlined">sensors</span>
                 <span class="font-nav-link uppercase tracking-widest">Únete</span>
-            </a>
-        </div>
-        <div class="mt-auto pt-6 border-t border-white/10">
-            <a class="text-white hover:bg-white/5 rounded-2xl px-6 py-4 flex items-center gap-4 transition-all" href="#">
-                <span class="material-symbols-outlined">settings</span>
-                <span class="font-nav-link uppercase tracking-widest">Configuración</span>
             </a>
         </div>
     </div>
@@ -421,6 +427,31 @@
     if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
     closeSidebar.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
+
+    // Vision modal
+    const visionModal = document.getElementById('vision-modal');
+    const visionModalBox = document.getElementById('vision-modal-box');
+
+    function openVisionModal() {
+        visionModal.classList.remove('opacity-0', 'pointer-events-none');
+        visionModal.classList.add('opacity-100');
+        visionModalBox.classList.remove('scale-95');
+        visionModalBox.classList.add('scale-100');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeVisionModal() {
+        visionModal.classList.remove('opacity-100');
+        visionModal.classList.add('opacity-0', 'pointer-events-none');
+        visionModalBox.classList.remove('scale-100');
+        visionModalBox.classList.add('scale-95');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('open-vision-modal').addEventListener('click', openVisionModal);
+    document.getElementById('close-vision-modal').addEventListener('click', closeVisionModal);
+    document.getElementById('vision-modal-backdrop').addEventListener('click', closeVisionModal);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeVisionModal(); });
 </script>
 
 </body>

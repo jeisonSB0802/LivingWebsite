@@ -62,7 +62,7 @@
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos de Amistad</a>
-        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
     </nav>
 </header>
 
@@ -85,6 +85,14 @@
 <div class="fixed inset-0 z-[99] bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
 
 <main class="pt-20">
+
+    <!-- Back Button -->
+    <div class="px-6 md:px-10 pt-6">
+        <button onclick="history.back()" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-nav-link text-nav-link uppercase tracking-widest">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            Volver
+        </button>
+    </div>
 
     <!-- Hero -->
     <section class="relative py-20 px-gutter text-center overflow-hidden">
@@ -190,7 +198,7 @@
                     <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" style="font-size:16px;">location_on</span><span>Naranjo, San Miguel</span></div>
                     <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" style="font-size:16px;">person</span><span>Jennifer, Steven, Yendry y Bernal</span></div>
                 </div>
-                <a href="https://wa.me/50670805428" target="_blank" rel="noopener noreferrer" class="mt-6 w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold transition-all flex items-center justify-center gap-2 text-sm">Solicitar Unirse</a>
+                <a href="https://wa.me/50662332979" target="_blank" rel="noopener noreferrer" class="mt-6 w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold transition-all flex items-center justify-center gap-2 text-sm">Solicitar Unirse</a>
             </div>
             <!-- GA Naranjo -->
             <div class="glass-card rounded-3xl p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all">
@@ -207,7 +215,7 @@
                     <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" style="font-size:16px;">location_on</span><span>Naranjo, El Rosario</span></div>
                     <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" style="font-size:16px;">person</span><span>Jeison y Fátima</span></div>
                 </div>
-                <a href="https://wa.me/50664717568" target="_blank" rel="noopener noreferrer" class="mt-6 w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold transition-all flex items-center justify-center gap-2 text-sm">Solicitar Unirse</a>
+                <a href="https://wa.me/50662332979" target="_blank" rel="noopener noreferrer" class="mt-6 w-full py-3 rounded-xl border border-primary/30 hover:bg-primary text-primary hover:text-white font-bold transition-all flex items-center justify-center gap-2 text-sm">Solicitar Unirse</a>
             </div>
         </div>
     </section>
@@ -220,11 +228,6 @@
 <div>
 <h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
 <p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">sensors</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">favorite</span></a>
-</div>
 </div>
 <div>
 <h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
@@ -239,8 +242,6 @@
 <ul class="space-y-4">
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
 </ul>
 </div>
 </div>
@@ -373,21 +374,38 @@ const CATEGORY_STYLE = {
     formacion: { color: "#10B981", bg: "rgba(16,185,129,0.12)", label: "Formación New Life", icon: "school" },
 };
 
+
+const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const DAYS_ES   = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+
 const FILTERS = [
-    { id: 'all',       label: 'Todos'             },
     { id: 'encuentro', label: 'Encuentros'         },
     { id: 'grupo',     label: 'Grupos de Amistad' },
     { id: 'especial',  label: 'Eventos Especiales' },
     { id: 'formacion', label: 'Formación New Life' },
 ];
 
-const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-const DAYS_ES   = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
-
 let currentYear  = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
 let selectedDay  = null;
-let activeFilter = 'all';
+let activeFilter = 'none';
+
+function setFilter(filterId) {
+    activeFilter = (activeFilter === filterId) ? 'none' : filterId;
+    renderFilterBar();
+    renderEvents();
+}
+
+function renderFilterBar() {
+    const bar = document.getElementById('filter-bar');
+    bar.innerHTML = FILTERS.map(f => {
+        const isActive = activeFilter === f.id;
+        const cs = CATEGORY_STYLE[f.id];
+        const activeStyle = `background:${cs.bg};color:${cs.color};border-color:${cs.color};`;
+        const inactiveStyle = `background:transparent;color:#666666;border-color:rgba(255,255,255,0.1);`;
+        return `<button onclick="setFilter('${f.id}')" class="px-3 py-1.5 rounded-full text-xs font-bold border transition-all hover:opacity-90" style="${isActive ? activeStyle : inactiveStyle}">${f.label}</button>`;
+    }).join('');
+}
 
 function eventCategoriesForMonth(year, month) {
     const prefix = `${year}-${String(month+1).padStart(2,'0')}`;
@@ -406,24 +424,6 @@ function selectDay(day) {
     renderEvents();
 }
 
-function setFilter(filterId) {
-    activeFilter = filterId;
-    renderFilterBar();
-    renderEvents();
-}
-
-function renderFilterBar() {
-    const bar = document.getElementById('filter-bar');
-    bar.innerHTML = FILTERS.map(f => {
-        const isActive = activeFilter === f.id;
-        const cs = CATEGORY_STYLE[f.id];
-        const activeStyle = cs
-            ? `background:${cs.bg};color:${cs.color};border-color:${cs.color};`
-            : `background:rgba(255,255,255,0.1);color:#FFFFFF;border-color:rgba(255,255,255,0.35);`;
-        const inactiveStyle = `background:transparent;color:#666666;border-color:rgba(255,255,255,0.1);`;
-        return `<button onclick="setFilter('${f.id}')" class="px-3 py-1.5 rounded-full text-xs font-bold border transition-all hover:opacity-90" style="${isActive ? activeStyle : inactiveStyle}">${f.label}</button>`;
-    }).join('');
-}
 
 function renderCalendar() {
     const title = document.getElementById('calendar-title');
@@ -465,7 +465,15 @@ function renderEvents() {
         .filter(e => e.date.startsWith(prefix))
         .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
 
-    if (activeFilter !== 'all') {
+    if (activeFilter === 'none' && selectedDay === null) {
+        list.innerHTML = `<div class="glass-card rounded-3xl p-10 text-center">
+            <span class="material-symbols-outlined text-primary mb-4 block" style="font-size:40px;">touch_app</span>
+            <p class="text-white font-bold mb-2">Selecciona una categoría</p>
+            <p class="text-on-surface-variant text-sm">Toca uno de los filtros de arriba para ver lo que tenemos agendado este mes.</p>
+        </div>`;
+        return;
+    }
+    if (activeFilter !== 'none' && activeFilter !== 'all') {
         events = events.filter(e => e.category === activeFilter);
     }
     if (selectedDay !== null) {
@@ -476,7 +484,7 @@ function renderEvents() {
     if (!events.length) {
         const msg = selectedDay
             ? `No hay eventos el ${selectedDay} de ${MONTHS_ES[currentMonth]}.`
-            : `No hay eventos registrados para este mes.`;
+            : `No hay eventos registrados para esta categoría.`;
         list.innerHTML = `<div class="glass-card rounded-3xl p-10 text-center text-on-surface-variant">${msg}</div>`;
         return;
     }

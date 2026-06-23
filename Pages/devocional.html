@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="dark" lang="es"><head>
+﻿<!DOCTYPE html><html class="dark" lang="es"><head>
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="../assets/images/Recursos/Logo3.png">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -62,7 +62,7 @@
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/aboutUs.html">Nosotros</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/activities.html">Actividades</a>
         <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/groups.html">Grupos de Amistad</a>
-        <a class="font-nav-link text-nav-link text-primary uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
+        <a class="font-nav-link text-nav-link text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="/Pages/joinUs.html">Únete</a>
     </nav>
 </header>
 
@@ -85,6 +85,14 @@
 <div class="fixed inset-0 z-[99] bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
 
 <main class="pt-20">
+
+    <!-- Back Button -->
+    <div class="px-6 pt-6">
+        <button onclick="history.back()" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-nav-link text-nav-link uppercase tracking-widest">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            Volver
+        </button>
+    </div>
 
     <!-- Hero -->
     <section class="relative min-h-[420px] flex items-center justify-center text-center px-6 overflow-hidden">
@@ -203,11 +211,6 @@
 <div>
 <h1 class="font-display-hero text-headline-md text-primary mb-6">Red Living</h1>
 <p class="text-[#AAAAAA] max-w-sm mb-8">Sin anhelo de juzgar, intencionalmente profundo. Únete al movimiento de una generación que vive para más.</p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">sensors</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
-<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-sm">favorite</span></a>
-</div>
 </div>
 <div>
 <h6 class="font-nav-link text-nav-link text-white uppercase mb-6">Recursos</h6>
@@ -222,8 +225,6 @@
 <ul class="space-y-4">
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contáctanos</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/Pages/groups.html">Encuentra un Grupo</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de Uso</a></li>
 </ul>
 </div>
 </div>
